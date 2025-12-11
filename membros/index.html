@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Membros - Conteúdo Premium</title>
+    <meta name="description" content="Área exclusiva para membros premium com cursos completos e conteúdo especializado.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .benefits {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .benefits h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-card h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+        
+        .premium-content {
+            padding: 4rem 0;
+        }
+        
+        .premium-content h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+        
+        .content-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .preview-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .preview-image {
+            height: 200px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .preview-content {
+            padding: 1.5rem;
+        }
+        
+        .premium-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .preview-card h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .preview-teaser {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .locked-content {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid #ff6b6b;
+            margin: 1rem 0;
+        }
+        
+        .locked-content p {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .cta-button {
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .faq {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .faq h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+        
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            background: #667eea;
+            color: white;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 1.5rem;
+            display: none;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        .final-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .benefits-grid,
+            .content-preview {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Blog Premium</div>
+            <ul class="nav-links">
+                <li><a href="../">Início</a></li>
+                <li><a href="../blog/">Blog</a></li>
+                <li><a href="./">Área de Membros</a></li>
+                <li><a href="assinar.html">Assinar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Área de Membros Premium</h1>
+            <p>Conteúdo exclusivo, cursos completos e consultoria personalizada</p>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="container">
+            <h2>Benefícios Exclusivos</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📚</div>
+                    <h3>Cursos Completos</h3>
+                    <p>Acesso a cursos estruturados com certificado de conclusão em todas as nossas especialidades.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💬</div>
+                    <h3>Consultoria 1:1</h3>
+                    <p>Sessões mensais de consultoria personalizada com nossos especialistas.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📝</div>
+                    <h3>Templates Exclusivos</h3>
+                    <p>Modelos prontos, checklists e ferramentas práticas para aplicação imediata.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">👥</div>
+                    <h3>Comunidade Privada</h3>
+                    <p>Acesso à comunidade exclusiva de membros para networking e troca de experiências.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Conteúdo Semanal</h3>
+                    <p>Novos materiais toda semana, incluindo vídeos, artigos e recursos práticos.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📱</div>
+                    <h3>Acesso Mobile</h3>
+                    <p>Plataforma otimizada para mobile com app exclusivo para membros.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="premium-content">
+        <div class="container">
+            <h2>Preview do Conteúdo Premium</h2>
+            <div class="content-preview">
+                <div class="preview-card">
+                    <div class="premium-badge">PREMIUM</div>
+                    <div class="preview-image">🧠</div>
+                    <div class="preview-content">
+                        <h3>Curso: Neurodivergência no Ambiente Corporativo</h3>
+                        <p class="preview-teaser">Módulo 1: Fundamentos da Neurociência Aplicada</p>
+                        <div class="locked-content">
+                            <p>🔒 Este conteúdo está disponível apenas para membros premium. Inclui 8 módulos completos com vídeos, exercícios práticos e certificado.</p>
+                        </div>
+                        <a href="assinar.html" class="cta-button">Desbloquear Conteúdo</a>
+                    </div>
+                </div>
+                
+                <div class="preview-card">
+                    <div class="premium-badge">PREMIUM</div>
+                    <div class="preview-image">🌳</div>
+                    <div class="preview-content">
+                        <h3>Masterclass: Técnicas Avançadas de Bonsai</h3>
+                        <p class="preview-teaser">Aula 1: Aramação e Modelagem Profissional</p>
+                        <div class="locked-content">
+                            <p>🔒 Série completa com 12 aulas práticas, incluindo técnicas secretas dos mestres japoneses e cronograma personalizado.</p>
+                        </div>
+                        <a href="assinar.html" class="cta-button">Desbloquear Conteúdo</a>
+                    </div>
+                </div>
+                
+                <div class="preview-card">
+                    <div class="premium-badge">PREMIUM</div>
+                    <div class="preview-image">🎨</div>
+                    <div class="preview-content">
+                        <h3>Workshop: Portfólio Artístico Profissional</h3>
+                        <p class="preview-teaser">Sessão 1: Curadoria e Apresentação</p>
+                        <div class="locked-content">
+                            <p>🔒 Workshop intensivo com feedback personalizado, templates profissionais e estratégias de marketing para artistas.</p>
+                        </div>
+                        <a href="assinar.html" class="cta-button">Desbloquear Conteúdo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2>Perguntas Frequentes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Qual o valor da assinatura?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    A assinatura premium custa R$ 97/mês ou R$ 970/ano (2 meses grátis). Você pode cancelar a qualquer momento.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Como funciona a consultoria 1:1?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Cada membro premium tem direito a 1 sessão mensal de 45 minutos via videochamada com nossos especialistas. Agendamento através da plataforma.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    O conteúdo fica disponível para sempre?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Todo conteúdo acessado durante sua assinatura ativa permanece disponível por 6 meses após o cancelamento.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Posso cancelar a qualquer momento?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Sim! Você pode cancelar sua assinatura a qualquer momento através do painel de controle, sem multas ou taxas.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2>Pronto para Começar?</h2>
+            <p>Junte-se a mais de 1.000 membros que já transformaram suas vidas</p>
+            <a href="assinar.html" class="cta-button">Assinar Agora</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Blog Premium. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('span');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                if (item !== answer) {
+                    item.classList.remove('active');
+                    item.previousElementSibling.querySelector('span').textContent = '+';
+                }
+            });
+            
+            // Toggle current FAQ item
+            if (answer.classList.contains('active')) {
+                answer.classList.remove('active');
+                icon.textContent = '+';
+            } else {
+                answer.classList.add('active');
+                icon.textContent = '−';
+            }
+        }
+        
+        // Smooth animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.benefit-card, .preview-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
