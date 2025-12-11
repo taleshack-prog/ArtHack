@@ -145,16 +145,16 @@
             color: #667eea;
         }
         
-        /* Ebook Highlight Section Styles - Aprimorada para Botão Responsivo */
+        /* Ebook Highlight Section Styles - Com Fallback para Imagem */
         .ebook-highlight {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Gradiente sutil para destaque */
-            padding: 3rem 0; /* Padding aumentado para proeminência */
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 3rem 0;
             border-top: 1px solid #eee;
             border-bottom: 1px solid #eee;
         }
         
         .ebook-highlight .container {
-            max-width: 800px; /* Largura focada */
+            max-width: 800px;
         }
 
         .ebook-content {
@@ -162,12 +162,12 @@
             align-items: center;
             justify-content: center;
             gap: 1.5rem;
-            text-align: center; /* Centralizado por padrão */
+            text-align: center;
         }
         
         .ebook-btn {
             display: flex;
-            flex-direction: column; /* Stack vertical em mobile */
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             position: relative;
@@ -179,27 +179,40 @@
             padding: 1.5rem;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Sombra para elevação */
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Easing suave */
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             max-width: 100%;
             background: white;
-            border: 2px solid #667eea; /* Borda temática */
-            aria-label: "Acessar o ebook Antifrágil Blindado";
+            border: 2px solid #667eea;
         }
         
         .ebook-image {
             flex-shrink: 0;
-            margin-bottom: 1rem; /* Espaço abaixo da imagem em stack */
+            margin-bottom: 1rem;
+            position: relative; /* Para fallback */
         }
         
         .ebook-image img {
-            width: 250px; /* Tamanho maior para impacto (responsivo) */
+            width: 250px;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             transition: transform 0.3s;
-            object-fit: cover; /* Mantém proporção */
-            loading: lazy; /* Otimização nativa */
+            object-fit: cover;
+            loading: lazy;
+        }
+        
+        /* Fallback: Se imagem não carregar, mostra gradiente com ícone */
+        .ebook-image img:not([src]) {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            width: 250px;
+            height: 350px; /* Altura aproximada da capa */
+            border-radius: 8px;
         }
         
         .ebook-image img:hover {
@@ -213,14 +226,14 @@
         
         .ebook-info h3 {
             color: #333;
-            font-size: 1.3rem; /* Título mais proeminente */
+            font-size: 1.3rem;
             margin-bottom: 0.5rem;
             font-weight: 600;
         }
         
         .ebook-info p {
             color: #666;
-            font-size: 1rem; /* Texto legível */
+            font-size: 1rem;
             margin-bottom: 1rem;
             line-height: 1.5;
         }
@@ -232,16 +245,16 @@
         }
         
         .ebook-btn:hover {
-            transform: translateY(-3px) scale(1.02); /* Hover com elevação e zoom */
-            box-shadow: 0 12px 48px rgba(102, 126, 234, 0.3); /* Sombra colorida */
-            border-color: #764ba2; /* Mudança de cor na borda */
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 48px rgba(102, 126, 234, 0.3);
+            border-color: #764ba2;
         }
         
         .ebook-btn:hover .ebook-arrow {
-            transform: translateX(5px); /* Animação da seta */
+            transform: translateX(5px);
         }
 
-        /* Responsividade Aprimorada: Mobile-First */
+        /* Responsividade */
         @media (max-width: 768px) {
             .ebook-content {
                 flex-direction: column;
@@ -250,11 +263,11 @@
             
             .ebook-btn {
                 padding: 1.2rem;
-                width: 100%; /* Full-width em mobile para toque fácil */
+                width: 100%;
             }
             
             .ebook-image img {
-                width: 100%; /* Imagem full-width em mobile */
+                width: 100%;
                 max-width: 300px;
             }
             
@@ -269,25 +282,24 @@
 
         @media (min-width: 769px) {
             .ebook-content {
-                flex-direction: row; /* Side-by-side em desktop */
+                flex-direction: row;
             }
             
             .ebook-btn {
                 flex-direction: row;
                 gap: 1.5rem;
                 padding: 1.5rem 2rem;
-                max-width: 600px; /* Largura controlada */
+                max-width: 600px;
             }
             
             .ebook-image {
-                margin-bottom: 0; /* Sem margem em row */
+                margin-bottom: 0;
             }
             
             .ebook-image img {
-                width: 200px; /* Tamanho fixo em desktop para equilíbrio */
+                width: 200px;
             }
         }
-        /* End Ebook Highlight Section Styles */
 
         .blog-preview {
             padding: 4rem 0;
@@ -455,12 +467,12 @@
             </div>
         </section>
 
-        <!-- Ebook Highlight Section - Agora um Botão Responsivo Impactante -->
+        <!-- Ebook Highlight Section -->
         <section class="ebook-highlight">
             <div class="container">
-                <a href="https://taleshack-prog.github.io/antifr-gil-blindado-ebook/" class="ebook-btn">
+                <a href="https://taleshack-prog.github.io/antifr-gil-blindado-ebook/" class="ebook-btn" aria-label="Acessar o ebook Antifrágil Blindado">
                     <div class="ebook-image">
-                        <img src="assets/images/capa-antifragil.png" 
+                        <img src="Generatedimage_1764336359238.png" 
                              alt="Capa do ebook Antifrágil Blindado por Tales"
                              loading="lazy">
                     </div>
@@ -472,7 +484,6 @@
                 </a>
             </div>
         </section>
-        <!-- End Ebook Highlight Section -->
 
         <section class="blog-preview">
             <div class="container">
@@ -529,7 +540,6 @@
     <script>
         function toggleMenu() {
             const navLinks = document.querySelector('.nav-links');
-            // Toggle display based on current state
             if (navLinks.style.display === 'flex') {
                 navLinks.style.display = 'none';
             } else {
@@ -569,7 +579,7 @@
             observer.observe(el);
         });
         
-        // Lazy-load fallback para browsers antigos (opcional, já que loading="lazy" é nativo)
+        // Fallback para lazy-load em browsers antigos
         if (!('loading' in HTMLImageElement.prototype)) {
             const images = document.querySelectorAll('img[loading="lazy"]');
             const imageObserver = new IntersectionObserver((entries, observer) => {
