@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Premium - Neurodivergência, Bonsai & Arte</title>
-    <meta name="description" content="Conteúdo especializado sobre neurodivergência, bonsai e artes plásticas. Área gratuita e premium para assinantes.">
+    <title>Blog Premium - Neurodivergência, Bonsai & Arte | Tales</title>
+    <meta name="description" content="Explorando neurodivergência, cultivo de bonsai e artes plásticas com profundidade profissional. Galeria de obras exclusivas e conteúdo premium para criativos.">
     
-    <!-- Schema.org -->
+    <!-- Google Fonts: Playfair Display para títulos artísticos, Open Sans para legibilidade -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Atualizado para Arte e Blog -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Blog Premium",
-        "url": "https://seunome.github.io",
-        "description": "Conteúdo especializado sobre neurodivergência, bonsai e artes plásticas"
+        "name": "Blog Premium - Tales",
+        "url": "https://taleshack-prog.github.io",
+        "description": "Conteúdo especializado em neurodivergência, bonsai e artes plásticas com galeria de obras originais"
     }
     </script>
     
@@ -25,24 +30,32 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.7;
             color: #333;
+            background: #fff;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 2rem;
         }
         
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 0;
+            background: #fff;
+            color: #2c3e50;
+            padding: 1.5rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 1px solid #eee;
         }
         
         nav {
@@ -52,371 +65,454 @@
         }
         
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #2c3e50;
         }
         
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
         }
         
         .nav-links a {
-            color: white;
+            color: #2c3e50;
             text-decoration: none;
-            transition: opacity 0.3s;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            position: relative;
         }
         
         .nav-links a:hover {
-            opacity: 0.8;
+            color: #34495e;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: #2c3e50;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
         }
         
         .hero {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 4rem 0;
+            background: #f8f9fa;
+            color: #2c3e50;
+            padding: 6rem 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23eee" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ddd" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
         }
         
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
+            letter-spacing: 0.5px;
         }
         
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
         }
         
         .cta-button {
-            background: #ff6b6b;
-            color: white;
-            padding: 15px 30px;
+            background: #2c3e50;
+            color: #fff;
+            padding: 1rem 2.5rem;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
+            border-radius: 0;
+            font-weight: 600;
             display: inline-block;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid #2c3e50;
         }
         
         .cta-button:hover {
+            background: transparent;
+            color: #2c3e50;
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+            box-shadow: 0 5px 15px rgba(44, 62, 80, 0.2);
         }
         
         .categories {
-            padding: 4rem 0;
-            background: #f8f9fa;
+            padding: 5rem 0;
+            background: #fff;
         }
         
         .categories h2 {
             text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            font-size: 2.8rem;
+            color: #2c3e50;
         }
         
         .category-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 3rem;
         }
         
         .category-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: #f8f9fa;
+            padding: 3rem 2rem;
+            border-radius: 0;
             text-align: center;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
         }
         
         .category-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: #2c3e50;
         }
         
         .category-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
         }
         
         .category-card h3 {
             margin-bottom: 1rem;
-            color: #667eea;
+            color: #2c3e50;
+            font-size: 1.5rem;
         }
         
-        /* Ebook Highlight Section Styles - Com Fallback para Imagem */
-        .ebook-highlight {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding: 3rem 0;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
+        /* Galeria de Obras - Seção Completa com Precificação Aprimorada */
+        .gallery {
+            padding: 5rem 0;
+            background: #f8f9fa;
         }
         
-        .ebook-highlight .container {
-            max-width: 800px;
-        }
-
-        .ebook-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1.5rem;
+        .gallery h2 {
             text-align: center;
+            margin-bottom: 4rem;
+            font-size: 2.8rem;
+            color: #2c3e50;
         }
         
-        .ebook-btn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            text-decoration: none;
-            color: #333;
-            font-family: 'Segoe UI', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            padding: 1.5rem;
-            border-radius: 12px;
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .art-card {
+            background: #fff;
             overflow: hidden;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            max-width: 100%;
-            background: white;
-            border: 2px solid #667eea;
+            border-radius: 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
         }
         
-        .ebook-image {
-            flex-shrink: 0;
-            margin-bottom: 1rem;
-            position: relative; /* Para fallback */
+        .art-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
         
-        .ebook-image img {
-            width: 250px;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: transform 0.3s;
+        .art-image {
+            width: 100%;
+            height: 300px;
             object-fit: cover;
-            loading: lazy;
+            display: block;
         }
         
-        /* Fallback: Se imagem não carregar, mostra gradiente com ícone */
-        .ebook-image img:not([src]) {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-            width: 250px;
-            height: 350px; /* Altura aproximada da capa */
-            border-radius: 8px;
+        .art-content {
+            padding: 1.5rem;
         }
         
-        .ebook-image img:hover {
-            transform: scale(1.05);
-        }
-        
-        .ebook-info {
-            flex: 1;
-            text-align: center;
-        }
-        
-        .ebook-info h3 {
-            color: #333;
-            font-size: 1.3rem;
+        .art-content h3 {
+            color: #2c3e50;
             margin-bottom: 0.5rem;
-            font-weight: 600;
+            font-size: 1.2rem;
         }
         
-        .ebook-info p {
+        .art-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #27ae60; /* Verde para conversão */
+            margin-bottom: 0.8rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .art-description {
             color: #666;
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin-bottom: 1rem;
             line-height: 1.5;
         }
         
-        .ebook-arrow {
-            font-size: 1.2rem;
-            color: #667eea;
-            transition: transform 0.3s;
+        .art-buy {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
         }
         
-        .ebook-btn:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 12px 48px rgba(102, 126, 234, 0.3);
-            border-color: #764ba2;
+        .art-buy:hover {
+            border-color: #2c3e50;
+        }
+        
+        /* Ebook Highlight - Elegante e Integrado */
+        .ebook-highlight {
+            padding: 5rem 0;
+            background: #fff;
+            text-align: center;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .ebook-btn {
+            display: inline-block;
+            max-width: 600px;
+            margin: 0 auto;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        
+        .ebook-image {
+            margin-bottom: 2rem;
+        }
+        
+        .ebook-image img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            object-fit: cover;
+            loading: lazy;
+        }
+        
+        /* Fallback SVG para Imagem (Ícone de Livro) */
+        .ebook-image img:not([src]) {
+            background: #f8f9fa;
+            width: 300px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            border: 1px solid #eee;
+        }
+        
+        .ebook-image img:not([src])::before {
+            content: '📖';
+            font-size: 4rem;
+            opacity: 0.5;
+        }
+        
+        .ebook-info h3 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .ebook-info p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .ebook-arrow {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            font-weight: 600;
         }
         
         .ebook-btn:hover .ebook-arrow {
-            transform: translateX(5px);
+            text-decoration: underline;
         }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .ebook-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .ebook-btn {
-                padding: 1.2rem;
-                width: 100%;
-            }
-            
-            .ebook-image img {
-                width: 100%;
-                max-width: 300px;
-            }
-            
-            .ebook-info h3 {
-                font-size: 1.2rem;
-            }
-            
-            .ebook-info p {
-                font-size: 0.95rem;
-            }
+        
+        .ebook-btn:hover .ebook-image img {
+            transform: scale(1.05);
         }
-
-        @media (min-width: 769px) {
-            .ebook-content {
-                flex-direction: row;
-            }
-            
-            .ebook-btn {
-                flex-direction: row;
-                gap: 1.5rem;
-                padding: 1.5rem 2rem;
-                max-width: 600px;
-            }
-            
-            .ebook-image {
-                margin-bottom: 0;
-            }
-            
-            .ebook-image img {
-                width: 200px;
-            }
-        }
-
+        
+        /* Blog Preview - Editável */
         .blog-preview {
-            padding: 4rem 0;
+            padding: 5rem 0;
+            background: #fff;
         }
         
         .blog-preview h2 {
             text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            font-size: 2.8rem;
+            color: #2c3e50;
         }
         
         .posts-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
         }
         
         .post-card {
-            background: white;
-            border-radius: 15px;
+            background: #f8f9fa;
+            border-radius: 0;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
         }
         
         .post-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
         
         .post-image {
             height: 200px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: #2c3e50;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 2rem;
+            color: #fff;
+            font-size: 2.5rem;
         }
         
         .post-content {
-            padding: 1.5rem;
+            padding: 2rem;
         }
         
         .post-meta {
-            color: #666;
+            color: #999;
             font-size: 0.9rem;
             margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         .post-card h3 {
             margin-bottom: 1rem;
-            color: #333;
+            color: #2c3e50;
+            font-size: 1.4rem;
         }
         
         .post-excerpt {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             color: #666;
         }
         
         .read-more {
-            color: #667eea;
+            color: #2c3e50;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+        
+        .read-more:hover {
+            border-color: #2c3e50;
         }
         
         .premium-cta {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4rem 0;
+            background: #2c3e50;
+            color: #fff;
+            padding: 5rem 0;
             text-align: center;
         }
         
         .premium-cta h2 {
             margin-bottom: 1rem;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
         }
         
         .premium-cta p {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
         }
         
         footer {
-            background: #333;
-            color: white;
+            background: #2c3e50;
+            color: #fff;
             text-align: center;
-            padding: 2rem 0;
+            padding: 3rem 0;
+            font-size: 0.9rem;
         }
         
         .mobile-menu {
             display: none;
+            background: none;
+            border: none;
+            color: #2c3e50;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
         
+        /* Responsividade: Mobile-First */
         @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
             .nav-links {
                 display: none;
             }
             
             .mobile-menu {
                 display: block;
-                background: none;
-                border: none;
-                color: white;
-                font-size: 1.5rem;
-                cursor: pointer;
             }
             
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
             
-            .category-grid {
-                grid-template-columns: 1fr;
+            .hero p {
+                font-size: 1.1rem;
             }
             
-            .posts-grid {
+            .category-grid, .gallery-grid, .posts-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .gallery {
+                padding: 3rem 0;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .nav-links {
+                display: flex;
             }
         }
     </style>
@@ -424,11 +520,12 @@
 <body>
     <header>
         <nav class="container">
-            <div class="logo">Blog Premium</div>
+            <div class="logo">Tales - Arte & Insight</div>
             <ul class="nav-links">
                 <li><a href="#home">Início</a></li>
-                <li><a href="blog/">Blog</a></li>
-                <li><a href="membros/">Área de Membros</a></li>
+                <li><a href="#gallery">Galeria</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="membros/">Membros</a></li>
                 <li><a href="membros/assinar.html">Assinar</a></li>
             </ul>
             <button class="mobile-menu" onclick="toggleMenu()">☰</button>
@@ -438,31 +535,72 @@
     <main>
         <section class="hero" id="home">
             <div class="container">
-                <h1>Conteúdo Especializado</h1>
-                <p>Neurodivergência, Bonsai e Artes Plásticas</p>
-                <a href="membros/assinar.html" class="cta-button">Torne-se Membro Premium</a>
+                <div class="hero-content">
+                    <h1>Arte, Neurodivergência e Bonsai</h1>
+                    <p>Explorando a interseção entre criatividade humana, resiliência mental e a paciência da natureza. Conteúdo premium para artistas e pensadores.</p>
+                    <a href="membros/assinar.html" class="cta-button">Acessar Conteúdo Premium</a>
+                </div>
             </div>
         </section>
 
         <section class="categories">
             <div class="container">
-                <h2>Nossas Especialidades</h2>
+                <h2>Especialidades</h2>
                 <div class="category-grid">
                     <div class="category-card">
                         <div class="category-icon">🧠</div>
                         <h3>Neurodivergência</h3>
-                        <p>Insights sobre TDAH, autismo e outras formas de neurodivergência. Estratégias práticas e científicas para o dia a dia.</p>
+                        <p>Estratégias científicas para transformar desafios em forças criativas, baseadas em neurociência e experiências reais.</p>
                     </div>
                     <div class="category-card">
                         <div class="category-icon">🌳</div>
                         <h3>Bonsai</h3>
-                        <p>Arte milenar do cultivo de bonsai. Técnicas avançadas, cuidados específicos e filosofia oriental aplicada.</p>
+                        <p>Técnicas milenares de cultivo, filosofia zen e aplicações modernas para equilíbrio pessoal.</p>
                     </div>
                     <div class="category-card">
                         <div class="category-icon">🎨</div>
                         <h3>Artes Plásticas</h3>
-                        <p>Técnicas artísticas, história da arte e projetos práticos. Do básico ao avançado com foco na expressão criativa.</p>
+                        <p>Da teoria à prática: composição, cor e expressão autêntica em obras originais.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeria de Obras Originais -->
+        <section class="gallery" id="gallery">
+            <div class="container">
+                <h2>Galeria de Obras Originais</h2>
+                <div class="gallery-grid">
+                    <article class="art-card">
+                        <img src="assets/art/obra-neurodivergente.jpg" alt="Abstração Sináptica: Exploração de padrões neurodivergentes em acrílico" class="art-image" loading="lazy">
+                        <div class="art-content">
+                            <h3>Abstração Sináptica</h3>
+                            <div class="art-price">`R$ 2.800`</div>
+                            <p class="art-description">Acrílico sobre tela 80x100cm, inspirado em resiliência TDAH e conexões cerebrais. Edição limitada de 5.</p>
+                            <a href="https://forms.gle/exemplo-compra" class="art-buy" target="_blank">Comprar ou Inquirir</a>
+                        </div>
+                    </article>
+                    
+                    <article class="art-card">
+                        <img src="assets/art/bonsai-abstrato.jpg" alt="Bonsai Eterno: Óleo representando harmonia natural e paciência zen" class="art-image" loading="lazy">
+                        <div class="art-content">
+                            <h3>Bonsai Eterno</h3>
+                            <div class="art-price">`R$ 1.950`</div>
+                            <p class="art-description">Óleo sobre madeira 60x90cm, simbolizando crescimento sustentável em contextos neurodivergentes.</p>
+                            <a href="https://forms.gle/exemplo-compra" class="art-buy" target="_blank">Comprar ou Inquirir</a>
+                        </div>
+                    </article>
+                    
+                    <article class="art-card">
+                        <img src="assets/art/fragmentos-plasticos.jpg" alt="Fragmentos Plásticos: Mista celebrando expressão autêntica em arte contemporânea" class="art-image" loading="lazy">
+                        <div class="art-content">
+                            <h3>Fragmentos Plásticos</h3>
+                            <div class="art-price">`R$ 3.500`</div>
+                            <p class="art-description">Técnica mista sobre canvas 100x120cm, explorando fragmentação criativa e autocompreensão.</p>
+                            <a href="https://forms.gle/exemplo-compra" class="art-buy" target="_blank">Comprar ou Inquirir</a>
+                        </div>
+                    </article>
+                    <!-- Para adicionar: Copie um <article> acima, edite src/preço/descrição, commit e push. -->
                 </div>
             </div>
         </section>
@@ -478,24 +616,24 @@
                     </div>
                     <div class="ebook-info">
                         <h3>Antifrágil Blindado</h3>
-                        <p>Guia prático para famílias neurodivergentes transformarem vulnerabilidades em forças através de artes, jiu-jitsu, natureza e autocompreensão.</p>
-                        <span class="ebook-arrow">→ Saiba mais</span>
+                        <p>Guia prático para famílias neurodivergentes: artes, jiu-jitsu, natureza e autocompreensão como ferramentas de transformação.</p>
+                        <span class="ebook-arrow">→ Saiba Mais</span>
                     </div>
                 </a>
             </div>
         </section>
 
-        <section class="blog-preview">
+        <section class="blog-preview" id="blog">
             <div class="container">
-                <h2>Últimos Posts do Blog</h2>
+                <h2>Novidades e Artigos</h2>
                 <div class="posts-grid">
                     <article class="post-card">
                         <div class="post-image">🧠</div>
                         <div class="post-content">
                             <div class="post-meta">Neurodivergência • 15 Jan 2024</div>
-                            <h3>TDAH no Trabalho: 5 Estratégias Comprovadas</h3>
-                            <p class="post-excerpt">Descubra técnicas baseadas em neurociência para aumentar sua produtividade e bem-estar profissional...</p>
-                            <a href="blog/tdah-trabalho-estrategias.html" class="read-more">Ler mais →</a>
+                            <h3>TDAH no Trabalho: Estratégias Comprovadas</h3>
+                            <p class="post-excerpt">Técnicas baseadas em neurociência para produtividade sustentável. Edite este post em blog/tdah-trabalho.html.</p>
+                            <a href="blog/tdah-trabalho.html" class="read-more">Ler Mais</a>
                         </div>
                     </article>
                     
@@ -504,8 +642,8 @@
                         <div class="post-content">
                             <div class="post-meta">Bonsai • 12 Jan 2024</div>
                             <h3>Poda de Inverno: Guia Completo</h3>
-                            <p class="post-excerpt">Aprenda as técnicas corretas de poda para preparar seus bonsais para a nova estação de crescimento...</p>
-                            <a href="blog/poda-inverno-bonsai.html" class="read-more">Ler mais →</a>
+                            <p class="post-excerpt">Prepare seus bonsais para o crescimento. Adicione novidades editando blog/poda-inverno.html.</p>
+                            <a href="blog/poda-inverno.html" class="read-more">Ler Mais</a>
                         </div>
                     </article>
                     
@@ -514,40 +652,37 @@
                         <div class="post-content">
                             <div class="post-meta">Arte • 10 Jan 2024</div>
                             <h3>Teoria das Cores na Prática</h3>
-                            <p class="post-excerpt">Domine os fundamentos da teoria das cores e transforme suas obras com harmonias cromáticas impactantes...</p>
-                            <a href="blog/teoria-cores-pratica.html" class="read-more">Ler mais →</a>
+                            <p class="post-excerpt">Harmonias cromáticas para obras impactantes. Poste novo artigo criando blog/novo-post.html.</p>
+                            <a href="blog/teoria-cores.html" class="read-more">Ler Mais</a>
                         </div>
                     </article>
                 </div>
+                <!-- Para adicionar post: Copie um <article> e edite meta/título/excerpt/link -->
             </div>
         </section>
 
         <section class="premium-cta">
             <div class="container">
-                <h2>Conteúdo Premium Exclusivo</h2>
-                <p>Acesso a cursos completos, templates e consultoria personalizada</p>
-                <a href="membros/assinar.html" class="cta-button">Começar Agora</a>
+                <h2>Conteúdo Exclusivo para Membros</h2>
+                <p>Acesso a tutoriais avançados, consultoria e integração com DAO para colecionadores.</p>
+                <a href="membros/assinar.html" class="cta-button">Torne-se Membro</a>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Blog Premium. Todos os direitos reservados.</p>
+            <p>&copy; 2024 Tales - Todos os direitos reservados. | Desenvolvido com foco em arte e inovação.</p>
         </div>
     </footer>
 
     <script>
         function toggleMenu() {
             const navLinks = document.querySelector('.nav-links');
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-            }
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         }
         
-        // Smooth scroll
+        // Smooth scroll para âncoras
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -557,13 +692,9 @@
             });
         });
         
-        // Animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver(function(entries) {
+        // Animações de Entrada (Intersection Observer)
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
@@ -572,23 +703,22 @@
             });
         }, observerOptions);
         
-        document.querySelectorAll('.category-card, .post-card, .ebook-btn').forEach(el => {
+        document.querySelectorAll('.category-card, .art-card, .post-card, .ebook-btn').forEach(el => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
             observer.observe(el);
         });
         
-        // Fallback para lazy-load em browsers antigos
+        // Fallback Lazy-Load
         if (!('loading' in HTMLImageElement.prototype)) {
             const images = document.querySelectorAll('img[loading="lazy"]');
-            const imageObserver = new IntersectionObserver((entries, observer) => {
+            const imageObserver = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const img = entry.target;
                         img.src = img.dataset.src || img.src;
-                        img.classList.remove('lazy');
-                        observer.unobserve(img);
+                        imageObserver.unobserve(img);
                     }
                 });
             });
