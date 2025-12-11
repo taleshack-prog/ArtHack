@@ -285,6 +285,14 @@
             border-color: #2c3e50;
         }
         
+        .no-obras {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            grid-column: 1 / -1;
+            padding: 2rem;
+        }
+        
         /* Ebook Highlight - Elegante e Integrado */
         .ebook-highlight {
             padding: 5rem 0;
@@ -571,36 +579,20 @@
             <div class="container">
                 <h2>Galeria de Obras Originais</h2>
                 <div class="gallery-grid">
+                    {% for obra in site.obras %}
                     <article class="art-card">
-                        <img src="assets/art/obra-neurodivergente.jpg" alt="Abstração Sináptica: Exploração de padrões neurodivergentes em acrílico" class="art-image" loading="lazy">
+                        <img src="{{ obra.imagem }}" alt="{{ obra.alt }}" class="art-image" loading="lazy">
                         <div class="art-content">
-                            <h3>Abstração Sináptica</h3>
-                            <div class="art-price">`R$ 2.800`</div>
-                            <p class="art-description">Acrílico sobre tela 80x100cm, inspirado em resiliência TDAH e conexões cerebrais. Edição limitada de 5.</p>
-                            <a href="https://forms.gle/exemplo-compra" class="art-buy" target="_blank">Comprar ou Inquirir</a>
+                            <h3>{{ obra.title }}</h3>
+                            <div class="art-price">{{ obra.preco }}</div>
+                            <p class="art-description">{{ obra.descricao }}</p>
+                            <a href="{{ obra.url | relative_url }}" class="art-buy" target="_blank">Comprar ou Inquirir</a>
                         </div>
                     </article>
-                    
-                    <article class="art-card">
-                        <img src="assets/art/bonsai-abstrato.jpg" alt="Bonsai Eterno: Óleo representando harmonia natural e paciência zen" class="art-image" loading="lazy">
-                        <div class="art-content">
-                            <h3>Bonsai Eterno</h3>
-                            <div class="art-price">`R$ 1.950`</div>
-                            <p class="art-description">Óleo sobre madeira 60x90cm, simbolizando crescimento sustentável em contextos neurodivergentes.</p>
-                            <a href="https://forms.gle/exemplo-compra" class="art-buy" target="_blank">Comprar ou Inquirir</a>
-                        </div>
-                    </article>
-                    
-                    <article class="art-card">
-                        <img src="assets/art/fragmentos-plasticos.jpg" alt="Fragmentos Plásticos: Mista celebrando expressão autêntica em arte contemporânea" class="art-image" loading="lazy">
-                        <div class="art-content">
-                            <h3>Fragmentos Plásticos</h3>
-                            <div class="art-price">`R$ 3.500`</div>
-                            <p class="art-description">Técnica mista sobre canvas 100x120cm, explorando fragmentação criativa e autocompreensão.</p>
-                            <a href="https://forms.gle/exemplo-compra" class="art-buy" target="_blank">Comprar ou Inquirir</a>
-                        </div>
-                    </article>
-                    <!-- Para adicionar: Copie um <article> acima, edite src/preço/descrição, commit e push. -->
+                    {% endfor %}
+                    {% if site.obras.size == 0 %}
+                    <p class="no-obras">Nenhuma obra adicionada ainda. Edite _obras/ para começar.</p>
+                    {% endif %}
                 </div>
             </div>
         </section>
