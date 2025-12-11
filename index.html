@@ -145,19 +145,22 @@
             color: #667eea;
         }
         
+        /* Ebook Highlight Section Styles */
         .ebook-highlight {
             background: white;
-            padding: 2rem 0;
+            padding: 2rem 0; /* Reduced padding for discreteness */
             border-top: 1px solid #eee;
             border-bottom: 1px solid #eee;
         }
         
+        .ebook-highlight .container {
+            max-width: 800px; /* Constrain width for a more focused look */
+        }
+
         .ebook-content {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
-            max-width: 700px;
-            margin: 0 auto;
+            gap: 1.5rem; /* Reduced gap */
         }
         
         .ebook-image {
@@ -165,7 +168,7 @@
         }
         
         .ebook-image img {
-            width: 100px;
+            width: 100px; /* Small image size */
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -183,14 +186,14 @@
         
         .ebook-info h3 {
             color: #333;
-            font-size: 1.2rem;
+            font-size: 1.2rem; /* Slightly smaller title */
             margin-bottom: 0.5rem;
             font-weight: 600;
         }
         
         .ebook-info p {
             color: #666;
-            font-size: 0.9rem;
+            font-size: 0.9rem; /* Smaller text */
             margin-bottom: 0.8rem;
             line-height: 1.4;
         }
@@ -199,7 +202,7 @@
             color: #667eea;
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.85rem;
+            font-size: 0.85rem; /* Smaller link text */
             border-bottom: 1px solid transparent;
             transition: border-color 0.3s;
         }
@@ -207,7 +210,8 @@
         .ebook-link:hover {
             border-color: #667eea;
         }
-        
+        /* End Ebook Highlight Section Styles */
+
         .blog-preview {
             padding: 4rem 0;
         }
@@ -326,6 +330,7 @@
                 grid-template-columns: 1fr;
             }
             
+            /* Ebook Highlight Responsive */
             .ebook-content {
                 flex-direction: column !important;
                 text-align: center;
@@ -383,12 +388,14 @@
             </div>
         </section>
 
+        <!-- Ebook Highlight Section - Discrete and Professional -->
         <section class="ebook-highlight">
             <div class="container">
                 <div class="ebook-content">
                     <div class="ebook-image">
                         <a href="https://taleshack-prog.github.io/antifr-gil-blindado-ebook/">
-                            <img src="Generatedimage_1764336359238.png" alt="Antifrágil Blindado - Ebook">
+                            <img src="Generatedimage_1764336359238.png" 
+                                 alt="Antifrágil Blindado - Ebook">
                         </a>
                     </div>
                     <div class="ebook-info">
@@ -399,6 +406,7 @@
                 </div>
             </div>
         </section>
+        <!-- End Ebook Highlight Section -->
 
         <section class="blog-preview">
             <div class="container">
@@ -455,7 +463,12 @@
     <script>
         function toggleMenu() {
             const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            // Toggle display based on current state
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+            }
         }
         
         // Smooth scroll
