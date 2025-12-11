@@ -145,27 +145,30 @@
             color: #667eea;
         }
         
-        .ebook-section {
-            background: #f5f5dc;
-            padding: 4rem 0;
+        .ebook-highlight {
+            background: white;
+            padding: 2rem 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
         }
         
         .ebook-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
+            display: flex;
             align-items: center;
+            gap: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto;
         }
         
         .ebook-image {
-            text-align: center;
+            flex-shrink: 0;
         }
         
         .ebook-image img {
-            max-width: 100%;
+            width: 100px;
             height: auto;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             transition: transform 0.3s;
             cursor: pointer;
         }
@@ -174,64 +177,35 @@
             transform: scale(1.05);
         }
         
-        .ebook-info h2 {
-            font-size: 2.5rem;
-            color: #2d5a5a;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            font-weight: bold;
+        .ebook-info {
+            flex: 1;
         }
         
         .ebook-info h3 {
-            font-size: 1.5rem;
-            color: #d4af37;
-            margin-bottom: 2rem;
-            font-weight: normal;
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
         }
         
-        .ebook-description {
-            color: #2d5a5a;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-        }
-        
-        .ebook-pillars {
-            margin-bottom: 2rem;
-        }
-        
-        .ebook-pillars h4 {
-            color: #2d5a5a;
-            margin-bottom: 1rem;
-        }
-        
-        .ebook-pillars ul {
-            list-style: none;
-            padding: 0;
-            color: #2d5a5a;
-        }
-        
-        .ebook-pillars li {
+        .ebook-info p {
+            color: #666;
+            font-size: 0.9rem;
             margin-bottom: 0.8rem;
-            font-size: 1rem;
+            line-height: 1.4;
         }
         
-        .ebook-button {
-            background: #d4af37;
-            color: #2d5a5a;
-            padding: 15px 30px;
+        .ebook-link {
+            color: #667eea;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            display: inline-block;
-            transition: all 0.3s;
-            font-size: 1.1rem;
+            font-weight: 500;
+            font-size: 0.85rem;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
         }
         
-        .ebook-button:hover {
-            background: #2d5a5a;
-            color: #d4af37;
-            transform: translateY(-2px);
+        .ebook-link:hover {
+            border-color: #667eea;
         }
         
         .blog-preview {
@@ -353,16 +327,12 @@
             }
             
             .ebook-content {
-                grid-template-columns: 1fr !important;
-                gap: 2rem;
+                flex-direction: column !important;
+                text-align: center;
             }
             
             .ebook-image {
-                margin-bottom: 2rem;
-            }
-            
-            .ebook-info h2 {
-                font-size: 2rem;
+                margin-bottom: 1rem;
             }
         }
     </style>
@@ -413,32 +383,18 @@
             </div>
         </section>
 
-        <section class="ebook-section">
+        <section class="ebook-highlight">
             <div class="container">
                 <div class="ebook-content">
                     <div class="ebook-image">
                         <a href="https://taleshack-prog.github.io/antifr-gil-blindado-ebook/">
-                            <img src="image-019b0d4e-df51-77c3-a46f-01d5e7048d2a.png" alt="Antifragil Blindado - Ebook">
+                            <img src="Generatedimage_1764336359238.png" alt="Antifrágil Blindado - Ebook">
                         </a>
                     </div>
                     <div class="ebook-info">
-                        <h2>ANTIFRAGIL BLINDADO</h2>
-                        <h3>Guia para Famílias Neurodivergentes</h3>
-                        <p class="ebook-description">
-                            Este ebook de 127 páginas é um guia revolucionário para famílias neurodivergentes, oferecendo um caminho para transformar vulnerabilidades em forças inabaláveis. Baseado no conceito de "Antifrágil" de Nassim Taleb, ele propõe uma blindagem robusta através de uma abordagem multidisciplinar e não-medicamentosa.
-                        </p>
-                        <div class="ebook-pillars">
-                            <h4>Exploramos 4 pilares fundamentais:</h4>
-                            <ul>
-                                <li><strong>🎨 Artes Plásticas:</strong> Expressão criativa e processamento emocional.</li>
-                                <li><strong>🥋 Jiu-Jitsu:</strong> Resiliência física e mental, disciplina e autodefesa.</li>
-                                <li><strong>🌿 Natureza, Água e Animais:</strong> Conexão com o ambiente, terapias naturais e zooterapia.</li>
-                                <li><strong>🌳 Bonsai e Orquídeas:</strong> Paciência produtiva, foco e contemplação.</li>
-                            </ul>
-                        </div>
-                        <a href="https://taleshack-prog.github.io/antifr-gil-blindado-ebook/" class="ebook-button">
-                            Adquirir Ebook →
-                        </a>
+                        <h3>Antifrágil Blindado</h3>
+                        <p>Guia prático para famílias neurodivergentes transformarem vulnerabilidades em forças através de artes, jiu-jitsu, natureza e autocompreensão.</p>
+                        <a href="https://taleshack-prog.github.io/antifr-gil-blindado-ebook/" class="ebook-link">Saiba mais →</a>
                     </div>
                 </div>
             </div>
