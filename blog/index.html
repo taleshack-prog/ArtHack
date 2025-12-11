@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Conteúdo Gratuito</title>
+    <meta name="description" content="Posts gratuitos sobre neurodivergência, bonsai e artes plásticas.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        .page-header {
+            background: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            background: white;
+            border: 2px solid #667eea;
+            color: #667eea;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .posts-container {
+            padding: 2rem 0;
+        }
+        
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .post-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .post-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .post-image {
+            height: 200px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .post-content {
+            padding: 1.5rem;
+        }
+        
+        .post-category {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .post-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .post-card h3 {
+            margin-bottom: 1rem;
+            color: #333;
+            font-size: 1.3rem;
+        }
+        
+        .post-excerpt {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+        
+        .read-more {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .premium-teaser {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .premium-teaser h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .cta-button {
+            background: white;
+            color: #ff6b6b;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filters {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Blog Premium</div>
+            <ul class="nav-links">
+                <li><a href="../">Início</a></li>
+                <li><a href="./">Blog</a></li>
+                <li><a href="../membros/">Área de Membros</a></li>
+                <li><a href="../membros/assinar.html">Assinar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Blog Gratuito</h1>
+            <p>Conteúdo de qualidade sobre nossos temas especializados</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterPosts('all')">Todos</button>
+            <button class="filter-btn" onclick="filterPosts('neurodivergencia')">Neurodivergência</button>
+            <button class="filter-btn" onclick="filterPosts('bonsai')">Bonsai</button>
+            <button class="filter-btn" onclick="filterPosts('arte')">Arte</button>
+        </div>
+    </div>
+
+    <section class="posts-container">
+        <div class="container">
+            <div class="posts-grid" id="postsGrid">
+                <article class="post-card" data-category="neurodivergencia">
+                    <div class="post-image">🧠</div>
+                    <div class="post-content">
+                        <span class="post-category">Neurodivergência</span>
+                        <div class="post-meta">15 Jan 2024 • 5 min de leitura</div>
+                        <h3>TDAH no Trabalho: 5 Estratégias Comprovadas</h3>
+                        <p class="post-excerpt">Descubra técnicas baseadas em neurociência para aumentar sua produtividade e bem-estar profissional. Métodos testados por especialistas...</p>
+                        <a href="#" class="read-more">Ler mais →</a>
+                    </div>
+                </article>
+                
+                <article class="post-card" data-category="bonsai">
+                    <div class="post-image">🌳</div>
+                    <div class="post-content">
+                        <span class="post-category">Bonsai</span>
+                        <div class="post-meta">12 Jan 2024 • 8 min de leitura</div>
+                        <h3>Poda de Inverno: Guia Completo</h3>
+                        <p class="post-excerpt">Aprenda as técnicas corretas de poda para preparar seus bonsais para a nova estação de crescimento. Inclui cronograma sazonal...</p>
+                        <a href="#" class="read-more">Ler mais →</a>
+                    </div>
+                </article>
+                
+                <article class="post-card" data-category="arte">
+                    <div class="post-image">🎨</div>
+                    <div class="post-content">
+                        <span class="post-category">Arte</span>
+                        <div class="post-meta">10 Jan 2024 • 6 min de leitura</div>
+                        <h3>Teoria das Cores na Prática</h3>
+                        <p class="post-excerpt">Domine os fundamentos da teoria das cores e transforme suas obras com harmonias cromáticas impactantes. Exercícios práticos inclusos...</p>
+                        <a href="#" class="read-more">Ler mais →</a>
+                    </div>
+                </article>
+                
+                <article class="post-card" data-category="neurodivergencia">
+                    <div class="post-image">🧠</div>
+                    <div class="post-content">
+                        <span class="post-category">Neurodivergência</span>
+                        <div class="post-meta">8 Jan 2024 • 7 min de leitura</div>
+                        <h3>Autismo e Sensibilidade Sensorial</h3>
+                        <p class="post-excerpt">Compreenda as particularidades sensoriais no espectro autista e aprenda estratégias de adaptação para o cotidiano...</p>
+                        <a href="#" class="read-more">Ler mais →</a>
+                    </div>
+                </article>
+                
+                <article class="post-card" data-category="bonsai">
+                    <div class="post-image">🌳</div>
+                    <div class="post-content">
+                        <span class="post-category">Bonsai</span>
+                        <div class="post-meta">5 Jan 2024 • 10 min de leitura</div>
+                        <h3>Escolhendo o Primeiro Bonsai</h3>
+                        <p class="post-excerpt">Guia completo para iniciantes: quais espécies escolher, onde comprar e como começar sua jornada no mundo dos bonsais...</p>
+                        <a href="#" class="read-more">Ler mais →</a>
+                    </div>
+                </article>
+                
+                <article class="post-card" data-category="arte">
+                    <div class="post-image">🎨</div>
+                    <div class="post-content">
+                        <span class="post-category">Arte</span>
+                        <div class="post-meta">3 Jan 2024 • 5 min de leitura</div>
+                        <h3>Composição: Regra dos Terços</h3>
+                        <p class="post-excerpt">Aprenda a aplicar a regra dos terços em suas obras e crie composições visualmente mais interessantes e equilibradas...</p>
+                        <a href="#" class="read-more">Ler mais →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="premium-teaser">
+        <div class="container">
+            <h2>Quer Mais Conteúdo Exclusivo?</h2>
+            <p>Acesse cursos completos, templates e consultoria personalizada</p>
+            <a href="../membros/assinar.html" class="cta-button">Tornar-se Membro Premium</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Blog Premium. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function filterPosts(category) {
+            const posts = document.querySelectorAll('.post-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter posts
+            posts.forEach(post => {
+                if (category === 'all' || post.dataset.category === category) {
+                    post.style.display = 'block';
+                    post.style.animation = 'fadeIn 0.5s ease-in';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        }
+        
+        // Add CSS animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
