@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Premium - Neurodivergência, Bonsai & Arte</title>
+    <meta name="description" content="Conteúdo especializado sobre neurodivergência, bonsai e artes plásticas. Área gratuita e premium para assinantes.">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Blog Premium",
+        "url": "https://seunome.github.io",
+        "description": "Conteúdo especializado sobre neurodivergência, bonsai e artes plásticas"
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+        }
+        
+        .categories {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .categories h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .category-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .category-card h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+        
+        .blog-preview {
+            padding: 4rem 0;
+        }
+        
+        .blog-preview h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+        
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .post-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .post-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .post-image {
+            height: 200px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .post-content {
+            padding: 1.5rem;
+        }
+        
+        .post-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .post-card h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .post-excerpt {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .read-more {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .premium-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .premium-cta h2 {
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .premium-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .mobile-menu {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Blog Premium</div>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="blog/">Blog</a></li>
+                <li><a href="membros/">Área de Membros</a></li>
+                <li><a href="membros/assinar.html">Assinar</a></li>
+            </ul>
+            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <h1>Conteúdo Especializado</h1>
+                <p>Neurodivergência, Bonsai e Artes Plásticas</p>
+                <a href="membros/assinar.html" class="cta-button">Torne-se Membro Premium</a>
+            </div>
+        </section>
+
+        <section class="categories">
+            <div class="container">
+                <h2>Nossas Especialidades</h2>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <div class="category-icon">🧠</div>
+                        <h3>Neurodivergência</h3>
+                        <p>Insights sobre TDAH, autismo e outras formas de neurodivergência. Estratégias práticas e científicas para o dia a dia.</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🌳</div>
+                        <h3>Bonsai</h3>
+                        <p>Arte milenar do cultivo de bonsai. Técnicas avançadas, cuidados específicos e filosofia oriental aplicada.</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🎨</div>
+                        <h3>Artes Plásticas</h3>
+                        <p>Técnicas artísticas, história da arte e projetos práticos. Do básico ao avançado com foco na expressão criativa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-preview">
+            <div class="container">
+                <h2>Últimos Posts do Blog</h2>
+                <div class="posts-grid">
+                    <article class="post-card">
+                        <div class="post-image">🧠</div>
+                        <div class="post-content">
+                            <div class="post-meta">Neurodivergência • 15 Jan 2024</div>
+                            <h3>TDAH no Trabalho: 5 Estratégias Comprovadas</h3>
+                            <p class="post-excerpt">Descubra técnicas baseadas em neurociência para aumentar sua produtividade e bem-estar profissional...</p>
+                            <a href="blog/tdah-trabalho-estrategias.html" class="read-more">Ler mais →</a>
+                        </div>
+                    </article>
+                    
+                    <article class="post-card">
+                        <div class="post-image">🌳</div>
+                        <div class="post-content">
+                            <div class="post-meta">Bonsai • 12 Jan 2024</div>
+                            <h3>Poda de Inverno: Guia Completo</h3>
+                            <p class="post-excerpt">Aprenda as técnicas corretas de poda para preparar seus bonsais para a nova estação de crescimento...</p>
+                            <a href="blog/poda-inverno-bonsai.html" class="read-more">Ler mais →</a>
+                        </div>
+                    </article>
+                    
+                    <article class="post-card">
+                        <div class="post-image">🎨</div>
+                        <div class="post-content">
+                            <div class="post-meta">Arte • 10 Jan 2024</div>
+                            <h3>Teoria das Cores na Prática</h3>
+                            <p class="post-excerpt">Domine os fundamentos da teoria das cores e transforme suas obras com harmonias cromáticas impactantes...</p>
+                            <a href="blog/teoria-cores-pratica.html" class="read-more">Ler mais →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="premium-cta">
+            <div class="container">
+                <h2>Conteúdo Premium Exclusivo</h2>
+                <p>Acesso a cursos completos, templates e consultoria personalizada</p>
+                <a href="membros/assinar.html" class="cta-button">Começar Agora</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Blog Premium. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        }
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.category-card, .post-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
