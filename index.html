@@ -285,6 +285,16 @@
             border-color: #2c3e50;
         }
         
+        .no-obras {
+            grid-column: 1 / -1;
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            padding: 2rem;
+            background: #fff;
+            border: 1px dashed #ddd;
+        }
+        
         /* Ebook Highlight - Elegante e Integrado */
         .ebook-highlight {
             padding: 5rem 0;
@@ -566,44 +576,25 @@
             </div>
         </section>
 
-        <!-- Galeria de Obras Originais - Hard-Coded com Suas 3 Imagens -->
+        <!-- Galeria de Obras Originais - Loop Dinâmico com Coleção obras -->
         <section class="gallery" id="gallery">
             <div class="container">
                 <h2>Galeria de Obras Originais</h2>
                 <div class="gallery-grid">
-                    <!-- Card 1: La Cosechera - Ajuste src se nome diferente -->
+                    {% for obra in site.obras %}
                     <article class="art-card">
-                        <img src="assets/art/La Cosechera.jpg" alt="La Cosechera: Escultura em tronco de eucalipto de Tales" class="art-image" loading="lazy">
+                        <img src="{{ obra.imagem }}" alt="{{ obra.alt }}" class="art-image" loading="lazy">
                         <div class="art-content">
-                            <h3>La Cosechera</h3>
-                            <div class="art-price">`R$ 6.600`</div>
-                            <p class="art-description">Escultura em tronco de eucalipto original, 40cm de altura, inspirada na força e beleza do Pampa Uruguaio. Peça única, da coleção URUGUAY.</p>
-                            <a href="https://forms.gle/exemplo-compra" class="art-buy" target="_blank">Comprar ou Inquirir</a>
+                            <h3>{{ obra.title }}</h3>
+                            <div class="art-price">{{ obra.preco }}</div>
+                            <p class="art-description">{{ obra.descricao }}</p>
+                            <a href="{{ obra.url | relative_url }}" class="art-buy" target="_blank">Comprar ou Inquirir</a>
                         </div>
                     </article>
-                    
-                    <!-- Card 2: Segunda Obra - Ajuste src, title, preco, descricao com dados reais da sua segunda imagem -->
-                    <article class="art-card">
-                        <img src="assets/art/segunda-obra.jpg" alt="Segunda Obra: Descrição breve da escultura de Tales" class="art-image" loading="lazy">
-                        <div class="art-content">
-                            <h3>Segunda Obra</h3>
-                            <div class="art-price">`R$ 4.500`</div>
-                            <p class="art-description">Descrição da segunda escultura: material, tamanho, inspiração. Peça única da coleção.</p>
-                            <a href="https://forms.gle/exemplo-compra" class="art-buy" target="_blank">Comprar ou Inquirir</a>
-                        </div>
-                    </article>
-                    
-                    <!-- Card 3: Terceira Obra - Ajuste src, title, preco, descricao com dados reais da sua terceira imagem -->
-                    <article class="art-card">
-                        <img src="assets/art/terceira-obra.jpg" alt="Terceira Obra: Descrição breve da escultura de Tales" class="art-image" loading="lazy">
-                        <div class="art-content">
-                            <h3>Terceira Obra</h3>
-                            <div class="art-price">`R$ 5.200`</div>
-                            <p class="art-description">Descrição da terceira escultura: material, tamanho, inspiração. Peça única da coleção.</p>
-                            <a href="https://forms.gle/exemplo-compra" class="art-buy" target="_blank">Comprar ou Inquirir</a>
-                        </div>
-                    </article>
-                    <!-- Para adicionar mais: Copie um <article> acima, edite src/title/preco/descricao, commit. -->
+                    {% endfor %}
+                    {% if site.obras.size == 0 %}
+                    <p class="no-obras">Nenhuma obra adicionada ainda. Edite _obras/ para começar.</p>
+                    {% endif %}
                 </div>
             </div>
         </section>
