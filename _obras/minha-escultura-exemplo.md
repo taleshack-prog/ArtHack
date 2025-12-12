@@ -1,10 +1,10 @@
 ---
 layout: obra
-title: "Resiliência Blindada"
-preco: "`R$ 4.200`"
-descricao: "Escultura em bronze original, 50cm de altura, inspirada em neurodivergência e força pessoal. Edição limitada."
-imagem: "assets/art/minha-escultura-exemplo.jpg"  # Nome da imagem que você upará no Passo 3
-alt: "Foto realista de escultura em bronze de Tales"
+title: "La Cosechera"
+preco: "`R$ 6.600`"
+descricao: "Escultura em tronco de eucalipto original, 40cm de altura, inspirada na força dos e beleza do Pampa Uruguaio. Peça única, da coleção URUGUAY."
+imagem: "assets/art/La Cosechera.jpg"  # La Cosechera
+alt: "Foto realista de escultura em tronco de eucalipto de Tales Hack"
 ---
 
 
