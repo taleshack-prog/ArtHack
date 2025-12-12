@@ -24,5 +24,5 @@ alt: "Foto realista de escultura MetaMorpheus em ipê de demolição, obra de Ta
 ---
 
 
- --- é "frontmatter" (YAML do Jekyll – campos como title, preco). Edite title/preco/descricao/imagem/alt com seus dados reais depois.
+ 
 
