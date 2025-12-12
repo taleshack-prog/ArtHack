@@ -6,6 +6,7 @@ descricao: "Escultura em tronco de eucalipto original, 40cm de altura, inspirada
 imagem: "assets/art/la-cosechera.jpg"  # La-Cosechera
 alt: "Foto realista de escultura em tronco de eucalipto de Tales Hack"
 ---
+
 ---
 layout: obra
 title: "El Cuerpo"
@@ -14,6 +15,7 @@ descricao: "Escultura em dormente de trem reciclado com base em tronco de pinus,
 imagem: "assets/art/el-cuerpo.jpg"
 alt: "Foto realista de escultura El Cuerpo em dormente reciclado e pinus, obra de Tales Hack, tema resiliência pampeana"
 ---
+
  
 
 
