@@ -248,6 +248,15 @@
             display: block;
         }
         
+        .art-image[src=""] {
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 1rem;
+        }
+        
         .art-content {
             padding: 1.5rem;
         }
@@ -583,12 +592,12 @@
                 <div class="gallery-grid">
                     {% for obra in site.obras %}
                     <article class="art-card">
-                        <img src="{{ obra.imagem }}" alt="{{ obra.alt }}" class="art-image" loading="lazy">
+                        <img src="{{ obra.imagem | default: 'assets/art/placeholder.jpg' }}" alt="{{ obra.alt | default: 'Obra de Tales Hack' }}" class="art-image" loading="lazy" aria-label="Imagem da obra {{ obra.title }}">
                         <div class="art-content">
                             <h3>{{ obra.title }}</h3>
-                            <div class="art-price">{{ obra.preco }}</div>
+                            <div class="art-price">{{ obra.preco | default: 'Preço sob consulta' }}</div>
                             <p class="art-description">{{ obra.descricao }}</p>
-                            <a href="{{ obra.url | relative_url }}" class="art-buy" target="_blank">Comprar ou Inquirir</a>
+                            <a href="{{ obra.url | relative_url | default: '#' }}" class="art-buy" target="_blank">Comprar ou Inquirir</a>
                         </div>
                     </article>
                     {% endfor %}
