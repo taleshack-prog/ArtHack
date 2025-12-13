@@ -208,7 +208,7 @@
             font-size: 1.5rem;
         }
         
-        /* Galeria de Obras - Seção Completa com Precificação Aprimorada */
+        /* Galeria de Obras - Hard-Coded com 3 Cards Fixos */
         .gallery {
             padding: 5rem 0;
             background: #f8f9fa;
@@ -293,16 +293,6 @@
         
         .art-buy:hover {
             border-color: #2c3e50;
-        }
-        
-        .no-obras {
-            grid-column: 1 / -1;
-            text-align: center;
-            color: #666;
-            font-style: italic;
-            padding: 2rem;
-            background: #fff;
-            border: 1px dashed #ddd;
         }
         
         /* Ebook Highlight - Elegante e Integrado */
@@ -586,25 +576,43 @@
             </div>
         </section>
 
-        <!-- Galeria de Obras Originais - Loop Dinâmico com Fix Erros -->
+        <!-- Galeria de Obras Originais - Hard-Coded com 3 Cards Fixos -->
         <section class="gallery" id="gallery">
             <div class="container">
                 <h2>Galeria de Obras Originais</h2>
                 <div class="gallery-grid">
-                    {% for obra in site.obras %}
+                    <!-- Card 1: La-Cosechera -->
                     <article class="art-card">
-                        <img src="{{ site.baseurl }}{{ obra.imagem | default: '/assets/art/placeholder.jpg' }}" alt="{{ obra.alt | default: 'Obra de Tales Hack' }}" class="art-image" loading="lazy" onerror="this.src='/assets/art/placeholder.jpg'; this.alt='Placeholder para obra';">
+                        <img src="assets/art/la-cosechera.jpg" alt="Foto realista de escultura em tronco de eucalipto de Tales Hack" class="art-image" loading="lazy" onerror="this.src='assets/art/placeholder.jpg'; this.alt='Placeholder para La-Cosechera';">
                         <div class="art-content">
-                            <h3>{{ obra.title | default: 'Obra Sem Título' }}</h3>
-                            <div class="art-price">{{ obra.preco | default: 'Preço sob consulta' }}</div>
-                            <p class="art-description">{{ obra.descricao | strip_html | strip_newlines | truncate: 150 | default: 'Descrição não disponível' }}</p>
-                            <a href="{{ obra.url | relative_url | default: '#' }}" class="art-buy" target="_blank">Comprar ou Inquirir</a>
+                            <h3>La-Cosechera</h3>
+                            <div class="art-price">R$ 6.600</div>
+                            <p class="art-description">Escultura em tronco de eucalipto original, 40cm de altura, inspirada na força e beleza do Pampa Uruguaio. Peça única, da coleção URUGUAY.</p>
+                            <a href="#" class="art-buy" target="_blank">Comprar ou Inquirir</a>
                         </div>
                     </article>
-                    {% endfor %}
-                    {% if site.obras.size == 0 %}
-                    <p class="no-obras">Nenhuma obra adicionada ainda. Edite _obras/ para começar.</p>
-                    {% endif %}
+
+                    <!-- Card 2: El Cuerpo -->
+                    <article class="art-card">
+                        <img src="assets/art/el-cuerpo.jpg" alt="Foto realista de escultura El Cuerpo em dormente reciclado e pinus, obra de Tales Hack, tema resiliência pampeana" class="art-image" loading="lazy" onerror="this.src='assets/art/placeholder.jpg'; this.alt='Placeholder para El Cuerpo';">
+                        <div class="art-content">
+                            <h3>El Cuerpo</h3>
+                            <div class="art-price">R$ 8.500</div>
+                            <p class="art-description">Escultura em dormente de trem reciclado com base em tronco de pinus, medindo 1,20 m de altura e 36 cm de diâmetro. Peça única da coleção URUGUAY, inspirada na resiliência do pampeano (Los Orientales), simbolizando a força duradoura da matéria reaproveitada em contextos de transformação cultural.</p>
+                            <a href="#" class="art-buy" target="_blank">Comprar ou Inquirir</a>
+                        </div>
+                    </article>
+
+                    <!-- Card 3: MetaMorpheus -->
+                    <article class="art-card">
+                        <img src="assets/art/meta-morpheus.jpg" alt="Foto realista de escultura MetaMorpheus em ipê de demolição, obra de Tales Hack, tema transformação e renascimento" class="art-image" loading="lazy" onerror="this.src='assets/art/placeholder.jpg'; this.alt='Placeholder para MetaMorpheus';">
+                        <div class="art-content">
+                            <h3>MetaMorpheus</h3>
+                            <div class="art-price">R$ 7.200</div>
+                            <p class="art-description">Escultura em viga de ipê de demolição, com 37 cm de altura por 22 cm de diâmetro, peça única da coleção Metamorphosis. Celebra a transformação e o renascimento da matéria em novas formas, ecoando o princípio de que nada se perde, apenas se metamorfoseia em expressões artísticas renovadas.</p>
+                            <a href="#" class="art-buy" target="_blank">Comprar ou Inquirir</a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -681,7 +689,7 @@
     </footer>
 
     <script>
-        // Wrap todo JS em DOMContentLoaded para evitar erros "element not found"
+        // Wrap todo JS em DOMContentLoaded para evitar erros
         document.addEventListener('DOMContentLoaded', function() {
             function toggleMenu() {
                 const navLinks = document.querySelector('.nav-links');
@@ -736,12 +744,6 @@
                 images.forEach(img => imageObserver.observe(img));
             }
 
-            // Debug: Log coleção no console para verificação (remove após fix)
-            console.log('Número de obras:', {{ site.obras.size }});
-            {% for obra in site.obras %}
-            console.log('Obra: {{ obra.title }} - Imagem: {{ site.baseurl }}{{ obra.imagem }} - Descrição: {{ obra.descricao | slice: 50 }}...');
-            {% endfor %}
-            
             // Mobile menu onclick
             const mobileBtn = document.querySelector('.mobile-menu');
             if (mobileBtn) {
