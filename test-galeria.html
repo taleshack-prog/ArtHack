@@ -1,0 +1,25 @@
+---
+layout: default
+title: Teste Galeria Obras
+---
+<h1>Teste de Coleção Obras</h1>
+<p>Número de obras: {{ site.obras.size }}</p>
+<div class="test-grid">
+  {% for obra in site.obras %}
+  <div class="test-card">
+    <h3>{{ obra.title }}</h3>
+    <p>Preço: {{ obra.preco }}</p>
+    <p>Descrição: {{ obra.descricao | truncate: 100 }}</p>
+    <img src="{{ obra.imagem }}" alt="{{ obra.alt }}" style="max-width: 200px; height: auto;">
+  </div>
+  {% endfor %}
+  {% if site.obras.size == 0 %}
+  <p>ERRO: Coleção vazia. Verifique _config.yml e _obras/.</p>
+  {% endif %}
+</div>
+
+<style>
+  .test-grid { display: flex; flex-wrap: wrap; gap: 20px; }
+  .test-card { border: 1px solid #ddd; padding: 10px; width: 300px; }
+  img { border: 1px solid #ccc; }
+</style>
