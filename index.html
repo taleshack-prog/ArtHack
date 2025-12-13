@@ -305,18 +305,6 @@
             border: 1px dashed #ddd;
         }
         
-        /* Debug info - Remove após test */
-        .debug {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background: rgba(0,0,0,0.8);
-            color: white;
-            padding: 10px;
-            font-size: 12px;
-            z-index: 999;
-        }
-        
         /* Ebook Highlight - Elegante e Integrado */
         .ebook-highlight {
             padding: 5rem 0;
@@ -598,19 +586,18 @@
             </div>
         </section>
 
-        <!-- Galeria de Obras Originais - Loop Dinâmico Integrado do Test -->
+        <!-- Galeria de Obras Originais - Loop Dinâmico com Fix Erros -->
         <section class="gallery" id="gallery">
             <div class="container">
                 <h2>Galeria de Obras Originais</h2>
-                <p style="text-align: center; margin-bottom: 1rem; color: #666;">Número de obras: {{ site.obras.size }}</p>
                 <div class="gallery-grid">
                     {% for obra in site.obras %}
                     <article class="art-card">
-                        <img src="{{ obra.imagem | default: 'assets/art/placeholder.jpg' }}" alt="{{ obra.alt | default: 'Obra de Tales Hack' }}" class="art-image" loading="lazy" style="max-width: 100%; height: auto;">
+                        <img src="{{ site.baseurl }}{{ obra.imagem | default: '/assets/art/placeholder.jpg' }}" alt="{{ obra.alt | default: 'Obra de Tales Hack' }}" class="art-image" loading="lazy" onerror="this.src='/assets/art/placeholder.jpg'; this.alt='Placeholder para obra';">
                         <div class="art-content">
-                            <h3>{{ obra.title }}</h3>
+                            <h3>{{ obra.title | default: 'Obra Sem Título' }}</h3>
                             <div class="art-price">{{ obra.preco | default: 'Preço sob consulta' }}</div>
-                            <p class="art-description">{{ obra.descricao | strip_newlines | truncate: 200 }}</p>
+                            <p class="art-description">{{ obra.descricao | strip_html | strip_newlines | truncate: 150 | default: 'Descrição não disponível' }}</p>
                             <a href="{{ obra.url | relative_url | default: '#' }}" class="art-buy" target="_blank">Comprar ou Inquirir</a>
                         </div>
                     </article>
@@ -629,7 +616,7 @@
                     <div class="ebook-image">
                         <img src="Generatedimage_1764336359238.png" 
                              alt="Capa do ebook Antifrágil Blindado por Tales"
-                             loading="lazy">
+                             loading="lazy" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkJvb2sgUGxhY2Vob2xkZXI8L3RleHQ+PC9zdmc+';">
                     </div>
                     <div class="ebook-info">
                         <h3>Antifrágil Blindado</h3>
@@ -694,59 +681,73 @@
     </footer>
 
     <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        }
-        
-        // Smooth scroll para âncoras
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // Animações de Entrada (Intersection Observer)
-        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+        // Wrap todo JS em DOMContentLoaded para evitar erros "element not found"
+        document.addEventListener('DOMContentLoaded', function() {
+            function toggleMenu() {
+                const navLinks = document.querySelector('.nav-links');
+                if (navLinks) {
+                    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
                 }
-            });
-        }, observerOptions);
-        
-        document.querySelectorAll('.category-card, .art-card, .post-card, .ebook-btn').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            observer.observe(el);
-        });
-        
-        // Fallback Lazy-Load
-        if (!('loading' in HTMLImageElement.prototype)) {
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            const imageObserver = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src || img.src;
-                        imageObserver.unobserve(img);
+            }
+            
+            // Smooth scroll para âncoras
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
                     }
                 });
             });
-            images.forEach(img => imageObserver.observe(img));
-        }
+            
+            // Animações de Entrada (Intersection Observer)
+            const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.category-card, .art-card, .post-card, .ebook-btn').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(el);
+            });
+            
+            // Fallback Lazy-Load
+            if (!('loading' in HTMLImageElement.prototype)) {
+                const images = document.querySelectorAll('img[loading="lazy"]');
+                const imageObserver = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src || img.src;
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+                images.forEach(img => imageObserver.observe(img));
+            }
 
-        // Debug: Log coleção no console para verificação
-        console.log('Número de obras:', {{ site.obras.size }});
-        {% for obra in site.obras %}
-        console.log('Obra: {{ obra.title }} - Imagem: {{ obra.imagem }} - Descrição: {{ obra.descricao | slice: 50 }}...');
-        {% endfor %}
+            // Debug: Log coleção no console para verificação (remove após fix)
+            console.log('Número de obras:', {{ site.obras.size }});
+            {% for obra in site.obras %}
+            console.log('Obra: {{ obra.title }} - Imagem: {{ site.baseurl }}{{ obra.imagem }} - Descrição: {{ obra.descricao | slice: 50 }}...');
+            {% endfor %}
+            
+            // Mobile menu onclick
+            const mobileBtn = document.querySelector('.mobile-menu');
+            if (mobileBtn) {
+                mobileBtn.onclick = toggleMenu;
+            }
+        });
     </script>
 </body>
 </html>
