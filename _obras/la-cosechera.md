@@ -6,3 +6,4 @@ descricao: "Escultura em tronco de eucalipto original, 40cm de altura, inspirada
 imagem: "assets/art/la-cosechera.jpg"
 alt: "Foto realista de escultura em tronco de eucalipto de Tales Hack"
 ---
+ 
