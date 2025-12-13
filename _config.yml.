@@ -6,11 +6,7 @@ url: "https://taleshack-prog.github.io/ArtHack"
 collections:
   obras:
     output: true
-    permalink: /galeria/:name/
 
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-
-
-Commit: "Adiciona config Jekyll para galeria editável" > Direto no main.
