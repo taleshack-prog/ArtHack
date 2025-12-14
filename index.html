@@ -180,8 +180,9 @@
         }
         .art-image {
             width: 100%;
-            height: 250px;
-            object-fit: cover;
+            height: 350px; /* Aumentado para mostrar escultura inteira sem corte */
+            object-fit: contain; /* Preserva proporção, sem crop; adiciona padding se necessário para beleza */
+            background-color: #f8f9fa; /* Fundo sutil se imagem não preencher */
         }
         .art-content {
             padding: 1.5rem;
@@ -198,23 +199,95 @@
             margin-bottom: 1rem;
         }
         .art-description {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             color: #555;
             line-height: 1.5;
+            max-height: 120px; /* Limita a ~3 linhas para balancear com imagem */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
         }
-        .art-buy {
+        .art-buttons {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .art-buy, .art-fullview {
             display: inline-block;
-            color: #3498db;
+            padding: 0.5rem 1rem;
             text-decoration: none;
             font-weight: 600;
-            border: 1px solid #3498db;
-            padding: 0.5rem 1rem;
             border-radius: 5px;
             transition: background-color 0.3s;
+            flex: 1;
+            text-align: center;
+        }
+        .art-buy {
+            color: #3498db;
+            border: 1px solid #3498db;
         }
         .art-buy:hover {
             background-color: #3498db;
             color: #fff;
+        }
+        .art-fullview {
+            color: #e74c3c;
+            border: 1px solid #e74c3c;
+            cursor: pointer;
+        }
+        .art-fullview:hover {
+            background-color: #e74c3c;
+            color: #fff;
+        }
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            animation: fadeIn 0.3s ease-out;
+        }
+        .lightbox-content {
+            position: relative;
+            margin: auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox img {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+        .close-lightbox {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 2001;
+        }
+        .close-lightbox:hover {
+            color: #fff;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         /* Ebook Highlight */
         .ebook-highlight {
@@ -352,6 +425,14 @@
             .category-grid, .gallery-grid, .posts-grid {
                 grid-template-columns: 1fr;
             }
+            .lightbox-content {
+                width: 95vw;
+                height: 95vh;
+                padding: 10px;
+            }
+            .art-buttons {
+                flex-direction: column;
+            }
         }
         /* Background SVG pattern (opcional, para textura sutil) */
         body::before {
@@ -421,35 +502,52 @@
                 <h2>Galeria de Obras Originais</h2>
                 <div class="gallery-grid">
                     <article class="art-card">
-                        <img src="assets/art/la-cosechera.jpg" alt="Foto realista de escultura em tronco de eucalipto de Tales Hack" class="art-image" loading="lazy">
+                        <img src="assets/art/la-cosechera.jpg" alt="Foto realista de escultura em tronco de eucalipto de Tales Hack" class="art-image" loading="lazy" data-full="assets/art/la-cosechera.jpg">
                         <div class="art-content">
                             <h3>La-Cosechera</h3>
                             <div class="art-price">R$ 6.600</div>
                             <p class="art-description">Escultura em tronco de eucalipto original, 40cm de altura, inspirada na força e beleza do Pampa Uruguaio. Peça única, da coleção URUGUAY.</p>
-                            <a href="#" target="_blank" class="art-buy">Comprar ou Inquirir</a>
+                            <div class="art-buttons">
+                                <a href="#" target="_blank" class="art-buy">Comprar ou Inquirir</a>
+                                <button class="art-fullview" onclick="openLightbox('assets/art/la-cosechera.jpg')">Ver Imagem Completa</button>
+                            </div>
                         </div>
                     </article>
                     <article class="art-card">
-                        <img src="assets/art/el-cuerpo.jpg" alt="Foto realista de escultura El Cuerpo em dormente reciclado e pinus, obra de Tales Hack, tema resiliência pampeana" class="art-image" loading="lazy">
+                        <img src="assets/art/el-cuerpo.jpg" alt="Foto realista de escultura El Cuerpo em dormente reciclado e pinus, obra de Tales Hack, tema resiliência pampeana" class="art-image" loading="lazy" data-full="assets/art/el-cuerpo.jpg">
                         <div class="art-content">
                             <h3>El Cuerpo</h3>
                             <div class="art-price">R$ 8.500</div>
                             <p class="art-description">Escultura em dormente de trem reciclado com base em tronco de pinus, medindo 1,20 m de altura e 36 cm de diâmetro. Peça única da coleção URUGUAY, inspirada na resiliência do pampeano (Los Orientales), simbolizando a força duradoura da matéria reaproveitada em contextos de transformação cultural.</p>
-                            <a href="#" target="_blank" class="art-buy">Comprar ou Inquirir</a>
+                            <div class="art-buttons">
+                                <a href="#" target="_blank" class="art-buy">Comprar ou Inquirir</a>
+                                <button class="art-fullview" onclick="openLightbox('assets/art/el-cuerpo.jpg')">Ver Imagem Completa</button>
+                            </div>
                         </div>
                     </article>
                     <article class="art-card">
-                        <img src="assets/art/metamorpheus.jpg" alt="Foto realista de escultura MetaMorpheus em ipê de demolição, obra de Tales Hack, tema transformação e renascimento" class="art-image" loading="lazy">
+                        <img src="assets/art/metamorpheus.jpg" alt="Foto realista de escultura MetaMorpheus em ipê de demolição, obra de Tales Hack, tema transformação e renascimento" class="art-image" loading="lazy" data-full="assets/art/metamorpheus.jpg">
                         <div class="art-content">
                             <h3>MetaMorpheus</h3>
                             <div class="art-price">R$ 8.200</div>
                             <p class="art-description">Escultura em viga de ipê de demolição, com 37 cm de altura por 22 cm de diâmetro, peça única da coleção Metamorphosis. Celebra a transformação e o renascimento da matéria em novas formas, ecoando o princípio de que nada se cria, nada se perde, são apenas expressões artísticas renovadas.</p>
-                            <a href="#" target="_blank" class="art-buy">Comprar ou Inquirir</a>
+                            <div class="art-buttons">
+                                <a href="#" target="_blank" class="art-buy">Comprar ou Inquirir</a>
+                                <button class="art-fullview" onclick="openLightbox('assets/art/metamorpheus.jpg')">Ver Imagem Completa</button>
+                            </div>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox">
+            <div class="lightbox-content">
+                <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+                <img id="lightbox-img" src="" alt="Imagem completa da escultura">
+            </div>
+        </div>
 
         <section class="ebook-highlight">
             <div class="container">
@@ -551,6 +649,35 @@
 
         document.querySelectorAll('.category-card, .art-card, .post-card').forEach(el => {
             observer.observe(el);
+        });
+
+        // Lightbox Functions
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = imageSrc;
+            lightbox.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Previne scroll na página
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restaura scroll
+        }
+
+        // Close lightbox on outside click or ESC
+        window.onclick = function(event) {
+            const lightbox = document.getElementById('lightbox');
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
         });
     </script>
 </body>
