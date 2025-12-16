@@ -248,33 +248,58 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
-.art-buy, .art-fullview {
-    display: inline-block;
-    padding: 0.5rem 1rem;
+
+/* NOVOS ESTILOS PARA OS BOTÕES DA GALERIA */
+.art-buy {
+    background-color: #3498db; /* Cor primária */
+    color: #fff;
+    border: 1px solid #3498db;
+    padding: 0.7rem 1.2rem; /* Ajuste de padding */
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px; /* Mantém 5px para contexto da galeria */
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+    flex: 1;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.art-buy:hover {
+    background-color: #2980b9; /* Tom mais escuro no hover */
+    border-color: #2980b9;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+.art-buy:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.art-fullview {
+    background-color: transparent; /* Fundo transparente */
+    color: #555; /* Cor de texto mais neutra */
+    border: 1px solid #ccc; /* Borda sutil */
+    padding: 0.7rem 1.2rem; /* Padding igual ao botão de compra */
     text-decoration: none;
     font-weight: 600;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
     flex: 1;
     text-align: center;
-}
-.art-buy {
-    color: #3498db;
-    border: 1px solid #3498db;
-}
-.art-buy:hover {
-    background-color: #3498db;
-    color: #fff;
-}
-.art-fullview {
-    color: #e74c3c;
-    border: 1px solid #e74c3c;
     cursor: pointer;
 }
 .art-fullview:hover {
-    background-color: #e74c3c;
-    color: #fff;
+    background-color: #f0f0f0; /* Fundo levemente cinza no hover */
+    border-color: #bbb;
+    color: #333;
+    transform: translateY(-1px);
 }
+.art-fullview:active {
+    transform: translateY(0);
+    background-color: #e0e0e0;
+}
+/* FIM DOS NOVOS ESTILOS PARA OS BOTÕES DA GALERIA */
+
+
 /* Lightbox Modal */
 .lightbox {
     display: none;
