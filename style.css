@@ -9,7 +9,7 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f8f9fa;
-} 
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -92,7 +92,7 @@ nav {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* Nova Seção de Destaque para Neurodiversidade */
+/* Seção de Destaque para Neurodiversidade */
 .neuro-highlight {
     background-color: #f0f4f8; /* Um fundo suave para destaque */
     padding: 80px 0;
