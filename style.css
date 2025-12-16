@@ -91,6 +91,59 @@ nav {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
+
+/* Nova Seção de Destaque para Neurodiversidade */
+.neuro-highlight {
+    background-color: #f0f4f8; /* Um fundo suave para destaque */
+    padding: 80px 0;
+}
+.neuro-highlight .container {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Espaçamento entre texto e imagem */
+    flex-wrap: wrap; /* Permite quebrar em telas menores */
+}
+.neuro-content {
+    flex: 1;
+    min-width: 300px; /* Garante que o conteúdo não fique muito estreito */
+}
+.neuro-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    line-height: 1.2;
+}
+.neuro-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+.neuro-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+.neuro-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+/* Ajuste para o botão CTA dentro do neuro-highlight */
+.neuro-highlight .cta-button {
+    background-color: #3498db; /* Cor primária */
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.neuro-highlight .cta-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+
 /* Categories */
 .categories {
     padding: 80px 0;
@@ -421,6 +474,23 @@ footer {
     }
     .art-buttons {
         flex-direction: column;
+    }
+    .neuro-highlight .container {
+        flex-direction: column; /* Empilha o conteúdo em telas pequenas */
+        text-align: center;
+    }
+    .neuro-content {
+        order: 2; /* Coloca o texto abaixo da imagem em mobile */
+    }
+    .neuro-image {
+        order: 1; /* Coloca a imagem acima do texto em mobile */
+        margin-bottom: 2rem;
+    }
+    .neuro-content h2 {
+        font-size: 2.2rem;
+    }
+    .neuro-content p {
+        font-size: 1rem;
     }
 }
 /* Background SVG pattern (opcional, para textura sutil) */
