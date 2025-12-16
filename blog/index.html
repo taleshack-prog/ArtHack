@@ -3,371 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Conteúdo Gratuito</title>
-    <meta name="description" content="Posts gratuitos sobre neurodivergência, bonsai e artes plásticas.">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 0;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
-        
-        .nav-links a:hover {
-            opacity: 0.8;
-        }
-        
-        .page-header {
-            background: white;
-            padding: 3rem 0;
-            text-align: center;
-        }
-        
-        .page-header h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-        
-        .filters {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .filter-btn {
-            padding: 10px 20px;
-            background: white;
-            border: 2px solid #667eea;
-            color: #667eea;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: #667eea;
-            color: white;
-        }
-        
-        .posts-container {
-            padding: 2rem 0;
-        }
-        
-        .posts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-        
-        .post-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .post-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .post-image {
-            height: 200px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-        }
-        
-        .post-content {
-            padding: 1.5rem;
-        }
-        
-        .post-category {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 1rem;
-        }
-        
-        .post-meta {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-        
-        .post-card h3 {
-            margin-bottom: 1rem;
-            color: #333;
-            font-size: 1.3rem;
-        }
-        
-        .post-excerpt {
-            margin-bottom: 1.5rem;
-            color: #666;
-        }
-        
-        .read-more {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .premium-teaser {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-            margin: 3rem 0;
-        }
-        
-        .premium-teaser h2 {
-            margin-bottom: 1rem;
-        }
-        
-        .cta-button {
-            background: white;
-            color: #ff6b6b;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            display: inline-block;
-            transition: transform 0.3s;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-        }
-        
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .page-header h1 {
-                font-size: 2rem;
-            }
-            
-            .posts-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .filters {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+    <title>Blog Premium - Neurodivergência, Bonsai & Arte | Tales</title>
+    <meta name="description" content="Conteúdo premium sobre neurodivergência, bonsai e artes plásticas. Explore estratégias científicas, técnicas milenares e expressão criativa autêntica.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- Referência ao arquivo CSS externo -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Tales - Arte & Insight",
+        "url": "https://taleshack-prog.github.io/ArtHack",
+        "description": "Plataforma premium para neurodivergência, bonsai e artes plásticas."
+    }
+    </script>
 </head>
 <body>
     <header>
         <nav class="container">
-            <div class="logo">Blog Premium</div>
+            <div class="logo">Tales - Arte & Insight</div>
             <ul class="nav-links">
-                <li><a href="../">Início</a></li>
-                <li><a href="./">Blog</a></li>
-                <li><a href="../membros/">Área de Membros</a></li>
-                <li><a href="../membros/assinar.html">Assinar</a></li>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#gallery">Galeria</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="membros/">Membros</a></li>
+                <li><a href="membros/assinar.html">Assinar</a></li>
             </ul>
+            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
         </nav>
     </header>
 
-    <section class="page-header">
-        <div class="container">
-            <h1>Blog Gratuito</h1>
-            <p>Conteúdo de qualidade sobre nossos temas especializados</p>
-        </div>
-    </section>
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Arte, Neurodivergência e Bonsai</h1>
+                    <p>Explorando a interseção entre criatividade humana, resiliência mental e a paciência da natureza. Conteúdo premium para artistas e pensadores.</p>
+                    <a href="membros/assinar.html" class="cta-button">Acessar Conteúdo Premium</a>
+                </div>
+            </div>
+        </section>
 
-    <div class="container">
-        <div class="filters">
-            <button class="filter-btn active" onclick="filterPosts('all')">Todos</button>
-            <button class="filter-btn" onclick="filterPosts('neurodivergencia')">Neurodivergência</button>
-            <button class="filter-btn" onclick="filterPosts('bonsai')">Bonsai</button>
-            <button class="filter-btn" onclick="filterPosts('arte')">Arte</button>
-        </div>
-    </div>
+        <!-- Nova Seção de Destaque para Neurodiversidade -->
+        <section class="neuro-highlight">
+            <div class="container">
+                <div class="neuro-content">
+                    <h2>Desvende a Neurodiversidade: Uma Perspectiva Única</h2>
+                    <p>Mergulhe no artigo que desmistifica o conceito de neurodiversidade, explorando suas nuances sem jargões complexos e celebrando as variações naturais da mente humana.</p>
+                    <a href="blog/neurodiverg/o-que-e-neurodiversidade-sem-jargao.html" class="cta-button">Ler Artigo Completo</a>
+                </div>
+                <div class="neuro-image">
+                    <img src="assets/blog/neurodiversidade-ilustracao.png" alt="Ilustração abstrata representando a diversidade cerebral e a neurodiversidade." loading="lazy">
+                </div>
+            </div>
+        </section>
 
-    <section class="posts-container">
-        <div class="container">
-            <div class="posts-grid" id="postsGrid">
-                <article class="post-card" data-category="neurodivergencia">
-                    <div class="post-image">🧠</div>
-                    <div class="post-content">
-                        <span class="post-category">Neurodivergência</span>
-                        <div class="post-meta">15 Jan 2024 • 5 min de leitura</div>
-                        <h3>TDAH no Trabalho: 5 Estratégias Comprovadas</h3>
-                        <p class="post-excerpt">Descubra técnicas baseadas em neurociência para aumentar sua produtividade e bem-estar profissional. Métodos testados por especialistas...</p>
-                        <a href="#" class="read-more">Ler mais →</a>
+        <section class="categories">
+            <div class="container">
+                <h2>Especialidades</h2>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <div class="category-icon">🧠</div>
+                        <h3>Neurodivergência</h3>
+                        <p>Estratégias científicas para transformar desafios em forças criativas, baseadas em neurociência e experiências reais.</p>
                     </div>
-                </article>
-                
-                <article class="post-card" data-category="bonsai">
-                    <div class="post-image">🌳</div>
-                    <div class="post-content">
-                        <span class="post-category">Bonsai</span>
-                        <div class="post-meta">12 Jan 2024 • 8 min de leitura</div>
-                        <h3>Poda de Inverno: Guia Completo</h3>
-                        <p class="post-excerpt">Aprenda as técnicas corretas de poda para preparar seus bonsais para a nova estação de crescimento. Inclui cronograma sazonal...</p>
-                        <a href="#" class="read-more">Ler mais →</a>
+                    <div class="category-card">
+                        <div class="category-icon">🌳</div>
+                        <h3>Bonsai</h3>
+                        <p>Técnicas milenares de cultivo, filosofia zen e aplicações modernas para equilíbrio pessoal.</p>
                     </div>
-                </article>
-                
-                <article class="post-card" data-category="arte">
-                    <div class="post-image">🎨</div>
-                    <div class="post-content">
-                        <span class="post-category">Arte</span>
-                        <div class="post-meta">10 Jan 2024 • 6 min de leitura</div>
-                        <h3>Teoria das Cores na Prática</h3>
-                        <p class="post-excerpt">Domine os fundamentos da teoria das cores e transforme suas obras com harmonias cromáticas impactantes. Exercícios práticos inclusos...</p>
-                        <a href="#" class="read-more">Ler mais →</a>
+                    <div class="category-card">
+                        <div class="category-icon">🎨</div>
+                        <h3>Artes Plásticas</h3>
+                        <p>Da teoria à prática: composição, cor e expressão autêntica em obras originais.</p>
                     </div>
-                </article>
-                
-                <article class="post-card" data-category="neurodivergencia">
-                    <div class="post-image">🧠</div>
-                    <div class="post-content">
-                        <span class="post-category">Neurodivergência</span>
-                        <div class="post-meta">8 Jan 2024 • 7 min de leitura</div>
-                        <h3>Autismo e Sensibilidade Sensorial</h3>
-                        <p class="post-excerpt">Compreenda as particularidades sensoriais no espectro autista e aprenda estratégias de adaptação para o cotidiano...</p>
-                        <a href="#" class="read-more">Ler mais →</a>
-                    </div>
-                </article>
-                
-                <article class="post-card" data-category="bonsai">
-                    <div class="post-image">🌳</div>
-                    <div class="post-content">
-                        <span class="post-category">Bonsai</span>
-                        <div class="post-meta">5 Jan 2024 • 10 min de leitura</div>
-                        <h3>Escolhendo o Primeiro Bonsai</h3>
-                        <p class="post-excerpt">Guia completo para iniciantes: quais espécies escolher, onde comprar e como começar sua jornada no mundo dos bonsais...</p>
-                        <a href="#" class="read-more">Ler mais →</a>
-                    </div>
-                </article>
-                
-                <article class="post-card" data-category="arte">
-                    <div class="post-image">🎨</div>
-                    <div class="post-content">
-                        <span class="post-category">Arte</span>
-                        <div class="post-meta">3 Jan 2024 • 5 min de leitura</div>
-                        <h3>Composição: Regra dos Terços</h3>
-                        <p class="post-excerpt">Aprenda a aplicar a regra dos terços em suas obras e crie composições visualmente mais interessantes e equilibradas...</p>
-                        <a href="#" class="read-more">Ler mais →</a>
-                    </div>
-                </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery" id="gallery">
+            <div class="container">
+                <h2>Galeria de Obras Originais</h2>
+                <div class="gallery-grid">
+                    <article class="art-card">
+                        <img src="assets/art/la-cosechera.jpg" alt="Foto realista de escultura em tronco de eucalipto de Tales Hack" class="art-image" loading="lazy" data-full="assets/art/la-cosechera.jpg">
+                        <div class="art-content">
+                            <h3>La-Cosechera</h3>
+                            <div class="art-price">R$ 6.600</div>
+                            <p class="art-description">Escultura em tronco de eucalipto original, 40cm de altura, inspirada na força e beleza do Pampa Uruguaio. Peça única, da coleção URUGUAY.</p>
+                            <div class="art-buttons">
+                                <a href="#" target="_blank" class="art-buy">Comprar ou Inquirir</a>
+                                <button class="art-fullview" onclick="openLightbox('assets/art/la-cosechera.jpg')">Ver Imagem Completa</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="art-card">
+                        <img src="assets/art/el-cuerpo.jpg" alt="Foto realista de escultura El Cuerpo em dormente reciclado e pinus, obra de Tales Hack, tema resiliência pampeana" class="art-image" loading="lazy" data-full="assets/art/el-cuerpo.jpg">
+                        <div class="art-content">
+                            <h3>El Cuerpo</h3>
+                            <div class="art-price">R$ 8.500</div>
+                            <p class="art-description">Escultura em dormente de trem reciclado com base em tronco de pinus, medindo 1,20 m de altura e 36 cm de diâmetro. Peça única da coleção URUGUAY, inspirada na resiliência do pampeano (Los Orientales), simbolizando a força duradoura da matéria reaproveitada em contextos de transformação cultural.</p>
+                            <div class="art-buttons">
+                                <a href="#" target="_blank" class="art-buy">Comprar ou Inquirir</a>
+                                <button class="art-fullview" onclick="openLightbox('assets/art/el-cuerpo.jpg')">Ver Imagem Completa</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="art-card">
+                        <img src="assets/art/metamorpheus.jpg" alt="Foto realista de escultura MetaMorpheus em ipê de demolição, obra de Tales Hack, tema transformação e renascimento" class="art-image" loading="lazy" data-full="assets/art/metamorpheus.jpg">
+                        <div class="art-content">
+                            <h3>MetaMorpheus</h3>
+                            <div class="art-price">R$ 8.200</div>
+                            <p class="art-description">Escultura em viga de ipê de demolição, com 37 cm de altura por 22 cm de diâmetro, peça única da coleção Metamorphosis. Celebra a transformação e o renascimento da matéria em novas formas, ecoando o princípio de que nada se cria, nada se perde, são apenas expressões artísticas renovadas.</p>
+                            <div class="art-buttons">
+                                <a href="#" target="_blank" class="art-buy">Comprar ou Inquirir</a>
+                                <button class="art-fullview" onclick="openLightbox('assets/art/metamorpheus.jpg')">Ver Imagem Completa</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox">
+            <div class="lightbox-content">
+                <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+                <img id="lightbox-img" src="" alt="Imagem completa da escultura">
             </div>
         </div>
-    </section>
 
-    <section class="premium-teaser">
-        <div class="container">
-            <h2>Quer Mais Conteúdo Exclusivo?</h2>
-            <p>Acesse cursos completos, templates e consultoria personalizada</p>
-            <a href="../membros/assinar.html" class="cta-button">Tornar-se Membro Premium</a>
-        </div>
-    </section>
+        <section class="ebook-highlight">
+            <div class="container">
+                <a href="https://taleshack-prog.github.io/antifr-gil-blindado-ebook/" aria-label="Acessar o ebook Antifrágil Blindado" class="ebook-btn">
+                    <div class="ebook-image">
+                        <img src="Generatedimage_1764336359238.png" alt="Capa do ebook Antifrágil Blindado por Tales" loading="lazy">
+                    </div>
+                    <div class="ebook-info">
+                        <h3>Antifrágil Blindado</h3>
+                        <p>Guia prático para famílias neurodivergentes: artes, jiu-jitsu, natureza e autocompreensão como ferramentas de transformação.</p>
+                        <span class="ebook-arrow">→ Saiba Mais</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="blog-preview" id="blog">
+            <div class="container">
+                <h2>Novidades e Artigos</h2>
+                <div class="posts-grid">
+                    <article class="post-card">
+                        <div class="post-image">🧠</div>
+                        <div class="post-content">
+                            <div class="post-meta">Neurodivergência • 15 Jan 2024</div>
+                            <h3>O Que É Neurodiversidade (Sem Jargão)</h3>
+                            <p class="post-excerpt">Explore a neurodiversidade como uma variação natural do cérebro humano, suas forças e desafios, e a importância de ambientes protetores.</p>
+                            <a href="blog/neurodiverg/o-que-e-neurodiversidade-sem-jargao.html" class="read-more">Ler Mais</a>
+                        </div>
+                    </article>
+                    <article class="post-card">
+                        <div class="post-image">🌳</div>
+                        <div class="post-content">
+                            <div class="post-meta">Bonsai • 12 Jan 2024</div>
+                            <h3>Poda de Inverno: Guia Completo</h3>
+                            <p class="post-excerpt">Prepare seus bonsais para o crescimento.</p>
+                            <a href="blog/bonsai/poda-inverno.html" class="read-more">Ler Mais</a>
+                        </div>
+                    </article>
+                    <article class="post-card">
+                        <div class="post-image">🎨</div>
+                        <div class="post-content">
+                            <div class="post-meta">Artes Plásticas • 10 Jan 2024</div>
+                            <h3>Teoria das Cores na Prática</h3>
+                            <p class="post-excerpt">Harmonias cromáticas para obras impactantes.</p>
+                            <a href="blog/artes-plasticas/teoria-cores.html" class="read-more">Ler Mais</a>
+                        </div>
+                    </article>
+                    <article class="post-card">
+                        <div class="post-image">🥋</div>
+                        <div class="post-content">
+                            <div class="post-meta">Jiu-Jitsu • 05 Jan 2024</div>
+                            <h3>Jiu-Jitsu e Neurodivergência: Foco e Disciplina</h3>
+                            <p class="post-excerpt">Descubra como a prática do Jiu-Jitsu pode aprimorar o foco e a disciplina em indivíduos neurodivergentes.</p>
+                            <a href="blog/jiu-jitsu/foco-e-disciplina.html" class="read-more">Ler Mais</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="premium-cta">
+            <div class="container">
+                <h2>Conteúdo Exclusivo para Membros</h2>
+                <p>Acesso a tutoriais avançados, consultoria e integração com DAO para colecionadores.</p>
+                <a href="membros/assinar.html" class="cta-button">Torne-se Membro</a>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Blog Premium. Todos os direitos reservados.</p>
+            <p>&copy; 2024 Tales - Todos os direitos reservados. | Desenvolvido com foco em arte e inovação.</p>
         </div>
     </footer>
 
-    <script>
-        function filterPosts(category) {
-            const posts = document.querySelectorAll('.post-card');
-            const buttons = document.querySelectorAll('.filter-btn');
-            
-            // Update active button
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            
-            // Filter posts
-            posts.forEach(post => {
-                if (category === 'all' || post.dataset.category === category) {
-                    post.style.display = 'block';
-                    post.style.animation = 'fadeIn 0.5s ease-in';
-                } else {
-                    post.style.display = 'none';
-                }
-            });
-        }
-        
-        // Add CSS animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes fadeIn {
-                from { opacity: 0; transform: translateY(20px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
+    <script src="script.js"></script> <!-- Referência ao arquivo JS externo -->
 </body>
 </html>
