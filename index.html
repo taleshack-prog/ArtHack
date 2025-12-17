@@ -3,162 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tales - Arte & Insight</title>
-    <meta name="description" content="Portfólio e blog de Tales, explorando neurodiversidade, bonsai e artes plásticas.">
+    <title>Blog Premium - Neurodivergência, Bonsai & Arte | Tales</title>
+    <meta name="description" content="Conteúdo premium sobre neurodivergência, bonsai e artes plásticas. Explore estratégias científicas, técnicas milenares e expressão criativa autêntica.">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <!-- JSON-LD para SEO -->
+    
+    <!-- Structured Data (SEO) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Tales - Arte & Insight",
-      "url": "https://www.tales.com.br",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://www.tales.com.br/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+      "@type": "Person",
+      "name": "Tales",
+      "jobTitle": "Artista Plástico",
+      "url": "https://taleshack-prog.github.io/",
+      "sameAs": [
+        "https://github.com/taleshack-prog"
+      ]
     }
     </script>
 </head>
 <body>
+    <!-- Header Navigation -->
     <header>
         <nav class="container">
-            <a href="#home" class="logo">Tales - Arte & Insight</a>
-            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-            <ul class="nav-links" id="navLinks">
+            <div class="logo">Tales - Arte & Insight</div>
+            <ul class="nav-links">
                 <li><a href="#home">Início</a></li>
                 <li><a href="#gallery">Galeria</a></li>
                 <li><a href="#blog">Blog</a></li>
-                <li><a href="membros/index.html">Membros</a></li>
-                <li><a href="membros/assinar.html" class="btn-primary">Assinar</a></li>
+                <li><a href="membros/">Membros</a></li>
+                <li><a href="membros/assinar.html" class="nav-cta">Assinar</a></li>
             </ul>
+            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="hero">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
             <div class="container">
-                <h1>Bem-vindo ao Meu Mundo</h1>
-                <p>Onde a neurodiversidade encontra a arte, a natureza e a tecnologia.</p>
-                <a href="#blog" class="btn-secondary">Explore o Blog</a>
+                <div class="hero-content">
+                    <h1>Arte, Neurodivergência e Bonsai</h1>
+                    <p>Explorando a interseção entre criatividade humana, resiliência mental e a paciência da natureza. Conteúdo premium para artistas e pensadores.</p>
+                    <a href="membros/assinar.html" class="cta-button">Acessar Conteúdo Premium</a>
+                </div>
             </div>
         </section>
 
-        <section id="about" class="about-section">
+        <!-- Categories Section -->
+        <section class="categories">
             <div class="container">
-                <h2>Sobre Mim</h2>
-                <p>Sou Tales, um ortodontista aposentado que encontrou novas paixões na arte plástica, na escrita e no universo da tecnologia. Este espaço é uma fusão dos meus interesses, desde a complexidade da neurodiversidade até a serenidade da arte do bonsai e a inovação de blockchain e IA.</p>
-                <p>Minha jornada é um convite à reflexão e à descoberta, explorando como diferentes áreas do conhecimento podem se entrelaçar para criar algo novo e significativo. Aqui, você encontrará insights, criações artísticas e discussões sobre o futuro digital.</p>
-            </div>
-        </section>
-
-        <section id="gallery" class="gallery-section">
-            <div class="container">
-                <h2>Minha Galeria de Arte</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="assets/images/art1.jpg" alt="Obra de Arte 1">
-                        <div class="gallery-info">
-                            <h3>Título da Obra 1</h3>
-                            <p>Descrição breve da obra e inspiração.</p>
-                        </div>
+                <h2>Especialidades</h2>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <div class="category-icon">🧠</div>
+                        <h3>Neurodivergência</h3>
+                        <p>Estratégias científicas para transformar desafios em forças criativas, baseadas em neurociência e experiências reais.</p>
                     </div>
-                    <div class="gallery-item">
-                        <img src="assets/images/art2.jpg" alt="Obra de Arte 2">
-                        <div class="gallery-info">
-                            <h3>Título da Obra 2</h3>
-                            <p>Descrição breve da obra e inspiração.</p>
-                        </div>
+                    <div class="category-card">
+                        <div class="category-icon">🌳</div>
+                        <h3>Bonsai</h3>
+                        <p>Técnicas milenares de cultivo, filosofia zen e aplicações modernas para equilíbrio pessoal.</p>
                     </div>
-                    <div class="gallery-item">
-                        <img src="assets/images/art3.jpg" alt="Obra de Arte 3">
-                        <div class="gallery-info">
-                            <h3>Título da Obra 3</h3>
-                            <p>Descrição breve da obra e inspiração.</p>
-                        </div>
+                    <div class="category-card">
+                        <div class="category-icon">🎨</div>
+                        <h3>Artes Plásticas</h3>
+                        <p>Da teoria à prática: composição, cor e expressão autêntica em obras originais.</p>
                     </div>
                 </div>
-                <a href="galeria/index.html" class="btn-secondary">Ver Mais Obras</a>
             </div>
         </section>
 
-        <section id="blog" class="blog-section">
+        <!-- Gallery Section -->
+        <section class="gallery" id="gallery">
+            <div class="container">
+                <h2>Galeria de Obras Originais</h2>
+                <div class="gallery-grid">
+                    <!-- Art Card 1 -->
+                    <article class="art-card">
+                        <img src="assets/art/la-cosechera.jpg" alt="La-Cosechera - Escultura em eucalipto" loading="lazy">
+                        <div class="art-content">
+                            <h3>La-Cosechera</h3>
+                            <div class="art-price">R$ 6.600</div>
+                            <p class="art-description">Escultura em tronco de eucalipto original, 40cm de altura, inspirada na força e beleza do Pampa Uruguaio. Peça única, da coleção URUGUAY.</p>
+                            <div class="art-buttons">
+                                <a href="#" target="_blank" class="art-buy">Comprar ou Inquirir</a>
+                                <button class="art-fullview" onclick="openLightbox('assets/art/la-cosechera.jpg', 'La-Cosechera')">Ver Imagem Completa</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Art Card 2 -->
+                    <article class="art-card">
+                        <img src="assets/art/el-cuerpo.jpg" alt="El Cuerpo - Escultura em dormente de trem" loading="lazy">
+                        <div class="art-content">
+                            <h3>El Cuerpo</h3>
+                            <div class="art-price">R$ 8.500</div>
+                            <p class="art-description">Escultura em dormente de trem reciclado com base em tronco de pinus, medindo 1,20 m de altura e 36 cm de diâmetro. Peça única da coleção URUGUAY, inspirada na resiliência do pampeano (Los Orientales), simbolizando a força duradoura da matéria reaproveitada em contextos de transformação cultural.</p>
+                            <div class="art-buttons">
+                                <a href="#" target="_blank" class="art-buy">Comprar ou Inquirir</a>
+                                <button class="art-fullview" onclick="openLightbox('assets/art/el-cuerpo.jpg', 'El Cuerpo')">Ver Imagem Completa</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Art Card 3 -->
+                    <article class="art-card">
+                        <img src="assets/art/metamorpheus.jpg" alt="MetaMorpheus - Escultura em ipê de demolição" loading="lazy">
+                        <div class="art-content">
+                            <h3>MetaMorpheus</h3>
+                            <div class="art-price">R$ 8.200</div>
+                            <p class="art-description">Escultura em viga de ipê de demolição, com 37 cm de altura por 22 cm de diâmetro, peça única da coleção Metamorphosis. Celebra a transformação e o renascimento da matéria em novas formas, ecoando o princípio de que nada se cria, nada se perde, são apenas expressões artísticas renovadas.</p>
+                            <div class="art-buttons">
+                                <a href="#" target="_blank" class="art-buy">Comprar ou Inquirir</a>
+                                <button class="art-fullview" onclick="openLightbox('assets/art/metamorpheus.jpg', 'MetaMorpheus')">Ver Imagem Completa</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="lightbox-close">&times;</span>
+            <img class="lightbox-content" id="lightbox-img" alt="">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+
+        <!-- Ebook Highlight Section -->
+        <section class="ebook-highlight">
+            <div class="container">
+                <a href="https://taleshack-prog.github.io/antifr-gil-blindado-ebook/" target="_blank" class="ebook-card">
+                    <div class="ebook-image">
+                        <img src="assets/ebook-cover.jpg" alt="Capa do Ebook Antifrágil Blindado" loading="lazy">
+                    </div>
+                    <div class="ebook-info">
+                        <h3>Antifrágil Blindado</h3>
+                        <p>Guia prático para famílias neurodivergentes: artes, jiu-jitsu, natureza e autocompreensão como ferramentas de transformação.</p>
+                        <span class="ebook-arrow">→ Saiba Mais</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Blog Preview Section -->
+        <section class="blog-preview" id="blog">
             <div class="container">
                 <h2>Novidades e Artigos</h2>
-                <div class="blog-grid">
-                    <!-- NOVO ARTIGO DE BONSAI - INÍCIO -->
+                <div class="posts-grid">
+                    <!-- Post Card 1 -->
                     <article class="post-card">
-                        <div class="post-meta">
-                            <span class="category">Bonsai</span> • <span class="date">26 Jul 2024</span>
+                        <div class="post-image">
+                            <span class="post-icon">🧠</span>
                         </div>
-                        <h3>O Verão e a Arte do Bonsai: Guia Essencial para Iniciantes</h3>
-                        <p>Guia completo sobre os cuidados essenciais com Bonsai durante o verão, para iniciantes. Rega, adubação, proteção solar e mais.</p>
-                        <a href="blog/arte-do-bonsai/o-verao-e-a-arte-do-bonsai.html" class="read-more">Ler Mais →</a>
-                    </article>
-                    <!-- NOVO ARTIGO DE BONSAI - FIM -->
-
-                    <article class="post-card">
-                        <div class="post-meta">
-                            <span class="category">Neurodiversidade</span> • <span class="date">15 Jul 2024</span>
+                        <div class="post-content">
+                            <div class="post-meta">Neurodivergência • 15 Jan 2024</div>
+                            <h3>O Que É Neurodiversidade (Sem Jargão)</h3>
+                            <p class="post-excerpt">Explore a neurodiversidade como uma variação natural do cérebro humano, suas forças e desafios, e a importância de ambientes protetores.</p>
+                            <a href="blog/neurodiverg/o-que-e-neurodiversidade-sem-jargao.html" class="read-more">Ler Mais</a>
                         </div>
-                        <h3>O Que é Neurodiversidade Sem Jargão</h3>
-                        <p>Desmistificando a neurodiversidade e promovendo a inclusão.</p>
-                        <a href="blog/neurodiverg/o-que-e-neurodiversidade-sem-jargao.html" class="read-more">Ler Mais →</a>
                     </article>
 
+                    <!-- Post Card 2 -->
                     <article class="post-card">
-                        <div class="post-meta">
-                            <span class="category">Bonsai</span> • <span class="date">01 Jul 2024</span>
+                        <div class="post-image">
+                            <span class="post-icon">🌳</span>
                         </div>
-                        <h3>A Poda de Inverno no Bonsai</h3>
-                        <p>Técnicas essenciais para manter seu bonsai saudável durante os meses frios.</p>
-                        <a href="blog/bonsai/poda-inverno.html" class="read-more">Ler Mais →</a>
+                        <div class="post-content">
+                            <div class="post-meta">Bonsai • 12 Jan 2024</div>
+                            <h3>Poda de Inverno: Guia Completo</h3>
+                            <p class="post-excerpt">Prepare seus bonsais para o crescimento.</p>
+                            <a href="blog/bonsai/poda-inverno.html" class="read-more">Ler Mais</a>
+                        </div>
                     </article>
 
+                    <!-- Post Card 3 -->
                     <article class="post-card">
-                        <div class="post-meta">
-                            <span class="category">Artes Plásticas</span> • <span class="date">20 Jun 2024</span>
+                        <div class="post-image">
+                            <span class="post-icon">🎨</span>
                         </div>
-                        <h3>A Cor na Expressão Artística</h3>
-                        <p>Como as cores influenciam a emoção e a percepção na arte.</p>
-                        <a href="blog/artes-plasticas/a-cor-na-expressao-artistica.html" class="read-more">Ler Mais →</a>
+                        <div class="post-content">
+                            <div class="post-meta">Artes Plásticas • 10 Jan 2024</div>
+                            <h3>Teoria das Cores na Prática</h3>
+                            <p class="post-excerpt">Harmonias cromáticas para obras impactantes.</p>
+                            <a href="blog/artes-plasticas/teoria-cores.html" class="read-more">Ler Mais</a>
+                        </div>
+                    </article>
+
+                    <!-- Post Card 4 -->
+                    <article class="post-card">
+                        <div class="post-image">
+                            <span class="post-icon">🥋</span>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">Jiu-Jitsu • 05 Jan 2024</div>
+                            <h3>Jiu-Jitsu e Neurodivergência: Foco e Disciplina</h3>
+                            <p class="post-excerpt">Descubra como a prática do Jiu-Jitsu pode aprimorar o foco e a disciplina em indivíduos neurodivergentes.</p>
+                            <a href="blog/jiu-jitsu/foco-e-disciplina.html" class="read-more">Ler Mais</a>
+                        </div>
                     </article>
                 </div>
-                <a href="blog/index.html" class="btn-secondary">Ver Todos os Artigos</a>
             </div>
         </section>
 
-        <section id="contact" class="contact-section">
+        <!-- Premium CTA Section -->
+        <section class="premium-cta">
             <div class="container">
-                <h2>Entre em Contato</h2>
-                <p>Seja para discutir arte, neurodiversidade, tecnologia ou bonsai, adoraria ouvir você.</p>
-                <form class="contact-form">
-                    <input type="text" placeholder="Seu Nome" required>
-                    <input type="email" placeholder="Seu Email" required>
-                    <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
-                    <button type="submit" class="btn-primary">Enviar Mensagem</button>
-                </form>
+                <h2>Conteúdo Exclusivo para Membros</h2>
+                <p>Acesso a tutoriais avançados, consultoria e integração com DAO para colecionadores.</p>
+                <a href="membros/assinar.html" class="cta-button">Torne-se Membro</a>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Tales - Todos os direitos reservados. | Desenvolvido com foco em arte e inovação.</p>
+            <p>© 2024 Tales - Todos os direitos reservados. | Desenvolvido com foco em arte e inovação.</p>
         </div>
     </footer>
 
+    <!-- JavaScript -->
     <script src="script.js"></script>
-    <script>
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
-    </script>
 </body>
 </html>
