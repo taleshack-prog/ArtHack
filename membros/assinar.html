@@ -444,7 +444,7 @@
                     <h3>📧 Garanta Seu Acesso Premium</h3>
                     <p>Deixe seu e-mail para prosseguir com a assinatura e receber atualizações exclusivas sobre o conteúdo premium.</p>
                     
-                    <form class="email-form" id="emailForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <form class="email-form" id="emailForm" action="https://formspree.io/f/mykggewq" method="POST">
                         <div class="form-group">
                             <label for="name">Nome Completo *</label>
                             <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
@@ -462,7 +462,6 @@
                         
                         <!-- Campo oculto para identificar origem -->
                         <input type="hidden" name="_subject" value="Nova Lead - Assinatura Plano Anual">
-                        <input type="hidden" name="_cc" value="neuroarthack@yahoo.com">
                         
                         <button type="submit" class="submit-email-btn" id="submitBtn">
                             Continuar para Assinatura →
@@ -537,7 +536,6 @@
         const submitBtn = document.getElementById('submitBtn');
         const successMessage = document.getElementById('successMessage');
         const ctaButton = document.getElementById('ctaButton');
-        const emailCaptureSection = document.getElementById('emailCaptureSection');
 
         emailForm.addEventListener('submit', function(e) {
             e.preventDefault();
