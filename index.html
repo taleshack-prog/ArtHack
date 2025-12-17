@@ -14,128 +14,188 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- CSS INLINE - CORREÇÃO DA GALERIA -->
+    <!-- CSS INLINE - CORREÇÃO FORÇADA COM !IMPORTANT -->
     <style>
         /* ===========================
-           GALLERY SECTION - CORRIGIDO
+           GALLERY SECTION - CORRIGIDO COM !IMPORTANT
            =========================== */
 
         .gallery {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 80px 0 !important;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
         }
 
         .gallery h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: #2c3e50;
+            text-align: center !important;
+            font-size: 2.5rem !important;
+            margin-bottom: 50px !important;
+            color: #2c3e50 !important;
         }
 
         .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+            gap: 40px !important;
+            max-width: 1200px !important;
+            margin: 0 auto !important;
         }
 
         .art-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
+            background: white !important;
+            border-radius: 12px !important;
+            overflow: hidden !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+            display: flex !important;
+            flex-direction: column !important;
         }
 
         .art-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px) !important;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
         }
 
-        /* CORREÇÃO CRÍTICA: Imagens proporcionais */
-        .art-card img {
-            width: 100%;
-            height: 350px; /* Altura fixa para uniformidade */
-            object-fit: cover; /* Mantém proporção sem distorcer */
-            object-position: center; /* Centraliza a imagem */
-            display: block;
-            transition: transform 0.3s ease;
+        /* CORREÇÃO CRÍTICA: Imagens proporcionais COM !IMPORTANT */
+        .art-card img,
+        .art-card .art-image {
+            width: 100% !important;
+            height: 350px !important;
+            max-height: 350px !important;
+            object-fit: cover !important;
+            object-position: center !important;
+            display: block !important;
+            transition: transform 0.3s ease !important;
         }
 
-        .art-card:hover img {
-            transform: scale(1.05);
+        .art-card:hover img,
+        .art-card:hover .art-image {
+            transform: scale(1.05) !important;
         }
 
         .art-content {
-            padding: 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
+            padding: 25px !important;
+            flex-grow: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
         }
 
         .art-content h3 {
-            font-size: 1.6rem;
-            margin-bottom: 12px;
-            color: #2c3e50;
-            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem !important;
+            margin-bottom: 12px !important;
+            color: #2c3e50 !important;
+            font-family: 'Playfair Display', serif !important;
         }
 
         .art-price {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #27ae60;
-            margin-bottom: 15px;
+            font-size: 1.8rem !important;
+            font-weight: 700 !important;
+            color: #27ae60 !important;
+            margin-bottom: 15px !important;
         }
 
         .art-description {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #555;
-            margin-bottom: 20px;
-            flex-grow: 1;
+            font-size: 0.95rem !important;
+            line-height: 1.6 !important;
+            color: #555 !important;
+            margin-bottom: 20px !important;
+            flex-grow: 1 !important;
         }
 
         .art-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 12px !important;
         }
 
         .art-buy,
         .art-fullview {
-            padding: 12px 20px;
-            border-radius: 6px;
-            font-weight: 600;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-size: 0.95rem;
+            padding: 12px 20px !important;
+            border-radius: 6px !important;
+            font-weight: 600 !important;
+            text-align: center !important;
+            transition: all 0.3s ease !important;
+            cursor: pointer !important;
+            border: none !important;
+            font-size: 0.95rem !important;
         }
 
         .art-buy {
-            background: #2c3e50;
-            color: white;
-            text-decoration: none;
+            background: #2c3e50 !important;
+            color: white !important;
+            text-decoration: none !important;
         }
 
         .art-buy:hover {
-            background: #1a252f;
-            transform: translateY(-2px);
+            background: #1a252f !important;
+            transform: translateY(-2px) !important;
         }
 
         .art-fullview {
-            background: transparent;
-            color: #2c3e50;
-            border: 2px solid #2c3e50;
+            background: transparent !important;
+            color: #2c3e50 !important;
+            border: 2px solid #2c3e50 !important;
         }
 
         .art-fullview:hover {
-            background: #2c3e50;
-            color: white;
+            background: #2c3e50 !important;
+            color: white !important;
+        }
+
+        /* ===========================
+           EBOOK SECTION - CORREÇÃO
+           =========================== */
+
+        .ebook-highlight {
+            padding: 60px 0 !important;
+            background: #f8f9fa !important;
+        }
+
+        .ebook-btn {
+            display: flex !important;
+            align-items: center !important;
+            gap: 30px !important;
+            background: white !important;
+            border-radius: 12px !important;
+            padding: 30px !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+            text-decoration: none !important;
+            color: inherit !important;
+        }
+
+        .ebook-btn:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15) !important;
+        }
+
+        .ebook-image {
+            flex-shrink: 0 !important;
+        }
+
+        .ebook-image img {
+            width: 200px !important;
+            height: auto !important;
+            border-radius: 8px !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .ebook-info h3 {
+            font-size: 1.8rem !important;
+            margin-bottom: 10px !important;
+            color: #2c3e50 !important;
+        }
+
+        .ebook-info p {
+            font-size: 1rem !important;
+            line-height: 1.6 !important;
+            color: #555 !important;
+            margin-bottom: 15px !important;
+        }
+
+        .ebook-arrow {
+            font-size: 1.2rem !important;
+            color: #2c3e50 !important;
+            font-weight: 600 !important;
         }
 
         /* ===========================
@@ -143,54 +203,47 @@
            =========================== */
 
         .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
+            display: none !important;
+            position: fixed !important;
+            z-index: 9999 !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: rgba(0, 0, 0, 0.95) !important;
+            justify-content: center !important;
+            align-items: center !important;
+            cursor: pointer !important;
         }
 
         .lightbox.active {
-            display: flex;
+            display: flex !important;
         }
 
-        .lightbox-close {
-            position: absolute;
-            top: 30px;
-            right: 40px;
-            font-size: 50px;
-            color: white;
-            cursor: pointer;
-            z-index: 10000;
-            transition: color 0.3s ease;
+        .lightbox-close,
+        .close-lightbox {
+            position: absolute !important;
+            top: 30px !important;
+            right: 40px !important;
+            font-size: 50px !important;
+            color: white !important;
+            cursor: pointer !important;
+            z-index: 10000 !important;
+            transition: color 0.3s ease !important;
         }
 
-        .lightbox-close:hover {
-            color: #e74c3c;
+        .lightbox-close:hover,
+        .close-lightbox:hover {
+            color: #e74c3c !important;
         }
 
-        .lightbox-content {
-            max-width: 90%;
-            max-height: 85%;
-            object-fit: contain;
-            border-radius: 8px;
-            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
-        }
-
-        .lightbox-caption {
-            position: absolute;
-            bottom: 30px;
-            color: white;
-            font-size: 1.2rem;
-            text-align: center;
-            width: 100%;
-            padding: 0 20px;
+        .lightbox-content img,
+        #lightbox-img {
+            max-width: 90% !important;
+            max-height: 85% !important;
+            object-fit: contain !important;
+            border-radius: 8px !important;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5) !important;
         }
 
         /* ===========================
@@ -199,27 +252,39 @@
 
         @media (max-width: 768px) {
             .gallery-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                padding: 0 20px;
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+                padding: 0 20px !important;
             }
 
-            .art-card img {
-                height: 280px; /* Altura menor em mobile */
+            .art-card img,
+            .art-card .art-image {
+                height: 280px !important;
+                max-height: 280px !important;
             }
 
             .art-content h3 {
-                font-size: 1.4rem;
+                font-size: 1.4rem !important;
             }
 
             .art-price {
-                font-size: 1.5rem;
+                font-size: 1.5rem !important;
             }
 
-            .lightbox-close {
-                top: 15px;
-                right: 20px;
-                font-size: 40px;
+            .lightbox-close,
+            .close-lightbox {
+                top: 15px !important;
+                right: 20px !important;
+                font-size: 40px !important;
+            }
+
+            .ebook-btn {
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+
+            .ebook-image img {
+                width: 150px !important;
             }
         }
     </style>
@@ -297,42 +362,42 @@
                 <div class="gallery-grid">
                     <!-- Art Card 1 -->
                     <article class="art-card">
-                        <img src="assets/art/la-cosechera.jpg" alt="La-Cosechera - Escultura em eucalipto" loading="lazy">
+                        <img src="assets/art/la-cosechera.jpg" alt="La-Cosechera - Escultura em eucalipto" class="art-image" loading="lazy">
                         <div class="art-content">
                             <h3>La-Cosechera</h3>
                             <div class="art-price">R$ 6.600</div>
                             <p class="art-description">Escultura em tronco de eucalipto original, 40cm de altura, inspirada na força e beleza do Pampa Uruguaio. Peça única, da coleção URUGUAY.</p>
                             <div class="art-buttons">
                                 <a href="#" target="_blank" class="art-buy">Comprar ou Inquirir</a>
-                                <button class="art-fullview" onclick="openLightbox('assets/art/la-cosechera.jpg', 'La-Cosechera')">Ver Imagem Completa</button>
+                                <button class="art-fullview" onclick="openLightbox('assets/art/la-cosechera.jpg')">Ver Imagem Completa</button>
                             </div>
                         </div>
                     </article>
 
                     <!-- Art Card 2 -->
                     <article class="art-card">
-                        <img src="assets/art/el-cuerpo.jpg" alt="El Cuerpo - Escultura em dormente de trem" loading="lazy">
+                        <img src="assets/art/el-cuerpo.jpg" alt="El Cuerpo - Escultura em dormente de trem" class="art-image" loading="lazy">
                         <div class="art-content">
                             <h3>El Cuerpo</h3>
                             <div class="art-price">R$ 8.500</div>
                             <p class="art-description">Escultura em dormente de trem reciclado com base em tronco de pinus, medindo 1,20 m de altura e 36 cm de diâmetro. Peça única da coleção URUGUAY, inspirada na resiliência do pampeano (Los Orientales), simbolizando a força duradoura da matéria reaproveitada em contextos de transformação cultural.</p>
                             <div class="art-buttons">
                                 <a href="#" target="_blank" class="art-buy">Comprar ou Inquirir</a>
-                                <button class="art-fullview" onclick="openLightbox('assets/art/el-cuerpo.jpg', 'El Cuerpo')">Ver Imagem Completa</button>
+                                <button class="art-fullview" onclick="openLightbox('assets/art/el-cuerpo.jpg')">Ver Imagem Completa</button>
                             </div>
                         </div>
                     </article>
 
                     <!-- Art Card 3 -->
                     <article class="art-card">
-                        <img src="assets/art/metamorpheus.jpg" alt="MetaMorpheus - Escultura em ipê de demolição" loading="lazy">
+                        <img src="assets/art/metamorpheus.jpg" alt="MetaMorpheus - Escultura em ipê de demolição" class="art-image" loading="lazy">
                         <div class="art-content">
                             <h3>MetaMorpheus</h3>
                             <div class="art-price">R$ 8.200</div>
                             <p class="art-description">Escultura em viga de ipê de demolição, com 37 cm de altura por 22 cm de diâmetro, peça única da coleção Metamorphosis. Celebra a transformação e o renascimento da matéria em novas formas, ecoando o princípio de que nada se cria, nada se perde, são apenas expressões artísticas renovadas.</p>
                             <div class="art-buttons">
                                 <a href="#" target="_blank" class="art-buy">Comprar ou Inquirir</a>
-                                <button class="art-fullview" onclick="openLightbox('assets/art/metamorpheus.jpg', 'MetaMorpheus')">Ver Imagem Completa</button>
+                                <button class="art-fullview" onclick="openLightbox('assets/art/metamorpheus.jpg')">Ver Imagem Completa</button>
                             </div>
                         </div>
                     </article>
@@ -341,18 +406,19 @@
         </section>
 
         <!-- Lightbox Modal -->
-        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-            <span class="lightbox-close">&times;</span>
-            <img class="lightbox-content" id="lightbox-img" alt="">
-            <div class="lightbox-caption" id="lightbox-caption"></div>
+        <div id="lightbox" class="lightbox">
+            <div class="lightbox-content">
+                <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+                <img id="lightbox-img" src="" alt="Imagem completa da escultura">
+            </div>
         </div>
 
         <!-- Ebook Highlight Section -->
         <section class="ebook-highlight">
             <div class="container">
-                <a href="https://taleshack-prog.github.io/antifr-gil-blindado-ebook/" target="_blank" class="ebook-card">
+                <a href="https://taleshack-prog.github.io/antifr-gil-blindado-ebook/" aria-label="Acessar o ebook Antifrágil Blindado" class="ebook-btn">
                     <div class="ebook-image">
-                        <img src="assets/ebook-cover.jpg" alt="Capa do Ebook Antifrágil Blindado" loading="lazy">
+                        <img src="Generatedimage_1764336359238.png" alt="Capa do ebook Antifrágil Blindado por Tales" loading="lazy">
                     </div>
                     <div class="ebook-info">
                         <h3>Antifrágil Blindado</h3>
