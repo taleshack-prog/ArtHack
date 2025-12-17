@@ -3,488 +3,386 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assinar - Torne-se Membro Premium</title>
-    <meta name="description" content="Assine agora e tenha acesso a todo conteúdo premium, cursos completos e consultoria especializada.">
+    <title>Assinar Plano Anual - Tales Arte & Insight</title>
+    <meta name="description" content="Torne-se membro premium e tenha acesso a conteúdo exclusivo sobre neurodivergência, bonsai e artes plásticas. Plano anual por R$ 620,00 em até 12x.">
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    
+    <!-- CSS Inline para Página de Assinatura -->
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* ===========================
+           PÁGINA DE ASSINATURA
+           =========================== */
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 0;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+
+        .subscription-container {
+            max-width: 900px;
+            margin: 60px auto;
             padding: 0 20px;
         }
-        
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 0;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
-        
-        .hero {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
-            color: white;
-            padding: 4rem 0;
+
+        .subscription-header {
             text-align: center;
+            margin-bottom: 50px;
         }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: bold;
-        }
-        
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-        }
-        
-        .urgency {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 15px 30px;
-            border-radius: 50px;
-            display: inline-block;
-            font-weight: bold;
-            margin-bottom: 2rem;
-        }
-        
-        .pricing {
-            padding: 4rem 0;
-            background: #f8f9fa;
-        }
-        
-        .pricing h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-        }
-        
-        .pricing-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .pricing-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-            position: relative;
-            transition: transform 0.3s;
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .pricing-card.featured {
-            border: 3px solid #ff6b6b;
-            transform: scale(1.05);
-        }
-        
-        .popular-badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #ff6b6b;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-        
-        .pricing-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-        
-        .price {
+
+        .subscription-header h1 {
+            font-family: 'Playfair Display', serif;
             font-size: 3rem;
-            font-weight: bold;
-            color: #ff6b6b;
-            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
         }
-        
-        .price-period {
-            color: #666;
-            margin-bottom: 2rem;
-        }
-        
-        .savings {
-            background: #4CAF50;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-            display: inline-block;
-        }
-        
-        .features {
-            text-align: left;
-            margin-bottom: 2rem;
-        }
-        
-        .features li {
-            list-style: none;
-            padding: 0.5rem 0;
-            position: relative;
-            padding-left: 2rem;
-        }
-        
-        .features li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #4CAF50;
-            font-weight: bold;
-        }
-        
-        .cta-button {
-            background: #ff6b6b;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            display: inline-block;
-            transition: all 0.3s;
-            width: 100%;
-            font-size: 1.1rem;
-        }
-        
-        .cta-button:hover {
-            background: #ff5252;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
-        }
-        
-        .guarantee {
-            text-align: center;
-            margin-top: 2rem;
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .testimonials {
-            padding: 4rem 0;
-        }
-        
-        .testimonials h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .testimonial {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 1rem;
+
+        .subscription-header p {
+            font-size: 1.2rem;
             color: #555;
+            line-height: 1.6;
         }
-        
-        .testimonial-author {
-            font-weight: bold;
-            color: #333;
+
+        /* Card do Plano */
+        .plan-card {
+            background: white;
+            border-radius: 16px;
+            padding: 50px 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-        
-        .testimonial-role {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .stars {
-            color: #ffc107;
-            margin-bottom: 1rem;
-        }
-        
-        .final-cta {
+
+        .plan-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 4rem 0;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .plan-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .plan-price {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #27ae60;
+            margin: 20px 0;
+            line-height: 1;
+        }
+
+        .plan-price span {
+            font-size: 1.5rem;
+            color: #555;
+            font-weight: 400;
+        }
+
+        .plan-installment {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .plan-installment strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        /* Benefícios */
+        .plan-benefits {
+            text-align: left;
+            margin: 40px 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .plan-benefits h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
             text-align: center;
         }
-        
-        .final-cta h2 {
-            margin-bottom: 1rem;
-            font-size: 2.5rem;
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
         }
-        
-        .final-cta p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+
+        .benefit-item::before {
+            content: "✓";
+            color: #27ae60;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-right: 15px;
+            flex-shrink: 0;
         }
-        
-        .countdown {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 20px;
-            border-radius: 15px;
+
+        /* Botão CTA */
+        .cta-button-main {
             display: inline-block;
-            margin-bottom: 2rem;
-        }
-        
-        .countdown-timer {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        
-        footer {
-            background: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            text-align: center;
-            padding: 2rem 0;
+            padding: 18px 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            margin-top: 30px;
         }
-        
+
+        .cta-button-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.6);
+        }
+
+        /* Garantia */
+        .guarantee-section {
+            margin-top: 40px;
+            padding: 25px;
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            border-radius: 8px;
+        }
+
+        .guarantee-section h4 {
+            font-size: 1.3rem;
+            color: #856404;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .guarantee-section p {
+            font-size: 1rem;
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* FAQ */
+        .faq-section {
+            margin-top: 60px;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .faq-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .faq-answer {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Responsividade */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .subscription-header h1 {
+                font-size: 2rem;
             }
-            
-            .hero h1 {
-                font-size: 2.5rem;
+
+            .plan-card {
+                padding: 30px 20px;
             }
-            
-            .pricing-cards {
-                grid-template-columns: 1fr;
+
+            .plan-price {
+                font-size: 3rem;
             }
-            
-            .pricing-card.featured {
-                transform: none;
+
+            .cta-button-main {
+                padding: 15px 35px;
+                font-size: 1.1rem;
             }
-            
-            .testimonials-grid {
-                grid-template-columns: 1fr;
+
+            .faq-section {
+                padding: 25px 20px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Header Navigation -->
     <header>
         <nav class="container">
-            <div class="logo">Blog Premium</div>
+            <div class="logo"><a href="../index.html" style="color: inherit; text-decoration: none;">Tales - Arte & Insight</a></div>
             <ul class="nav-links">
-                <li><a href="../">Início</a></li>
-                <li><a href="../blog/">Blog</a></li>
-                <li><a href="./">Área de Membros</a></li>
-                <li><a href="assinar.html">Assinar</a></li>
+                <li><a href="../index.html#home">Início</a></li>
+                <li><a href="../index.html#gallery">Galeria</a></li>
+                <li><a href="../index.html#blog">Blog</a></li>
+                <li><a href="../membros/">Membros</a></li>
+                <li><a href="assinar.html" class="nav-cta">Assinar</a></li>
             </ul>
+            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <div class="urgency">🔥 Oferta Limitada - Apenas 48h</div>
-            <h1>Transforme Sua Vida</h1>
-            <p>Acesso completo a todo conteúdo premium + consultoria especializada</p>
-        </div>
-    </section>
+    <main>
+        <div class="subscription-container">
+            <!-- Header -->
+            <div class="subscription-header">
+                <h1>Torne-se Membro Premium</h1>
+                <p>Acesso completo a conteúdo exclusivo sobre neurodivergência, bonsai e artes plásticas. Transforme sua jornada criativa com conhecimento aprofundado.</p>
+            </div>
 
-    <section class="pricing">
-        <div class="container">
-            <h2>Escolha Seu Plano</h2>
-            <div class="pricing-cards">
-                <div class="pricing-card">
-                    <h3>Plano Mensal</h3>
-                    <div class="price">`R$ 97`</div>
-                    <div class="price-period">por mês</div>
-                    <ul class="features">
-                        <li>Acesso a todos os cursos</li>
-                        <li>Consultoria mensal 1:1</li>
-                        <li>Templates exclusivos</li>
-                        <li>Comunidade privada</li>
-                        <li>Conteúdo semanal</li>
-                        <li>Suporte prioritário</li>
-                    </ul>
-                    <a href="#" class="cta-button" onclick="subscribe('monthly')">Assinar Mensal</a>
+            <!-- Plano Anual -->
+            <div class="plan-card">
+                <div class="plan-badge">Melhor Valor</div>
+                
+                <h2 class="plan-title">Plano Anual Premium</h2>
+                
+                <div class="plan-price">
+                    R$ 620<span>/ano</span>
                 </div>
                 
-                <div class="pricing-card featured">
-                    <div class="popular-badge">MAIS POPULAR</div>
-                    <h3>Plano Anual</h3>
-                    <div class="price">`R$ 970`</div>
-                    <div class="price-period">por ano</div>
-                    <div class="savings">Economize `R$ 194` (2 meses grátis)</div>
-                    <ul class="features">
-                        <li>Acesso a todos os cursos</li>
-                        <li>Consultoria mensal 1:1</li>
-                        <li>Templates exclusivos</li>
-                        <li>Comunidade privada</li>
-                        <li>Conteúdo semanal</li>
-                        <li>Suporte prioritário</li>
-                        <li><strong>Bônus: Masterclass exclusiva</strong></li>
-                        <li><strong>Bônus: Kit de ferramentas</strong></li>
-                    </ul>
-                    <a href="#" class="cta-button" onclick="subscribe('yearly')">Assinar Anual</a>
+                <p class="plan-installment">
+                    ou <strong>12x de R$ 51,67</strong> no cartão de crédito
+                </p>
+
+                <!-- Benefícios -->
+                <div class="plan-benefits">
+                    <h3>O Que Você Recebe:</h3>
+                    
+                    <div class="benefit-item">
+                        <span>Acesso ilimitado a todos os cursos e tutoriais exclusivos</span>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <span>1 consultoria individual por trimestre (4 sessões/ano)</span>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <span>Templates e recursos para download (Notion, Canva, PDFs)</span>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <span>Acesso à comunidade privada exclusiva de membros</span>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <span>Conteúdo novo toda semana (artigos, vídeos, workshops)</span>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <span>Certificado de conclusão de cursos</span>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <span>Desconto de 20% na compra de obras de arte originais</span>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <span>Participação em eventos exclusivos e lives mensais</span>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <a href="https://linknabio.gg/tales-hack" target="_blank" rel="noopener noreferrer" class="cta-button-main">
+                    Assinar Agora
+                </a>
+
+                <!-- Garantia -->
+                <div class="guarantee-section">
+                    <h4>🛡️ Garantia de 7 Dias</h4>
+                    <p>Se você não estiver satisfeito com o conteúdo nos primeiros 7 dias, devolvemos 100% do seu investimento. Sem perguntas, sem burocracia.</p>
                 </div>
             </div>
-            <div class="guarantee">
-                🛡️ Garantia de 30 dias - 100% do seu dinheiro de volta
+
+            <!-- FAQ -->
+            <div class="faq-section">
+                <h3>Perguntas Frequentes</h3>
+
+                <div class="faq-item">
+                    <div class="faq-question">Como funciona o pagamento parcelado?</div>
+                    <div class="faq-answer">Você pode parcelar o valor de R$ 620,00 em até 12x de R$ 51,67 no cartão de crédito, sem juros. O acesso é liberado imediatamente após a confirmação do pagamento.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Quando terei acesso ao conteúdo?</div>
+                    <div class="faq-answer">O acesso é imediato! Assim que o pagamento for confirmado, você receberá um e-mail com suas credenciais de login e poderá acessar toda a área de membros.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">O que acontece após 1 ano?</div>
+                    <div class="faq-answer">Sua assinatura é renovada automaticamente pelo mesmo valor (ou com desconto para membros fiéis). Você pode cancelar a qualquer momento antes da renovação, sem multas.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Posso cancelar a qualquer momento?</div>
+                    <div class="faq-answer">Sim! Você pode cancelar sua assinatura a qualquer momento através da área de membros ou entrando em contato conosco. Não há taxas de cancelamento.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Como funcionam as consultorias individuais?</div>
+                    <div class="faq-answer">Você tem direito a 1 sessão de consultoria individual por trimestre (total de 4 sessões por ano). As sessões são de 60 minutos via videoconferência e podem ser agendadas diretamente na área de membros.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Qual a forma de pagamento aceita?</div>
+                    <div class="faq-answer">Aceitamos cartão de crédito (parcelado em até 12x sem juros) e PIX (pagamento à vista). O processamento é feito de forma segura através da Infinitipay.</div>
+                </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <section class="testimonials">
-        <div class="container">
-            <h2>O Que Nossos Membros Dizem</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"O conteúdo sobre neurodivergência mudou completamente minha abordagem no trabalho. Finalmente consegui criar estratégias que funcionam para mim."</p>
-                    <div class="testimonial-author">Maria Silva</div>
-                    <div class="testimonial-role">Desenvolvedora de Software</div>
-                </div>
-                
-                <div class="testimonial">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"As técnicas de bonsai são incríveis! Meus bonsais nunca estiveram tão saudáveis. A consultoria personalizada fez toda a diferença."</p>
-                    <div class="testimonial-author">João Santos</div>
-                    <div class="testimonial-role">Entusiasta de Bonsai</div>
-                </div>
-                
-                <div class="testimonial">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"Como artista, os workshops me ajudaram a profissionalizar meu trabalho. Consegui minha primeira exposição solo!"</p>
-                    <div class="testimonial-author">Ana Costa</div>
-                    <div class="testimonial-role">Artista Plástica</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="final-cta">
-        <div class="container">
-            <div class="countdown">
-                <div class="countdown-timer" id="countdown">47:23:15</div>
-                <div>Tempo restante para esta oferta</div>
-            </div>
-            <h2>Não Perca Esta Oportunidade</h2>
-            <p>Mais de 1.000 pessoas já transformaram suas vidas</p>
-            <a href="#" class="cta-button" onclick="subscribe('yearly')">Garantir Minha Vaga Agora</a>
-        </div>
-    </section>
-
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Blog Premium. Todos os direitos reservados.</p>
-            <p>Política de Privacidade | Termos de Uso | Contato</p>
+            <p>© 2024 Tales - Todos os direitos reservados. | <a href="../index.html" style="color: inherit;">Voltar ao Início</a></p>
         </div>
     </footer>
 
-    <script>
-        function subscribe(plan) {
-            // Aqui você integraria com seu provedor de pagamento
-            // Exemplo: Substack, Ghost, Memberful, etc.
-            
-            alert(`Redirecionando para pagamento do plano ${plan}...`);
-            
-            // Exemplo de redirecionamento para Substack:
-            // window.location.href = 'https://seublog.substack.com/subscribe';
-            
-            // Exemplo para Ghost:
-            // window.location.href = 'https://seublog.ghost.io/#/portal/signup';
-            
-            // Exemplo para Memberful:
-            // window.location.href = 'https://seublog.memberful.com/checkout?plan=123';
-        }
-        
-        // Countdown timer
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const endTime = now + (47 * 60 * 60 * 1000) + (23 * 60 * 1000) + (15 * 1000); // 47:23:15
-            
-            setInterval(() => {
-                const current = new Date().getTime();
-                const distance = endTime - current;
-                
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                
-                document.getElementById('countdown').textContent = 
-                    `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-                
-                if (distance < 0) {
-                    document.getElementById('countdown').textContent = 'OFERTA EXPIRADA';
-                }
-            }, 1000);
-        }
-        
-        updateCountdown();
-        
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-        
-        document.querySelectorAll('.pricing-card, .testimonial').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
+    <!-- JavaScript -->
+    <script src="../script.js"></script>
 </body>
 </html>
