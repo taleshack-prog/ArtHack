@@ -143,9 +143,114 @@
             flex-shrink: 0;
         }
 
-        /* Botão CTA */
+        /* FORMULÁRIO DE CAPTURA DE E-MAIL */
+        .email-capture-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px;
+            border-radius: 12px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .email-capture-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .email-capture-section p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            text-align: center;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .email-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .form-group label {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .form-group input {
+            padding: 14px 18px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: white;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+        }
+
+        .form-group input::placeholder {
+            color: #999;
+        }
+
+        .submit-email-btn {
+            padding: 16px 30px;
+            background: white;
+            color: #667eea;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .submit-email-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .submit-email-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* Mensagem de Sucesso */
+        .success-message {
+            display: none;
+            background: #27ae60;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* Botão CTA Principal (inicialmente oculto) */
         .cta-button-main {
-            display: inline-block;
+            display: none;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 18px 50px;
@@ -156,6 +261,10 @@
             transition: all 0.3s ease;
             box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
             margin-top: 30px;
+        }
+
+        .cta-button-main.show {
+            display: inline-block;
         }
 
         .cta-button-main:hover {
@@ -238,6 +347,10 @@
 
             .plan-price {
                 font-size: 3rem;
+            }
+
+            .email-capture-section {
+                padding: 30px 20px;
             }
 
             .cta-button-main {
@@ -326,9 +439,44 @@
                     </div>
                 </div>
 
-                <!-- CTA Button -->
-                <a href="https://linknabio.gg/tales-hack" target="_blank" rel="noopener noreferrer" class="cta-button-main">
-                    Assinar Agora
+                <!-- FORMULÁRIO DE CAPTURA DE E-MAIL -->
+                <div class="email-capture-section" id="emailCaptureSection">
+                    <h3>📧 Garanta Seu Acesso Premium</h3>
+                    <p>Deixe seu e-mail para prosseguir com a assinatura e receber atualizações exclusivas sobre o conteúdo premium.</p>
+                    
+                    <form class="email-form" id="emailForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nome Completo *</label>
+                            <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">E-mail *</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">WhatsApp (opcional)</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(00) 00000-0000">
+                        </div>
+                        
+                        <!-- Campo oculto para identificar origem -->
+                        <input type="hidden" name="_subject" value="Nova Lead - Assinatura Plano Anual">
+                        <input type="hidden" name="_cc" value="neuroarthack@yahoo.com">
+                        
+                        <button type="submit" class="submit-email-btn" id="submitBtn">
+                            Continuar para Assinatura →
+                        </button>
+                    </form>
+                    
+                    <div class="success-message" id="successMessage">
+                        ✅ E-mail registrado com sucesso! Clique no botão abaixo para finalizar sua assinatura.
+                    </div>
+                </div>
+
+                <!-- Botão CTA Principal (aparece após envio do formulário) -->
+                <a href="https://linknabio.gg/tales-hack" target="_blank" rel="noopener noreferrer" class="cta-button-main" id="ctaButton">
+                    Assinar Agora - R$ 620,00/ano
                 </a>
 
                 <!-- Garantia -->
@@ -382,7 +530,55 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- JavaScript para Controle do Formulário -->
+    <script>
+        // Controle do formulário de e-mail
+        const emailForm = document.getElementById('emailForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const successMessage = document.getElementById('successMessage');
+        const ctaButton = document.getElementById('ctaButton');
+        const emailCaptureSection = document.getElementById('emailCaptureSection');
+
+        emailForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Desabilita o botão durante o envio
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando...';
+            
+            // Envia o formulário via Fetch API
+            fetch(emailForm.action, {
+                method: 'POST',
+                body: new FormData(emailForm),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // Sucesso: mostra mensagem e botão CTA
+                    emailForm.style.display = 'none';
+                    successMessage.classList.add('show');
+                    ctaButton.classList.add('show');
+                    
+                    // Scroll suave até o botão CTA
+                    setTimeout(() => {
+                        ctaButton.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 500);
+                } else {
+                    // Erro: mostra alerta
+                    alert('Erro ao enviar. Tente novamente.');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Continuar para Assinatura →';
+                }
+            }).catch(error => {
+                alert('Erro de conexão. Verifique sua internet e tente novamente.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Continuar para Assinatura →';
+            });
+        });
+    </script>
+
+    <!-- JavaScript do Menu Mobile -->
     <script src="../script.js"></script>
 </body>
 </html>
