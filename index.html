@@ -14,6 +14,216 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
     
+    <!-- CSS INLINE - CORREÇÃO DA GALERIA -->
+    <style>
+        /* ===========================
+           GALLERY SECTION - CORRIGIDO
+           =========================== */
+
+        .gallery {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .gallery h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #2c3e50;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .art-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .art-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* CORREÇÃO CRÍTICA: Imagens proporcionais */
+        .art-card img {
+            width: 100%;
+            height: 350px; /* Altura fixa para uniformidade */
+            object-fit: cover; /* Mantém proporção sem distorcer */
+            object-position: center; /* Centraliza a imagem */
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .art-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .art-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .art-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            color: #2c3e50;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .art-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #27ae60;
+            margin-bottom: 15px;
+        }
+
+        .art-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .art-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .art-buy,
+        .art-fullview {
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 0.95rem;
+        }
+
+        .art-buy {
+            background: #2c3e50;
+            color: white;
+            text-decoration: none;
+        }
+
+        .art-buy:hover {
+            background: #1a252f;
+            transform: translateY(-2px);
+        }
+
+        .art-fullview {
+            background: transparent;
+            color: #2c3e50;
+            border: 2px solid #2c3e50;
+        }
+
+        .art-fullview:hover {
+            background: #2c3e50;
+            color: white;
+        }
+
+        /* ===========================
+           LIGHTBOX - MANTIDO
+           =========================== */
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            font-size: 50px;
+            color: white;
+            cursor: pointer;
+            z-index: 10000;
+            transition: color 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            color: #e74c3c;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 85%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 30px;
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        /* ===========================
+           RESPONSIVIDADE
+           =========================== */
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 0 20px;
+            }
+
+            .art-card img {
+                height: 280px; /* Altura menor em mobile */
+            }
+
+            .art-content h3 {
+                font-size: 1.4rem;
+            }
+
+            .art-price {
+                font-size: 1.5rem;
+            }
+
+            .lightbox-close {
+                top: 15px;
+                right: 20px;
+                font-size: 40px;
+            }
+        }
+    </style>
+    
     <!-- Structured Data (SEO) -->
     <script type="application/ld+json">
     {
