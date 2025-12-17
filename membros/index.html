@@ -3,488 +3,366 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Área de Membros - Conteúdo Premium</title>
-    <meta name="description" content="Área exclusiva para membros premium com cursos completos e conteúdo especializado.">
+    <title>Área de Membros - Tales Arte & Insight</title>
+    <meta name="description" content="Área exclusiva para membros premium. Acesse cursos, tutoriais, consultoria e conteúdo exclusivo sobre neurodivergência, bonsai e artes plásticas.">
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    
+    <!-- CSS Inline para Área de Membros -->
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* ===========================
+           ÁREA DE MEMBROS
+           =========================== */
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            background: #f5f7fa;
         }
-        
-        .container {
+
+        .members-container {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 60px auto;
             padding: 0 20px;
         }
-        
-        header {
+
+        .members-hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .members-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .members-hero p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .members-cta {
+            display: inline-block;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 1rem 0;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
-        
-        .nav-links a:hover {
-            opacity: 0.8;
-        }
-        
-        .hero {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero p {
+            padding: 15px 40px;
             font-size: 1.2rem;
-            margin-bottom: 2rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
         }
-        
-        .benefits {
-            padding: 4rem 0;
-            background: #f8f9fa;
+
+        .members-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.6);
         }
-        
-        .benefits h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-        }
-        
+
+        /* Seção de Benefícios */
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 30px;
+            margin-bottom: 60px;
         }
-        
+
         .benefit-card {
             background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
         .benefit-icon {
             font-size: 3rem;
-            margin-bottom: 1rem;
+            margin-bottom: 20px;
         }
-        
+
         .benefit-card h3 {
-            margin-bottom: 1rem;
-            color: #667eea;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
         }
-        
-        .premium-content {
-            padding: 4rem 0;
+
+        .benefit-card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
         }
-        
-        .premium-content h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-        }
-        
-        .content-preview {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-        
-        .preview-card {
+
+        /* Seção de Conteúdo Bloqueado */
+        .locked-content {
             background: white;
-            border-radius: 15px;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .locked-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .locked-icon {
+            font-size: 5rem;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+
+        .locked-content p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* Preview de Cursos */
+        .courses-preview {
+            margin-bottom: 60px;
+        }
+
+        .courses-preview h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             position: relative;
         }
-        
-        .preview-image {
-            height: 200px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-        }
-        
-        .preview-content {
-            padding: 1.5rem;
-        }
-        
-        .premium-badge {
+
+        .course-badge {
             position: absolute;
             top: 15px;
             right: 15px;
-            background: #ff6b6b;
+            background: #e74c3c;
             color: white;
             padding: 5px 15px;
             border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
         }
-        
-        .preview-card h3 {
-            margin-bottom: 1rem;
-            color: #333;
-        }
-        
-        .preview-teaser {
-            margin-bottom: 1rem;
-            color: #666;
-        }
-        
-        .locked-content {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 10px;
-            border-left: 4px solid #ff6b6b;
-            margin: 1rem 0;
-        }
-        
-        .locked-content p {
-            color: #666;
-            font-style: italic;
-        }
-        
-        .cta-button {
-            background: #ff6b6b;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            display: inline-block;
-            transition: transform 0.3s;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-        }
-        
-        .faq {
-            padding: 4rem 0;
-            background: #f8f9fa;
-        }
-        
-        .faq h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-        }
-        
-        .faq-item {
-            background: white;
-            margin-bottom: 1rem;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .faq-question {
-            background: #667eea;
-            color: white;
-            padding: 1rem 1.5rem;
-            cursor: pointer;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .faq-answer {
-            padding: 1.5rem;
-            display: none;
-        }
-        
-        .faq-answer.active {
-            display: block;
-        }
-        
-        .final-cta {
+
+        .course-image {
+            width: 100%;
+            height: 180px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
         }
-        
-        .final-cta h2 {
-            margin-bottom: 1rem;
-            font-size: 2.5rem;
+
+        .course-content {
+            padding: 25px;
         }
-        
-        .final-cta p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+
+        .course-content h3 {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
         }
-        
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
+
+        .course-content p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
         }
-        
+
+        /* Responsividade */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
+            .members-hero h1 {
                 font-size: 2rem;
             }
-            
+
             .benefits-grid,
-            .content-preview {
+            .courses-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .locked-content {
+                padding: 30px 20px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Header Navigation -->
     <header>
         <nav class="container">
-            <div class="logo">Blog Premium</div>
+            <div class="logo"><a href="../index.html" style="color: inherit; text-decoration: none;">Tales - Arte & Insight</a></div>
             <ul class="nav-links">
-                <li><a href="../">Início</a></li>
-                <li><a href="../blog/">Blog</a></li>
-                <li><a href="./">Área de Membros</a></li>
-                <li><a href="assinar.html">Assinar</a></li>
+                <li><a href="../index.html#home">Início</a></li>
+                <li><a href="../index.html#gallery">Galeria</a></li>
+                <li><a href="../index.html#blog">Blog</a></li>
+                <li><a href="index.html">Membros</a></li>
+                <li><a href="assinar.html" class="nav-cta">Assinar</a></li>
             </ul>
+            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Área de Membros Premium</h1>
-            <p>Conteúdo exclusivo, cursos completos e consultoria personalizada</p>
-        </div>
-    </section>
+    <main>
+        <div class="members-container">
+            <!-- Hero Section -->
+            <div class="members-hero">
+                <h1>Área de Membros Premium</h1>
+                <p>Conteúdo exclusivo, consultoria individual e acesso a uma comunidade de artistas, pensadores e entusiastas de neurodivergência, bonsai e artes plásticas.</p>
+                <a href="assinar.html" class="members-cta">Assinar Plano Anual - R$ 620,00</a>
+            </div>
 
-    <section class="benefits">
-        <div class="container">
-            <h2>Benefícios Exclusivos</h2>
+            <!-- Benefícios -->
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="benefit-icon">📚</div>
-                    <h3>Cursos Completos</h3>
-                    <p>Acesso a cursos estruturados com certificado de conclusão em todas as nossas especialidades.</p>
+                    <h3>Cursos Exclusivos</h3>
+                    <p>Acesso ilimitado a cursos aprofundados sobre neurodivergência, técnicas de bonsai e artes plásticas.</p>
                 </div>
+
                 <div class="benefit-card">
-                    <div class="benefit-icon">💬</div>
-                    <h3>Consultoria 1:1</h3>
-                    <p>Sessões mensais de consultoria personalizada com nossos especialistas.</p>
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Consultoria Individual</h3>
+                    <p>4 sessões de consultoria individual por ano (1 por trimestre) com duração de 60 minutos cada.</p>
                 </div>
+
                 <div class="benefit-card">
-                    <div class="benefit-icon">📝</div>
-                    <h3>Templates Exclusivos</h3>
-                    <p>Modelos prontos, checklists e ferramentas práticas para aplicação imediata.</p>
+                    <div class="benefit-icon">📥</div>
+                    <h3>Templates & Recursos</h3>
+                    <p>Baixe templates para Notion, Canva, PDFs e outros recursos práticos para aplicar imediatamente.</p>
                 </div>
+
                 <div class="benefit-card">
                     <div class="benefit-icon">👥</div>
                     <h3>Comunidade Privada</h3>
-                    <p>Acesso à comunidade exclusiva de membros para networking e troca de experiências.</p>
+                    <p>Participe de uma comunidade exclusiva de membros para trocar experiências e networking.</p>
                 </div>
+
                 <div class="benefit-card">
-                    <div class="benefit-icon">🎯</div>
-                    <h3>Conteúdo Semanal</h3>
-                    <p>Novos materiais toda semana, incluindo vídeos, artigos e recursos práticos.</p>
+                    <div class="benefit-icon">🎨</div>
+                    <h3>Desconto em Obras</h3>
+                    <p>20% de desconto na compra de obras de arte originais da galeria.</p>
                 </div>
+
                 <div class="benefit-card">
-                    <div class="benefit-icon">📱</div>
-                    <h3>Acesso Mobile</h3>
-                    <p>Plataforma otimizada para mobile com app exclusivo para membros.</p>
+                    <div class="benefit-icon">🎥</div>
+                    <h3>Lives Mensais</h3>
+                    <p>Participe de lives exclusivas com Q&A, workshops e eventos especiais.</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="premium-content">
-        <div class="container">
-            <h2>Preview do Conteúdo Premium</h2>
-            <div class="content-preview">
-                <div class="preview-card">
-                    <div class="premium-badge">PREMIUM</div>
-                    <div class="preview-image">🧠</div>
-                    <div class="preview-content">
-                        <h3>Curso: Neurodivergência no Ambiente Corporativo</h3>
-                        <p class="preview-teaser">Módulo 1: Fundamentos da Neurociência Aplicada</p>
-                        <div class="locked-content">
-                            <p>🔒 Este conteúdo está disponível apenas para membros premium. Inclui 8 módulos completos com vídeos, exercícios práticos e certificado.</p>
+            <!-- Conteúdo Bloqueado -->
+            <div class="locked-content">
+                <div class="locked-icon">🔒</div>
+                <h2>Conteúdo Exclusivo para Membros</h2>
+                <p>O conteúdo abaixo está disponível apenas para membros premium. Assine o plano anual e tenha acesso imediato a tudo!</p>
+                <a href="assinar.html" class="members-cta">Desbloquear Acesso</a>
+            </div>
+
+            <!-- Preview de Cursos -->
+            <div class="courses-preview">
+                <h2>Cursos Disponíveis (Preview)</h2>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <div class="course-badge">Bloqueado</div>
+                        <div class="course-image">🧠</div>
+                        <div class="course-content">
+                            <h3>Neurodivergência na Prática</h3>
+                            <p>Estratégias científicas para transformar desafios em forças criativas. 12 módulos com vídeos, exercícios e workbooks.</p>
                         </div>
-                        <a href="assinar.html" class="cta-button">Desbloquear Conteúdo</a>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-badge">Bloqueado</div>
+                        <div class="course-image">🌳</div>
+                        <div class="course-content">
+                            <h3>Bonsai: Do Básico ao Avançado</h3>
+                            <p>Técnicas milenares de cultivo, poda, aramação e estilização. 15 aulas práticas com demonstrações.</p>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-badge">Bloqueado</div>
+                        <div class="course-image">🎨</div>
+                        <div class="course-content">
+                            <h3>Escultura em Madeira</h3>
+                            <p>Da escolha da madeira à finalização. Aprenda técnicas de entalhe, polimento e preservação.</p>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-badge">Bloqueado</div>
+                        <div class="course-image">📝</div>
+                        <div class="course-content">
+                            <h3>Escrita Criativa Antifrágil</h3>
+                            <p>Desenvolva sua voz autêntica através da escrita. Técnicas de storytelling e autoexpressão.</p>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-badge">Bloqueado</div>
+                        <div class="course-image">🥋</div>
+                        <div class="course-content">
+                            <h3>Jiu-Jitsu e Foco Mental</h3>
+                            <p>Como a prática marcial aprimora disciplina, foco e resiliência em neurodivergentes.</p>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-badge">Bloqueado</div>
+                        <div class="course-image">🎯</div>
+                        <div class="course-content">
+                            <h3>Gestão de Projetos Criativos</h3>
+                            <p>Organize seus projetos artísticos com metodologias adaptadas para mentes neurodivergentes.</p>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="preview-card">
-                    <div class="premium-badge">PREMIUM</div>
-                    <div class="preview-image">🌳</div>
-                    <div class="preview-content">
-                        <h3>Masterclass: Técnicas Avançadas de Bonsai</h3>
-                        <p class="preview-teaser">Aula 1: Aramação e Modelagem Profissional</p>
-                        <div class="locked-content">
-                            <p>🔒 Série completa com 12 aulas práticas, incluindo técnicas secretas dos mestres japoneses e cronograma personalizado.</p>
-                        </div>
-                        <a href="assinar.html" class="cta-button">Desbloquear Conteúdo</a>
-                    </div>
-                </div>
-                
-                <div class="preview-card">
-                    <div class="premium-badge">PREMIUM</div>
-                    <div class="preview-image">🎨</div>
-                    <div class="preview-content">
-                        <h3>Workshop: Portfólio Artístico Profissional</h3>
-                        <p class="preview-teaser">Sessão 1: Curadoria e Apresentação</p>
-                        <div class="locked-content">
-                            <p>🔒 Workshop intensivo com feedback personalizado, templates profissionais e estratégias de marketing para artistas.</p>
-                        </div>
-                        <a href="assinar.html" class="cta-button">Desbloquear Conteúdo</a>
-                    </div>
-                </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <section class="faq">
-        <div class="container">
-            <h2>Perguntas Frequentes</h2>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    Qual o valor da assinatura?
-                    <span>+</span>
-                </div>
-                <div class="faq-answer">
-                    A assinatura premium custa R$ 97/mês ou R$ 970/ano (2 meses grátis). Você pode cancelar a qualquer momento.
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    Como funciona a consultoria 1:1?
-                    <span>+</span>
-                </div>
-                <div class="faq-answer">
-                    Cada membro premium tem direito a 1 sessão mensal de 45 minutos via videochamada com nossos especialistas. Agendamento através da plataforma.
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    O conteúdo fica disponível para sempre?
-                    <span>+</span>
-                </div>
-                <div class="faq-answer">
-                    Todo conteúdo acessado durante sua assinatura ativa permanece disponível por 6 meses após o cancelamento.
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    Posso cancelar a qualquer momento?
-                    <span>+</span>
-                </div>
-                <div class="faq-answer">
-                    Sim! Você pode cancelar sua assinatura a qualquer momento através do painel de controle, sem multas ou taxas.
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="final-cta">
-        <div class="container">
-            <h2>Pronto para Começar?</h2>
-            <p>Junte-se a mais de 1.000 membros que já transformaram suas vidas</p>
-            <a href="assinar.html" class="cta-button">Assinar Agora</a>
-        </div>
-    </section>
-
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Blog Premium. Todos os direitos reservados.</p>
+            <p>© 2024 Tales - Todos os direitos reservados. | <a href="../index.html" style="color: inherit;">Voltar ao Início</a></p>
         </div>
     </footer>
 
-    <script>
-        function toggleFAQ(element) {
-            const answer = element.nextElementSibling;
-            const icon = element.querySelector('span');
-            
-            // Close all other FAQ items
-            document.querySelectorAll('.faq-answer').forEach(item => {
-                if (item !== answer) {
-                    item.classList.remove('active');
-                    item.previousElementSibling.querySelector('span').textContent = '+';
-                }
-            });
-            
-            // Toggle current FAQ item
-            if (answer.classList.contains('active')) {
-                answer.classList.remove('active');
-                icon.textContent = '+';
-            } else {
-                answer.classList.add('active');
-                icon.textContent = '−';
-            }
-        }
-        
-        // Smooth animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-        
-        document.querySelectorAll('.benefit-card, .preview-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
+    <!-- JavaScript -->
+    <script src="../script.js"></script>
 </body>
 </html>
