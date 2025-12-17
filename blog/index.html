@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> <!-- Referência ao arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css"> <!-- Referência ao novo arquivo CSS externo -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -41,20 +41,6 @@
                     <h1>Arte, Neurodivergência e Bonsai</h1>
                     <p>Explorando a interseção entre criatividade humana, resiliência mental e a paciência da natureza. Conteúdo premium para artistas e pensadores.</p>
                     <a href="membros/assinar.html" class="cta-button">Acessar Conteúdo Premium</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Nova Seção de Destaque para Neurodiversidade -->
-        <section class="neuro-highlight">
-            <div class="container">
-                <div class="neuro-content">
-                    <h2>Desvende a Neurodiversidade: Uma Perspectiva Única</h2>
-                    <p>Mergulhe no artigo que desmistifica o conceito de neurodiversidade, explorando suas nuances sem jargões complexos e celebrando as variações naturais da mente humana.</p>
-                    <a href="blog/neurodiverg/o-que-e-neurodiversidade-sem-jargao.html" class="cta-button">Ler Artigo Completo</a>
-                </div>
-                <div class="neuro-image">
-                    <img src="assets/blog/neurodiversidade-ilustracao.png" alt="Ilustração abstrata representando a diversidade cerebral e a neurodiversidade." loading="lazy">
                 </div>
             </div>
         </section>
@@ -153,13 +139,25 @@
             <div class="container">
                 <h2>Novidades e Artigos</h2>
                 <div class="posts-grid">
+                    <!-- NOVO ARTIGO DE BONSAI - INÍCIO -->
+                    <article class="post-card">
+                        <div class="post-image">🌳</div> <!-- Ícone de árvore para Bonsai -->
+                        <div class="post-content">
+                            <div class="post-meta">Bonsai • 26 Jul 2024</div>
+                            <h3>O Verão e a Arte do Bonsai: Guia Essencial para Iniciantes</h3>
+                            <p class="post-excerpt">Guia completo sobre os cuidados essenciais com Bonsai durante o verão, para iniciantes. Rega, adubação, proteção solar e mais.</p>
+                            <a href="blog/arte-do-bonsai/o-verao-e-a-arte-do-bonsai.html" class="read-more">Ler Mais</a>
+                        </div>
+                    </article>
+                    <!-- NOVO ARTIGO DE BONSAI - FIM -->
+
                     <article class="post-card">
                         <div class="post-image">🧠</div>
                         <div class="post-content">
                             <div class="post-meta">Neurodivergência • 15 Jan 2024</div>
                             <h3>O Que É Neurodiversidade (Sem Jargão)</h3>
                             <p class="post-excerpt">Explore a neurodiversidade como uma variação natural do cérebro humano, suas forças e desafios, e a importância de ambientes protetores.</p>
-                            <a href="blog/neurodiverg/o-que-e-neurodiversidade-sem-jargao.html" class="read-more">Ler Mais</a>
+                            <a href="blog/neurodiverg/o-que-e-neurodivergencia-sem-jargao.html" class="read-more">Ler Mais</a>
                         </div>
                     </article>
                     <article class="post-card">
@@ -168,7 +166,7 @@
                             <div class="post-meta">Bonsai • 12 Jan 2024</div>
                             <h3>Poda de Inverno: Guia Completo</h3>
                             <p class="post-excerpt">Prepare seus bonsais para o crescimento.</p>
-                            <a href="blog/bonsai/poda-inverno.html" class="read-more">Ler Mais</a>
+                            <a href="blog/bonsai/poda-inverno.html" class="read-readmore">Ler Mais</a>
                         </div>
                     </article>
                     <article class="post-card">
@@ -208,6 +206,28 @@
         </div>
     </footer>
 
-    <script src="script.js"></script> <!-- Referência ao arquivo JS externo -->
+    <script src="script.js"></script> <!-- Referência ao novo arquivo JS externo -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        function openLightbox(imageSrc) {
+            document.getElementById('lightbox-img').src = imageSrc;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        // Close lightbox if clicked outside image
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('lightbox')) {
+                closeLightbox();
+            }
+        }
+    </script>
 </body>
 </html>
