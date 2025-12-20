@@ -3,115 +3,325 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O Verão e a Arte do Bonsai: Guia Essencial para Iniciantes | Tales - Arte & Insight</title>
+    <title>O Verão e a Arte do Bonsai: Guia Essencial para Iniciantes | Tales</title>
     <meta name="description" content="Guia completo sobre os cuidados essenciais com Bonsai durante o verão, para iniciantes. Rega, adubação, proteção solar e mais.">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../style.css"> <!-- Ajuste o caminho conforme a localização do seu arquivo style.css -->
-    <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon">
-    <!-- JSON-LD para SEO se aplicável, similar ao da sua index.html -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../../style.css">
+    
+    <!-- CSS Inline para Artigo -->
+    <style>
+        /* ===========================
+           ARTIGO DO BLOG - ESTILOS
+           =========================== */
+
+        .blog-article {
+            max-width: 900px !important;
+            margin: 0 auto !important;
+            padding: 0 !important;
+            background: white !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            overflow: hidden !important;
+        }
+
+        /* Header do Artigo - REDUZIDO */
+        .article-header {
+            padding: 30px 40px !important;
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%) !important;
+            color: white !important;
+            text-align: center !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            margin: 0 !important;
+            border: none !important;
+            transform: none !important;
+            position: static !important;
+        }
+
+        .article-header h1 {
+            font-family: 'Playfair Display', serif !important;
+            font-size: 2rem !important;
+            margin: 0 0 15px 0 !important;
+            line-height: 1.3 !important;
+            font-weight: 700 !important;
+            color: white !important;
+            text-align: center !important;
+        }
+
+        .article-meta {
+            display: flex !important;
+            justify-content: center !important;
+            gap: 15px !important;
+            flex-wrap: wrap !important;
+            font-size: 0.9rem !important;
+            opacity: 0.95 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .article-meta span {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 5px !important;
+            color: white !important;
+        }
+
+        /* Conteúdo do Artigo */
+        .article-content {
+            padding: 40px !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            background: white !important;
+        }
+
+        .article-content h2 {
+            font-family: 'Playfair Display', serif !important;
+            font-size: 1.6rem !important;
+            color: #2d5016 !important;
+            margin: 35px 0 15px 0 !important;
+            padding-bottom: 10px !important;
+            border-bottom: 3px solid #4a7c2c !important;
+        }
+
+        .article-content h3 {
+            font-family: 'Playfair Display', serif !important;
+            font-size: 1.2rem !important;
+            color: #2d5016 !important;
+            margin: 25px 0 12px 0 !important;
+        }
+
+        .article-content p {
+            font-size: 1rem !important;
+            line-height: 1.8 !important;
+            color: #555 !important;
+            margin-bottom: 15px !important;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 15px 0 15px 30px !important;
+            line-height: 1.8 !important;
+        }
+
+        .article-content li {
+            margin-bottom: 10px !important;
+            color: #555 !important;
+        }
+
+        .article-content strong {
+            color: #2d5016 !important;
+            font-weight: 600 !important;
+        }
+
+        /* Imagens do Artigo */
+        .post-image,
+        .post-image-inline {
+            width: 100% !important;
+            height: auto !important;
+            max-width: 100% !important;
+            margin: 25px 0 !important;
+            border-radius: 8px !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+            display: block !important;
+        }
+
+        /* Caixa de Destaque */
+        .highlight-box {
+            background: linear-gradient(135deg, #2d501615 0%, #4a7c2c15 100%) !important;
+            border-left: 5px solid #4a7c2c !important;
+            padding: 20px !important;
+            border-radius: 8px !important;
+            margin: 25px 0 !important;
+        }
+
+        .highlight-box strong {
+            color: #2d5016 !important;
+        }
+
+        /* CTA de Assinatura */
+        .article-cta {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%) !important;
+            color: white !important;
+            padding: 35px !important;
+            border-radius: 12px !important;
+            text-align: center !important;
+            margin: 40px 0 !important;
+        }
+
+        .article-cta h3 {
+            color: white !important;
+            font-size: 1.4rem !important;
+            margin-bottom: 12px !important;
+        }
+
+        .article-cta p {
+            color: rgba(255, 255, 255, 0.95) !important;
+            margin-bottom: 18px !important;
+        }
+
+        .article-cta a {
+            display: inline-block !important;
+            background: white !important;
+            color: #2d5016 !important;
+            padding: 12px 30px !important;
+            border-radius: 6px !important;
+            text-decoration: none !important;
+            font-weight: 600 !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .article-cta a:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .article-header {
+                padding: 20px 20px !important;
+            }
+
+            .article-header h1 {
+                font-size: 1.4rem !important;
+            }
+
+            .article-meta {
+                gap: 8px !important;
+                font-size: 0.8rem !important;
+            }
+
+            .article-content {
+                padding: 25px 20px !important;
+            }
+
+            .article-content h2 {
+                font-size: 1.3rem !important;
+            }
+
+            .article-content h3 {
+                font-size: 1rem !important;
+            }
+
+            .article-content p {
+                font-size: 0.95rem !important;
+            }
+
+            .article-cta {
+                padding: 25px 20px !important;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header Navigation -->
     <header>
         <nav class="container">
-            <a href="../../index.html" class="logo">Tales - Arte & Insight</a>
-            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-            <ul class="nav-links" id="navLinks">
+            <div class="logo"><a href="../../index.html" style="color: inherit; text-decoration: none;">Tales - Arte & Insight</a></div>
+            <ul class="nav-links">
                 <li><a href="../../index.html#home">Início</a></li>
                 <li><a href="../../index.html#gallery">Galeria</a></li>
                 <li><a href="../../index.html#blog">Blog</a></li>
-                <li><a href="../../membros/index.html">Membros</a></li>
-                <li><a href="../../membros/assinar.html" class="btn-primary">Assinar</a></li>
+                <li><a href="../../membros/">Membros</a></li>
+                <li><a href="../../membros/assinar.html" class="nav-cta">Assinar</a></li>
             </ul>
+            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
         </nav>
     </header>
 
-    <main class="blog-post-container">
-        <article class="post-content">
-            <div class="post-meta">
-                <span class="category">Bonsai</span> • <span class="date">26 Jul 2024</span>
+    <main>
+        <article class="blog-article">
+            <!-- Header do Artigo - REDUZIDO -->
+            <header class="article-header">
+                <h1>O Verão e a Arte do Bonsai</h1>
+                <div class="article-meta">
+                    <span>📅 26 de Julho de 2024</span>
+                    <span>🌳 Bonsai</span>
+                    <span>⏱️ 10 min</span>
+                </div>
+            </header>
+
+            <!-- Conteúdo do Artigo -->
+            <div class="article-content">
+                <!-- Introdução -->
+                <section>
+                    <p>A arte milenar do Bonsai é uma jornada de paciência, observação e conexão com a natureza. No entanto, para que essa beleza em miniatura prospere, é crucial adaptar os cuidados às diferentes estações do ano.</p>
+                    <p>O verão, com suas temperaturas elevadas e maior intensidade solar, apresenta desafios únicos que, se não forem bem gerenciados, podem comprometer a saúde do seu pequeno ecossistema. Este guia essencial foi elaborado para iniciantes, desvendando os segredos para manter seu Bonsai vibrante e saudável durante os meses mais quentes.</p>
+                </section>
+
+                <!-- Seção 1 -->
+                <h2>1. Rega: O Coração do Cuidado Estival</h2>
+                <p>Durante o verão, a rega é o aspecto mais crítico do cuidado com Bonsai. O calor intenso acelera a evaporação da água do solo, exigindo uma abordagem mais frequente e atenta.</p>
+                <ul>
+                    <li><strong>Frequência Aumentada:</strong> A maioria dos Bonsais precisará ser regada diariamente, e alguns até duas vezes ao dia em dias particularmente quentes.</li>
+                    <li><strong>Horário Ideal:</strong> Rega no início da manhã ou no final da tarde, evitando as horas mais quentes do dia.</li>
+                    <li><strong>Qualidade da Água:</strong> Use água em temperatura ambiente, nunca água fria diretamente do encanamento, pois pode chocar as raízes.</li>
+                    <li><strong>Drenagem Perfeita:</strong> Certifique-se de que o vaso tem furos de drenagem adequados. A água deve fluir livremente.</li>
+                </ul>
+
+                <!-- Seção 2 -->
+                <h2>2. Proteção Solar: Equilibrando Luz e Calor</h2>
+                <p>Embora os Bonsais precisem de luz solar, o excesso pode queimar as folhas e danificar a estrutura delicada da planta.</p>
+                <ul>
+                    <li><strong>Sombreamento Estratégico:</strong> Use telas de sombreamento (30-50% de redução de luz) durante as horas mais quentes do dia.</li>
+                    <li><strong>Localização:</strong> Posicione seus Bonsais em locais que recebam luz matinal suave e fiquem protegidos do sol direto da tarde.</li>
+                    <li><strong>Superfícies:</strong> Evite colocar os vasos diretamente sobre superfícies que absorvem e irradiam muito calor, como concreto ou asfalto. Utilize suportes ou bandejas com pedras úmidas para criar um microclima mais fresco.</li>
+                </ul>
+
+                <!-- Seção 3 -->
+                <h2>3. Adubação: Alimentando o Crescimento</h2>
+                <p>O verão é uma estação de crescimento vigoroso, e seus Bonsais precisam de nutrientes extras para sustentar esse desenvolvimento.</p>
+                <ul>
+                    <li><strong>Frequência de Adubação:</strong> Aumente a frequência para a cada 7-10 dias, usando um adubo balanceado ou específico para Bonsai.</li>
+                    <li><strong>Tipo de Adubo:</strong> Prefira adubos líquidos diluídos, que são absorvidos mais rapidamente pelas raízes.</li>
+                    <li><strong>Cuidado com Excesso:</strong> Não adubar plantas recém-transplantadas ou enfraquecidas. O adubo em excesso pode queimar as raízes.</li>
+                </ul>
+
+                <!-- Seção 4 -->
+                <h2>4. Poda e Manutenção: Moldando o Crescimento</h2>
+                <p>O verão é um período de crescimento vigoroso, o que o torna ideal para a poda de manutenção e modelagem.</p>
+                <ul>
+                    <li><strong>Poda de Manutenção:</strong> Remova brotos indesejados, galhos que cruzam ou crescem para dentro, e folhas amareladas ou danificadas. Isso ajuda a manter a forma do Bonsai e a direcionar a energia para o crescimento saudável.</li>
+                    <li><strong>Desfolha (se aplicável):</strong> Para algumas espécies caducifólias, a desfolha parcial no meio do verão pode estimular uma brotação menor e mais densa, além de promover a ramificação fina. Pesquise se sua espécie se beneficia dessa técnica.</li>
+                    <li><strong>Aramação:</strong> A aramação pode ser feita no verão, mas com atenção redobrada. O crescimento rápido pode fazer com que o arame "crave" na casca, causando cicatrizes. Verifique os arames semanalmente e remova-os ou reposicione-os conforme necessário.</li>
+                </ul>
+
+                <!-- Seção 5 -->
+                <h2>5. Controle de Pragas e Doenças: Vigilância Constante</h2>
+                <p>O calor e a umidade do verão podem ser um convite para pragas e doenças.</p>
+                <ul>
+                    <li><strong>Inspeção Regular:</strong> Examine seus Bonsais diariamente em busca de sinais de pragas (pulgões, cochonilhas, ácaros) ou doenças fúngicas.</li>
+                    <li><strong>Tratamentos Preventivos:</strong> Mantenha a boa circulação de ar e a higiene ao redor dos Bonsais. Em caso de infestação, utilize produtos orgânicos ou inseticidas específicos, seguindo as instruções do fabricante.</li>
+                </ul>
+
+                <!-- Seção 6 -->
+                <h2>6. Conclusão: A Recompensa do Cuidado no Verão</h2>
+                <p>Cuidar de um Bonsai no verão exige dedicação e atenção aos detalhes, mas a recompensa é imensa. Ao seguir estas diretrizes, você garantirá que seu pequeno tesouro verde não apenas sobreviva, mas prospere, desenvolvendo-se com vigor e beleza.</p>
+                <p>Lembre-se que cada Bonsai é único, e a observação constante é sua melhor ferramenta. Com paciência e amor, seu Bonsai continuará a ser uma fonte de inspiração e tranquilidade, mesmo nos dias mais quentes.</p>
+
+                <!-- CTA de Assinatura -->
+                <div class="article-cta">
+                    <h3>Quer Aprender Mais Sobre Bonsai?</h3>
+                    <p>Acesse nosso conteúdo premium com guias práticos, técnicas avançadas e consultoria especializada.</p>
+                    <a href="../../membros/assinar.html">Torne-se Membro Premium</a>
+                </div>
             </div>
-            <h1>O Verão e a Arte do Bonsai: Guia Essencial para Iniciantes</h1>
-            <img src="../../assets/images/bonsai-verao-capa.jpg" alt="Bonsai exuberante sob o sol de verão" class="post-image">
-
-            <p>A arte milenar do Bonsai é uma jornada de paciência, observação e conexão com a natureza. No entanto, para que essa beleza em miniatura prospere, é crucial adaptar os cuidados às diferentes estações do ano. O verão, com suas temperaturas elevadas e maior intensidade solar, apresenta desafios únicos que, se não forem bem gerenciados, podem comprometer a saúde do seu pequeno ecossistema. Este guia essencial foi elaborado para iniciantes, desvendando os segredos para manter seu Bonsai vibrante e saudável durante os meses mais quentes.</p>
-
-            <h2>Rega Adequada: A Fonte da Vida no Calor</h2>
-            <p>A rega é, sem dúvida, o aspecto mais crítico do cuidado com o Bonsai no verão. A evaporação da água é acelerada, e a demanda hídrica da planta aumenta significamente.</p>
-            <ul>
-                <li><strong>Frequência:</strong> Em muitos casos, a rega diária (ou até duas vezes ao dia em picos de calor) será necessária. A regra de ouro é verificar a umidade do solo: se a camada superficial estiver seca ao toque, é hora de regar.</li>
-                <li><strong>Horários:</strong> Prefira regar nas primeiras horas da manhã e, se necessário, no final da tarde, quando as temperaturas são mais amenas. Evite regar sob o sol forte, pois a água pode superaquecer as raízes e as folhas.</li>
-                <li><strong>Método:</strong> Regue até que a água escorra pelos orifícios de drenagem. Para garantir uma hidratação profunda, especialmente após um período de seca, você pode imergir o vaso em um recipiente com água por alguns minutos, permitindo que o substrato absorva a água de baixo para cima.</li>
-            </ul>
-            <!-- Imagem sugerida: bonsai-rega.jpg -->
-            <img src="../../assets/images/bonsai-rega.jpg" alt="Detalhe de alguém regando um Bonsai com regador de bico fino" class="post-image-inline">
-
-
-            <h2>Adubação no Verão: Nutrição Estratégica</h2>
-            <p>Embora o verão seja um período de crescimento ativo para muitas espécies, a adubação deve ser feita com cautela para evitar o estresse da planta.</p>
-            <ul>
-                <li><strong>Tipo de Adubo:</strong> Opte por adubos com menor concentração de nitrogênio e maior de fósforo e potássio, que promovem o fortalecimento das raízes e a resistência geral da planta. Adubos orgânicos de liberação lenta são uma excelente opção.</li>
-                <li><strong>Frequência:</strong> Reduza a frequência da adubação em comparação com a primavera. Uma aplicação a cada 3-4 semanas é geralmente suficiente.</li>
-                <li><strong>Cuidado com Excesso:</strong> Nunca adube um Bonsai desidratado ou estressado. Regue bem a planta antes da adubação para evitar que as raízes sejam queimadas.</li>
-            </ul>
-            <!-- Imagem sugerida: bonsai-adubacao.jpg -->
-            <img src="../../assets/images/bonsai-adubacao.jpg" alt="Close-up de adubo orgânico sendo aplicado no solo de um Bonsai" class="post-image-inline">
-
-
-            <h2>Proteção Solar: Um Escudo Contra o Excesso</h2>
-            <p>O sol intenso do verão pode ser prejudicial, especialmente para espécies mais sensíveis ou para Bonsais que ainda estão em fase de adaptação.</p>
-            <ul>
-                <li><strong>Sombreamento:</strong> Utilize telas de sombreamento (com 30% a 50% de bloqueio de luz) para proteger seus Bonsais durante as horas mais quentes do dia (geralmente entre 11h e 16h).</li>
-                <li><strong>Movimentação:</strong> Se não for possível instalar telas, mova seus Bonsais para um local com sombra parcial durante o pico do calor.</li>
-                <li><strong>Superfícies:</strong> Evite colocar os vasos diretamente sobre superfícies que absorvem e irradiam muito calor, como concreto ou asfalto. Utilize suportes ou bandejas com pedras úmidas para criar um microclima mais fresco.</li>
-            </ul>
-            <!-- Imagem sugerida: bonsai-sombreamento.jpg -->
-            <img src="../../assets/images/bonsai-sombreamento.jpg" alt="Bonsais sob uma tela de sombreamento" class="post-image-inline">
-
-
-            <h2>Poda e Manutenção: Moldando o Crescimento</h2>
-            <p>O verão é um período de crescimento vigoroso, o que o torna ideal para a poda de manutenção e modelagem.</p>
-            <ul>
-                <li><strong>Poda de Manutenção:</strong> Remova brotos indesejados, galhos que cruzam ou crescem para dentro, e folhas amareladas ou danificadas. Isso ajuda a manter a forma do Bonsai e a direcionar a energia para o crescimento saudável.</li>
-                <li><strong>Desfolha (se aplicável):</strong> Para algumas espécies caducifólias, a desfolha parcial no meio do verão pode estimular uma brotação menor e mais densa, além de promover a ramificação fina. Pesquise se sua espécie se beneficia dessa técnica.</li>
-                <li><strong>Aramação:</strong> A aramação pode ser feita no verão, mas com atenção redobrada. O crescimento rápido pode fazer com que o arame "crave" na casca, causando cicatrizes. Verifique os arames semanalmente e remova-os ou reposicione-os conforme necessário.</li>
-            </ul>
-            <!-- Imagem sugerida: bonsai-poda.jpg -->
-            <img src="../../assets/images/bonsai-poda.jpg" alt="Mão realizando a poda de manutenção em um Bonsai" class="post-image-inline">
-
-
-            <h2>Controle de Pragas e Doenças: Vigilância Constante</h2>
-            <p>O calor e a umidade do verão podem ser um convite para pragas e doenças.</p>
-            <ul>
-                <li><strong>Inspeção Regular:</strong> Examine seus Bonsais diariamente em busca de sinais de pragas (pulgões, cochonilhas, ácaros) ou doenças fúngicas.</li>
-                <li><strong>Tratamentos Preventivos:</strong> Mantenha a boa circulação de ar e a higiene ao redor dos Bonsais. Em caso de infestação, utilize produtos orgânicos ou inseticidas específicos, seguindo as instruções do fabricante.</li>
-            </ul>
-            <!-- Imagem sugerida: bonsai-pragas.jpg -->
-            <img src="../../assets/images/bonsai-pragas.jpg" alt="Close-up de uma folha de Bonsai sendo inspecionada em busca de pragas" class="post-image-inline">
-
-
-            <h2>Conclusão: A Recompensa do Cuidado no Verão</h2>
-            <p>Cuidar de um Bonsai no verão exige dedicação e atenção aos detalhes, mas a recompensa é imensa. Ao seguir estas diretrizes, você garantirá que seu pequeno tesouro verde não apenas sobreviva, mas prospere, desenvolvendo-se com vigor e beleza. Lembre-se que cada Bonsai é único, e a observação constante é sua melhor ferramenta. Com paciência e amor, seu Bonsai continuará a ser uma fonte de inspiração e tranquilidade, mesmo nos dias mais quentes.</p>
-            <!-- Imagem sugerida: bonsai-saudavel.jpg -->
-            <img src="../../assets/images/bonsai-saudavel.jpg" alt="Bonsai vibrante e cheio de vida, como resultado dos cuidados de verão" class="post-image-inline">
-
         </article>
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Tales - Todos os direitos reservados. | Desenvolvido com foco em arte e inovação.</p>
+            <p>© 2024 Tales - Todos os direitos reservados. | <a href="../../index.html" style="color: inherit;">Voltar ao Início</a></p>
         </div>
     </footer>
 
-    <script src="../../script.js"></script> <!-- Ajuste o caminho conforme a localização do seu arquivo script.js -->
-    <script>
-        // Função para alternar o menu mobile
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
-    </script>
+    <!-- JavaScript -->
+    <script src="../../script.js"></script>
 </body>
 </html>
