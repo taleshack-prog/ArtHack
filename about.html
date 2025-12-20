@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem é Tales Hack | Artista Plástico, Escultor e Pesquisador</title>
+    <meta name="description" content="Conheça a história de Tales Hack: artista plástico, escultor, pesquisador em neurodivergência e criador da NeuroArt DAO.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- CSS Inline para Página About -->
+    <style>
+        /* ===========================
+           PÁGINA ABOUT - ESTILOS
+           =========================== */
+
+        body {
+            font-family: 'Inter', sans-serif !important;
+            background: #f8f9fa !important;
+            color: #333 !important;
+        }
+
+        /* Hero Section */
+        .about-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+            color: white !important;
+            padding: 80px 40px !important;
+            text-align: center !important;
+            margin-bottom: 60px !important;
+        }
+
+        .about-hero h1 {
+            font-family: 'Playfair Display', serif !important;
+            font-size: 3.5rem !important;
+            margin: 0 0 20px 0 !important;
+            line-height: 1.2 !important;
+            font-weight: 700 !important;
+        }
+
+        .about-hero p {
+            font-size: 1.2rem !important;
+            opacity: 0.95 !important;
+            margin: 0 !important;
+            max-width: 600px !important;
+            margin: 0 auto !important;
+        }
+
+        /* Container Principal */
+        .about-container {
+            max-width: 1000px !important;
+            margin: 0 auto !important;
+            padding: 0 40px !important;
+        }
+
+        /* Seção Introdução com Foto */
+        .about-intro {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 60px !important;
+            align-items: center !important;
+            margin-bottom: 80px !important;
+            background: white !important;
+            padding: 60px !important;
+            border-radius: 12px !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+        }
+
+        .about-intro-image {
+            position: relative !important;
+        }
+
+        .about-intro-image img {
+            width: 100% !important;
+            height: auto !important;
+            border-radius: 12px !important;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15) !important;
+            transition: transform 0.3s ease !important;
+        }
+
+        .about-intro-image img:hover {
+            transform: translateY(-5px) !important;
+        }
+
+        .about-intro-text h2 {
+            font-family: 'Playfair Display', serif !important;
+            font-size: 2.5rem !important;
+            color: #1a1a2e !important;
+            margin: 0 0 20px 0 !important;
+            line-height: 1.3 !important;
+        }
+
+        .about-intro-text p {
+            font-size: 1.05rem !important;
+            line-height: 1.8 !important;
+            color: #555 !important;
+            margin-bottom: 15px !important;
+        }
+
+        .about-intro-text strong {
+            color: #1a1a2e !important;
+            font-weight: 600 !important;
+        }
+
+        /* Seção Especialidades */
+        .about-specialties {
+            margin-bottom: 80px !important;
+        }
+
+        .about-specialties h2 {
+            font-family: 'Playfair Display', serif !important;
+            font-size: 2.5rem !important;
+            color: #1a1a2e !important;
+            text-align: center !important;
+            margin-bottom: 50px !important;
+            padding-bottom: 20px !important;
+            border-bottom: 3px solid #16213e !important;
+        }
+
+        .specialties-grid {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 30px !important;
+        }
+
+        .specialty-card {
+            background: white !important;
+            padding: 40px 30px !important;
+            border-radius: 12px !important;
+            text-align: center !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .specialty-card:hover {
+            transform: translateY(-10px) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+        }
+
+        .specialty-card .icon {
+            font-size: 3rem !important;
+            margin-bottom: 15px !important;
+        }
+
+        .specialty-card h3 {
+            font-family: 'Playfair Display', serif !important;
+            font-size: 1.5rem !important;
+            color: #1a1a2e !important;
+            margin: 0 0 10px 0 !important;
+        }
+
+        .specialty-card p {
+            font-size: 0.95rem !important;
+            color: #666 !important;
+            line-height: 1.6 !important;
+            margin: 0 !important;
+        }
+
+        /* Seção Trajetória */
+        .about-trajectory {
+            background: white !important;
+            padding: 60px !important;
+            border-radius: 12px !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+            margin-bottom: 80px !important;
+        }
+
+        .about-trajectory h2 {
+            font-family: 'Playfair Display', serif !important;
+            font-size: 2.5rem !important;
+            color: #1a1a2e !important;
+            margin: 0 0 40px 0 !important;
+            padding-bottom: 20px !important;
+            border-bottom: 3px solid #16213e !important;
+        }
+
+        .trajectory-content {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 40px !important;
+        }
+
+        .trajectory-text p {
+            font-size: 1.05rem !important;
+            line-height: 1.8 !important;
+            color: #555 !important;
+            margin-bottom: 15px !important;
+        }
+
+        .trajectory-text strong {
+            color: #1a1a2e !important;
+            font-weight: 600 !important;
+        }
+
+        .trajectory-images {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 20px !important;
+        }
+
+        .trajectory-images img {
+            width: 100% !important;
+            height: auto !important;
+            border-radius: 12px !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+            transition: transform 0.3s ease !important;
+        }
+
+        .trajectory-images img:hover {
+            transform: scale(1.05) !important;
+        }
+
+        /* Seção Neurociência */
+        .about-neuroscience {
+            background: linear-gradient(135deg, #1a1a2e15 0%, #16213e15 100%) !important;
+            padding: 60px !important;
+            border-radius: 12px !important;
+            border-left: 5px solid #16213e !important;
+            margin-bottom: 80px !important;
+        }
+
+        .about-neuroscience h2 {
+            font-family: 'Playfair Display', serif !important;
+            font-size: 2.5rem !important;
+            color: #1a1a2e !important;
+            margin: 0 0 30px 0 !important;
+        }
+
+        .about-neuroscience p {
+            font-size: 1.05rem !important;
+            line-height: 1.8 !important;
+            color: #555 !important;
+            margin-bottom: 15px !important;
+        }
+
+        .about-neuroscience strong {
+            color: #1a1a2e !important;
+            font-weight: 600 !important;
+        }
+
+        /* Seção NeuroArt DAO */
+        .about-neuroart {
+            background: white !important;
+            padding: 60px !important;
+            border-radius: 12px !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+            text-align: center !important;
+            margin-bottom: 80px !important;
+        }
+
+        .about-neuroart h2 {
+            font-family: 'Playfair Display', serif !important;
+            font-size: 2.5rem !important;
+            color: #1a1a2e !important;
+            margin: 0 0 20px 0 !important;
+        }
+
+        .about-neuroart p {
+            font-size: 1.05rem !important;
+            line-height: 1.8 !important;
+            color: #555 !important;
+            margin-bottom: 15px !important;
+            max-width: 800px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        /* CTA */
+        .about-cta {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+            color: white !important;
+            padding: 60px 40px !important;
+            border-radius: 12px !important;
+            text-align: center !important;
+            margin-bottom: 80px !important;
+        }
+
+        .about-cta h2 {
+            font-family: 'Playfair Display', serif !important;
+            font-size: 2rem !important;
+            color: white !important;
+            margin: 0 0 20px 0 !important;
+        }
+
+        .about-cta p {
+            font-size: 1.1rem !important;
+            color: rgba(255, 255, 255, 0.95) !important;
+            margin-bottom: 30px !important;
+        }
+
+        .about-cta a {
+            display: inline-block !important;
+            background: white !important;
+            color: #1a1a2e !important;
+            padding: 15px 40px !important;
+            border-radius: 6px !important;
+            text-decoration: none !important;
+            font-weight: 600 !important;
+            font-size: 1.05rem !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .about-cta a:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        /* Responsividade */
+        @media (max-width: 1024px) {
+            .specialties-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            .trajectory-content {
+                grid-template-columns: 1fr !important;
+            }
+
+            .about-intro {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                padding: 50px 20px !important;
+            }
+
+            .about-hero h1 {
+                font-size: 2.2rem !important;
+            }
+
+            .about-container {
+                padding: 0 20px !important;
+            }
+
+            .about-intro {
+                padding: 30px 20px !important;
+                gap: 30px !important;
+            }
+
+            .about-intro-text h2 {
+                font-size: 1.8rem !important;
+            }
+
+            .about-trajectory {
+                padding: 30px 20px !important;
+            }
+
+            .specialties-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .specialty-card {
+                padding: 30px 20px !important;
+            }
+
+            .about-neuroscience {
+                padding: 30px 20px !important;
+            }
+
+            .about-neuroart {
+                padding: 30px 20px !important;
+            }
+
+            .about-cta {
+                padding: 40px 20px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <nav class="container">
+            <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">Tales - Arte & Insight</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Início</a></li>
+                <li><a href="index.html#gallery">Galeria</a></li>
+                <li><a href="index.html#blog">Blog</a></li>
+                <li><a href="membros/">Membros</a></li>
+                <li><a href="membros/assinar.html" class="nav-cta">Assinar</a></li>
+            </ul>
+            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="about-hero">
+            <h1>Quem é Tales Hack</h1>
+            <p>Artista Plástico, Escultor e Pesquisador Independente em Neurodivergência</p>
+        </section>
+
+        <!-- Introdução com Foto -->
+        <div class="about-container">
+            <section class="about-intro">
+                <div class="about-intro-image">
+                    <img src="assets/familia.jpeg" alt="Tales Hack com sua família">
+                </div>
+                <div class="about-intro-text">
+                    <h2>A Jornada de Uma Mente Divergente</h2>
+                    <p><strong>Tales Hack</strong> é artista plástico, escultor e pesquisador independente em neurodivergência (TDAH, TEA e superdotação). Ele cunhou o termo <strong>"NeuroArt"</strong> para definir a arte como expressão e investigação da mente divergente — um território onde estética, autoconsciência e curiosidade científica se encontram.</p>
+                    <p>Ortodontista aposentado, começou a pintar na década de 80 no <strong>Atelier Aquárius</strong>, da artista plástica <strong>Maria Aparecida Peixoto</strong>. Antes da odontologia, cursou 2 anos e meio de Engenharia Química na PUCRS; depois mudou de rota, formou-se em Odontologia e se especializou em Ortodontia.</p>
+                    <p>Paralelamente, manteve viva a pesquisa e o olhar artístico: também estudou Biologia na PUCRS (sem concluir), movido pela mesma inquietação que atravessa toda a sua trajetória.</p>
+                </div>
+            </section>
+
+            <!-- Especialidades -->
+            <section class="about-specialties">
+                <h2>Especialidades e Paixões</h2>
+                <div class="specialties-grid">
+                    <div class="specialty-card">
+                        <div class="icon">🎨</div>
+                        <h3>Artes Plásticas</h3>
+                        <p>Esculturas em madeira reciclada, unindo matéria, memória e transformação</p>
+                    </div>
+                    <div class="specialty-card">
+                        <div class="icon">🥋</div>
+                        <h3>Jiu-Jitsu</h3>
+                        <p>Prática regular com entusiasmo, explorando a neuromodulação através do tatame</p>
+                    </div>
+                    <div class="specialty-card">
+                        <div class="icon">🌳</div>
+                        <h3>Bonsai</h3>
+                        <p>Bonsaista dedicado, explorando paciência, observação e detalhe</p>
+                    </div>
+                    <div class="specialty-card">
+                        <div class="icon">🌸</div>
+                        <h3>Orquidófilo</h3>
+                        <p>Entusiasta de orquídeas, cultivando beleza e raridade</p>
+                    </div>
+                    <div class="specialty-card">
+                        <div class="icon">🐠</div>
+                        <h3>Aquariofilia</h3>
+                        <p>Aquariofilista, criando ecossistemas em miniatura</p>
+                    </div>
+                    <div class="specialty-card">
+                        <div class="icon">✍️</div>
+                        <h3>Escrita</h3>
+                        <p>Cronista no Substack, guardando poesias "no baú" para o tempo certo</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trajetória -->
+            <section class="about-trajectory">
+                <h2>Trajetória Multifacetada</h2>
+                <div class="trajectory-content">
+                    <div class="trajectory-text">
+                        <p>Neurodivergente e multifacetado, <strong>Tales Hack</strong> hoje trabalha com esculturas em madeira reciclada, unindo matéria, memória e transformação. Suas disciplinas — bonsai, orquidófila, aquariofilia e jiu-jitsu — são expressões de paciência, observação e atenção ao detalhe.</p>
+                        <p>É um <strong>aprendiz permanente de novas tecnologias</strong>: explora ML, LLMs e programação em <strong>HTML, JavaScript, Python e Solidity</strong>. Essa curiosidade técnica o levou a criar e cofundar a <strong>NeuroArt DAO</strong> (em construção), onde arte, pesquisa e comunidade se conectam.</p>
+                        <p>Escreve crônicas no Substack e guarda poesias "no baú", como quem protege sementes para o tempo certo. <strong>Marido e pai de dois filhos</strong>, Tales Hack é, acima de tudo, alguém que transforma caminhos — e transforma também tudo o que toca — em linguagem, forma e significado.</p>
+                    </div>
+                    <div class="trajectory-images">
+                        <img src="assets/buenos-aires.jpeg" alt="Buenos Aires - Viagem e Inspiração">
+                        <img src="assets/casa-pueblo.jpeg" alt="Casa Pueblo - Arquitetura e Arte">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Neurodivergência e Pesquisa -->
+            <section class="about-neuroscience">
+                <h2>Neurodivergência: Não uma Patologia, mas uma Perspectiva</h2>
+                <p>A pesquisa independente de Tales Hack em <strong>TDAH, TEA (Transtorno do Espectro Autista) e superdotação</strong> não busca "curar" ou "normalizar" a neurodivergência. Pelo contrário, ela reconhece que a divergência neurobiológica é uma variação natural do cérebro humano — frequentemente acompanhada de forças únicas: criatividade não-linear, hiperfoco, pensamento sistêmico e sensibilidade estética apurada.</p>
+                <p>O termo <strong>"NeuroArt"</strong> que ele cunhou encapsula essa filosofia: a arte não é apenas um produto, mas um processo de <strong>autoexploração e investigação da mente divergente</strong>. Para Tales, criar é pesquisar; pesquisar é criar.</p>
+            </section>
+
+            <!-- NeuroArt DAO -->
+            <section class="about-neuroart">
+                <h2>NeuroArt DAO: O Futuro da Arte e Comunidade</h2>
+                <p>A <strong>NeuroArt DAO</strong> (Organização Autônoma Descentralizada) é a materialização dessa visão. Em construção, ela conecta artistas neurodivergentes, pesquisadores e comunidades ao redor de um propósito comum: explorar, celebrar e financiar a arte como expressão da mente divergente.</p>
+                <p>Utilizando tecnologias de blockchain e smart contracts (programados em Solidity), a DAO busca criar um modelo de governança transparente, inclusivo e resistente — onde a criatividade neurodivergente é não apenas valorizada, mas economicamente sustentável.</p>
+            </section>
+
+            <!-- CTA -->
+            <section class="about-cta">
+                <h2>Explore Mais Sobre Tales Hack</h2>
+                <p>Visite a galeria de obras, leia os artigos sobre neurodivergência e artes, e acompanhe a jornada de criação da NeuroArt DAO.</p>
+                <a href="index.html#gallery">Ver Galeria de Obras</a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2024 Tales - Todos os direitos reservados. | <a href="index.html" style="color: inherit;">Voltar ao Início</a></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
