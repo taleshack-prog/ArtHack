@@ -14,242 +14,258 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="../../style.css">
     
-    <!-- CSS Inline para Artigo -->
+    <!-- CSS Inline para Artigo - COM !IMPORTANT -->
     <style>
         /* ===========================
            ARTIGO DO BLOG - ESTILOS
            =========================== */
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: #f8f9fa;
-            color: #333;
+            font-family: 'Inter', sans-serif !important;
+            background: #f8f9fa !important;
+            color: #333 !important;
         }
 
         .blog-article {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 0;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
+            max-width: 900px !important;
+            margin: 60px auto !important;
+            padding: 0 !important;
+            background: white !important;
+            border-radius: 12px !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+            overflow: hidden !important;
         }
 
-        /* Header do Artigo - CORRIGIDO */
+        /* Header do Artigo - CORRIGIDO COM !IMPORTANT */
         .article-header {
-            padding: 50px 40px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
+            padding: 50px 40px !important;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: white !important;
+            text-align: center !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            margin: 0 !important;
+            border: none !important;
+            transform: none !important;
+            position: relative !important;
+            top: auto !important;
+            left: auto !important;
+            right: auto !important;
         }
 
         .article-header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin: 0 0 20px 0;
-            line-height: 1.3;
-            font-weight: 700;
+            font-family: 'Playfair Display', serif !important;
+            font-size: 2.5rem !important;
+            margin: 0 0 20px 0 !important;
+            line-height: 1.3 !important;
+            font-weight: 700 !important;
+            color: white !important;
+            text-align: center !important;
         }
 
         .article-meta {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            font-size: 0.95rem;
-            opacity: 0.95;
+            display: flex !important;
+            justify-content: center !important;
+            gap: 20px !important;
+            flex-wrap: wrap !important;
+            font-size: 0.95rem !important;
+            opacity: 0.95 !important;
+            margin: 0 !important;
+            padding: 0 !important;
         }
 
         .article-meta span {
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            color: white !important;
         }
 
         /* Conteúdo do Artigo */
         .article-content {
-            padding: 50px 40px;
+            padding: 50px 40px !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
         }
 
         .article-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: #2c3e50;
-            margin: 40px 0 20px 0;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
+            font-family: 'Playfair Display', serif !important;
+            font-size: 1.8rem !important;
+            color: #2c3e50 !important;
+            margin: 40px 0 20px 0 !important;
+            padding-bottom: 10px !important;
+            border-bottom: 3px solid #667eea !important;
         }
 
         .article-content h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: #2c3e50;
-            margin: 30px 0 15px 0;
+            font-family: 'Playfair Display', serif !important;
+            font-size: 1.3rem !important;
+            color: #2c3e50 !important;
+            margin: 30px 0 15px 0 !important;
         }
 
         .article-content p {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 20px;
+            font-size: 1rem !important;
+            line-height: 1.8 !important;
+            color: #555 !important;
+            margin-bottom: 20px !important;
         }
 
         .article-content ul,
         .article-content ol {
-            margin: 20px 0 20px 30px;
-            line-height: 1.8;
+            margin: 20px 0 20px 30px !important;
+            line-height: 1.8 !important;
         }
 
         .article-content li {
-            margin-bottom: 12px;
-            color: #555;
+            margin-bottom: 12px !important;
+            color: #555 !important;
         }
 
         .article-content strong {
-            color: #2c3e50;
-            font-weight: 600;
+            color: #2c3e50 !important;
+            font-weight: 600 !important;
         }
 
         /* Caixa de Destaque */
         .highlight-box {
-            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
-            border-left: 5px solid #667eea;
-            padding: 25px;
-            border-radius: 8px;
-            margin: 30px 0;
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%) !important;
+            border-left: 5px solid #667eea !important;
+            padding: 25px !important;
+            border-radius: 8px !important;
+            margin: 30px 0 !important;
         }
 
         .highlight-box strong {
-            color: #667eea;
+            color: #667eea !important;
         }
 
         /* Tabela de Cores */
         .color-guide {
-            margin: 30px 0;
-            border-collapse: collapse;
-            width: 100%;
+            margin: 30px 0 !important;
+            border-collapse: collapse !important;
+            width: 100% !important;
         }
 
         .color-guide th,
         .color-guide td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #e9ecef;
+            padding: 15px !important;
+            text-align: left !important;
+            border-bottom: 1px solid #e9ecef !important;
         }
 
         .color-guide th {
-            background: #667eea;
-            color: white;
-            font-weight: 600;
+            background: #667eea !important;
+            color: white !important;
+            font-weight: 600 !important;
         }
 
         .color-guide tr:hover {
-            background: #f8f9fa;
+            background: #f8f9fa !important;
         }
 
         /* Referências */
         .references {
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 2px solid #e9ecef;
+            margin-top: 50px !important;
+            padding-top: 30px !important;
+            border-top: 2px solid #e9ecef !important;
         }
 
         .references h2 {
-            border-bottom: 3px solid #667eea;
+            border-bottom: 3px solid #667eea !important;
         }
 
         .references ol {
-            margin-left: 20px;
+            margin-left: 20px !important;
         }
 
         .references li {
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #555;
+            margin-bottom: 15px !important;
+            font-size: 0.95rem !important;
+            line-height: 1.6 !important;
+            color: #555 !important;
         }
 
         /* CTA de Assinatura */
         .article-cta {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px;
-            border-radius: 12px;
-            text-align: center;
-            margin: 50px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: white !important;
+            padding: 40px !important;
+            border-radius: 12px !important;
+            text-align: center !important;
+            margin: 50px 0 !important;
         }
 
         .article-cta h3 {
-            color: white;
-            margin-bottom: 15px;
+            color: white !important;
+            margin-bottom: 15px !important;
         }
 
         .article-cta p {
-            color: rgba(255, 255, 255, 0.95);
-            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.95) !important;
+            margin-bottom: 20px !important;
         }
 
         .article-cta a {
-            display: inline-block;
-            background: white;
-            color: #667eea;
-            padding: 12px 30px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            display: inline-block !important;
+            background: white !important;
+            color: #667eea !important;
+            padding: 12px 30px !important;
+            border-radius: 6px !important;
+            text-decoration: none !important;
+            font-weight: 600 !important;
+            transition: all 0.3s ease !important;
         }
 
         .article-cta a:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important;
         }
 
         /* Responsividade */
         @media (max-width: 768px) {
             .blog-article {
-                margin: 20px auto;
-                border-radius: 0;
+                margin: 20px auto !important;
+                border-radius: 0 !important;
             }
 
             .article-header {
-                padding: 30px 20px;
+                padding: 30px 20px !important;
             }
 
             .article-header h1 {
-                font-size: 1.8rem;
+                font-size: 1.8rem !important;
             }
 
             .article-meta {
-                gap: 10px;
-                font-size: 0.85rem;
+                gap: 10px !important;
+                font-size: 0.85rem !important;
             }
 
             .article-content {
-                padding: 30px 20px;
+                padding: 30px 20px !important;
             }
 
             .article-content h2 {
-                font-size: 1.5rem;
+                font-size: 1.5rem !important;
             }
 
             .article-content h3 {
-                font-size: 1.1rem;
+                font-size: 1.1rem !important;
             }
 
             .article-content p {
-                font-size: 0.95rem;
+                font-size: 0.95rem !important;
             }
 
             .color-guide th,
             .color-guide td {
-                padding: 10px;
-                font-size: 0.9rem;
+                padding: 10px !important;
+                font-size: 0.9rem !important;
             }
 
             .article-cta {
-                padding: 30px 20px;
+                padding: 30px 20px !important;
             }
         }
     </style>
@@ -272,7 +288,7 @@
 
     <main>
         <article class="blog-article">
-            <!-- Header do Artigo - ALINHADO -->
+            <!-- Header do Artigo - ALINHADO E RETO -->
             <header class="article-header">
                 <h1>Teoria das Cores na Prática: Um Guia para a Exploração Neurodivergente</h1>
                 <div class="article-meta">
@@ -343,87 +359,4 @@
                 <p>Para que o processo seja prazeroso e livre de tédio, os exercícios devem priorizar a <strong>Exploração Multissensorial</strong>. Abaixo, detalho três dinâmicas estruturadas para promover o engajamento sem pressão cognitiva:</p>
 
                 <h3>Exercício 1: O Experimento da Translucidez (Foco em Matiz e Mistura)</h3>
-                <p>Utilize recipientes de vidro transparente com água e corantes alimentícios em cores primárias. Em vez de explicar que "azul mais amarelo dá verde", ofereça conta-gotas e permita que o indivíduo pingue as cores livremente em um terceiro recipiente iluminado por baixo (uma mesa de luz ou lanterna).</p>
-                <p>A mudança gradual do tom na água oferece um feedback visual suave e hipnótico, facilitando o <strong>Flow State</strong> (estado de fluxo) sem a exigência de um resultado artístico final.</p>
-
-                <h3>Exercício 2: Mapeamento de Texturas Cromáticas (Foco em Valor e Croma)</h3>
-                <p>Crie uma "caixa de sensações" contendo materiais de uma única família de cor, mas com texturas e brilhos diferentes:</p>
-                <ul>
-                    <li>Veludo azul-marinho</li>
-                    <li>Cetim azul-celeste</li>
-                    <li>Lixa azul-petróleo</li>
-                    <li>Plástico azul-royal</li>
-                </ul>
-                <p>O exercício consiste em organizar esses objetos do mais "pesado" (escuro/denso) para o mais "leve" (claro/brilhante). Essa atividade trabalha a <strong>Discriminação Visual</strong> e a <strong>Propriocepção</strong>, vinculando a cor a uma experiência tátil concreta.</p>
-
-                <h3>Exercício 3: Filtros de Paisagem (Foco em Contraste e Temperatura)</h3>
-                <p>Forneça folhas de acetato colorido (filtros) para que o indivíduo observe o ambiente da casa através deles. Pergunte, de maneira sutil: "Como a sala parece mais silenciosa: com o filtro azul ou com o laranja?"</p>
-                <p>Isso induz a percepção de que a <strong>Temperatura de Cor</strong> altera a percepção do espaço e do som (sinestesia), sem a necessidade de memorizar termos técnicos precocemente.</p>
-
-                <!-- Seção 6 -->
-                <h2>6. Guia de Cores Calmantes para Ambientes Domésticos</h2>
-                <p>A escolha da paleta residencial deve priorizar a <strong>Baixa Reflectância</strong> e tons que não demandem esforço excessivo do sistema de processamento visual. Cores com subtons cinzentos ou "sujos" são ideais, pois reduzem a vibração cromática.</p>
-
-                <table class="color-guide">
-                    <thead>
-                        <tr>
-                            <th>Cor</th>
-                            <th>Descrição</th>
-                            <th>Benefícios</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Azul Sereno (Soft Blue)</strong></td>
-                            <td>Tons próximos ao azul-celeste com baixa saturação</td>
-                            <td>Reduzem a pressão arterial e frequência respiratória. Ideais para zonas de descompressão ou quartos.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Verde Sálvia (Sage Green)</strong></td>
-                            <td>Um verde acinzentado que remete à natureza</td>
-                            <td>Maior equilíbrio fisiológico. O olho humano foca o verde exatamente sobre a retina, exigindo zero esforço de acomodação dos músculos oculares.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Terracota Suave ou Areia</strong></td>
-                            <td>Tons terrosos claros</td>
-                            <td>Oferecem sensação de Aterramento (Grounding). Absorvem parte da luz, tornando o ambiente visualmente mais estável.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Lavanda Acinzentado</strong></td>
-                            <td>Uma alternativa ao roxo vibrante</td>
-                            <td>Promove introspecção e relaxamento sem risco de sobrecarga sensorial associado a cores mais quentes.</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <!-- Seção 7 - Referências -->
-                <section class="references">
-                    <h2>Referências Bibliográficas para Consulta</h2>
-                    <ol>
-                        <li>Nair, A. S., et al. (2022). A case study on the effect of light and colors in the built environment on autistic children's behavior. <em>Frontiers in Psychiatry</em>. (Trata da influência das cores no comportamento).</li>
-                        <li>Parmar, K. R. (2021). Visual Sensory Experiences From the Viewpoint of Autistic Adults. <em>Frontiers in Psychology</em>. (Oferece a perspectiva de quem vive a neurodivergência sobre o estímulo visual).</li>
-                        <li>Grandgeorge, M., & Masataka, N. (2016). Atypical Color Preference in Children with Autism Spectrum Disorder. <em>Frontiers in Psychology</em>. (Explica por que cores específicas podem ser preferidas ou evitadas).</li>
-                    </ol>
-                </section>
-
-                <!-- CTA de Assinatura -->
-                <div class="article-cta">
-                    <h3>Quer Aprender Mais Sobre Artes e Neurodivergência?</h3>
-                    <p>Acesse nosso conteúdo premium com guias práticos, exercícios detalhados e consultoria especializada.</p>
-                    <a href="../../membros/assinar.html">Torne-se Membro Premium</a>
-                </div>
-            </div>
-        </article>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>© 2024 Tales - Todos os direitos reservados. | <a href="../../index.html" style="color: inherit;">Voltar ao Início</a></p>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script src="../../script.js"></script>
-</body>
-</html>
+                <p>Utilize recipientes de vidro transparente com água e corantes alimentícios
