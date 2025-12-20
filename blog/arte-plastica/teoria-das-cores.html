@@ -29,14 +29,14 @@
         .blog-article {
             max-width: 900px;
             margin: 60px auto;
-            padding: 0 20px;
+            padding: 0;
             background: white;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             overflow: hidden;
         }
 
-        /* Header do Artigo */
+        /* Header do Artigo - CORRIGIDO */
         .article-header {
             padding: 50px 40px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -49,6 +49,7 @@
             font-size: 2.5rem;
             margin: 0 0 20px 0;
             line-height: 1.3;
+            font-weight: 700;
         }
 
         .article-meta {
@@ -106,52 +107,6 @@
         }
 
         .article-content strong {
-            color: #2c3e50;
-            font-weight: 600;
-        }
-
-        /* Imagens do Artigo */
-        .article-images {
-            margin: 40px 0;
-            padding: 30px 0;
-        }
-
-        .article-images h2 {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .blog-image {
-            margin: 30px auto;
-            max-width: 800px;
-            background: #f8f9fa;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .blog-image:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .blog-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            cursor: pointer;
-        }
-
-        .blog-image figcaption {
-            padding: 20px;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #555;
-            background: white;
-        }
-
-        .blog-image figcaption strong {
             color: #2c3e50;
             font-weight: 600;
         }
@@ -317,7 +272,7 @@
 
     <main>
         <article class="blog-article">
-            <!-- Header do Artigo -->
+            <!-- Header do Artigo - ALINHADO -->
             <header class="article-header">
                 <h1>Teoria das Cores na Prática: Um Guia para a Exploração Neurodivergente</h1>
                 <div class="article-meta">
@@ -467,14 +422,6 @@
             <p>© 2024 Tales - Todos os direitos reservados. | <a href="../../index.html" style="color: inherit;">Voltar ao Início</a></p>
         </div>
     </footer>
-
-    <!-- Lightbox Modal (se quiser adicionar funcionalidade de ampliar imagens) -->
-    <div id="lightbox" class="lightbox">
-        <div class="lightbox-content">
-            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
-            <img id="lightbox-img" src="" alt="Imagem ampliada">
-        </div>
-    </div>
 
     <!-- JavaScript -->
     <script src="../../script.js"></script>
