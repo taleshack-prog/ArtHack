@@ -6,8 +6,10 @@
       var path = window.location.pathname;
       var search = window.location.search;
       var hash = window.location.hash;
-      var redirect = window.location.origin + '/ArtHack/?redirect=' + encodeURIComponent(path + search + hash);
-      window.location.replace(redirect);
+      window.location.replace(
+        window.location.origin + '/ArtHack/?redirect=' + 
+        encodeURIComponent(path + search + hash)
+      );
     </script>
   </head>
   <body></body>
