@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Environment (NUNCA subir!)
+backend/.env
+backend/data/
+backend/uploads/
+
+# Build
+dist/
+dist-electron/
+docs/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db

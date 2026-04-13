@@ -1,0 +1,19 @@
+{
+  "name": "arthack-cms-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "npm i --prefix backend && npm i --prefix dashboard && npm i --prefix frontend",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:dashboard": "npm run dev --prefix dashboard",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\" \"npm run dev:dashboard\"",
+    "electron": "npm run electron:dev --prefix dashboard",
+    "build:frontend": "npm run build --prefix frontend",
+    "build:electron": "npm run electron:build --prefix dashboard",
+    "build:electron:win": "npm run electron:build:win --prefix dashboard"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
