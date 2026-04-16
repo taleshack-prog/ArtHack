@@ -459,7 +459,7 @@ function Ebook() {
             className="w-36 rounded-xl shadow-xl flex-shrink-0"
           />
           <div className="text-center md:text-left">
-            <p className="text-xs text-amber-400 tracking-widest uppercase mb-2">E-book Gratuito</p>
+            <p className="text-xs text-amber-400 tracking-widest uppercase mb-2">E-book</p>
             <h3 className="text-2xl font-bold mb-3 group-hover:text-amber-400 transition-colors" style={{ fontFamily: "'Playfair Display', serif" }}>
               Antifrágil Blindado
             </h3>
